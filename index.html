@@ -2,251 +2,137 @@
 <html lang="en">
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CFHWRFE835"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-CFHWRFE835');
-    </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CFHWRFE835"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CFHWRFE835');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Tools2Do — Health, Tech & Pakistan News</title>
-    <meta name="description" content="Read the latest articles on health alerts, Pakistan government schemes, technology, and trending world news on Tools2Do Blog.">
-    <meta name="keywords" content="tools2do blog, hantavirus pakistan, health news 2026, pakistan news blog, bisp updates, petrol scheme news">
-    <meta property="og:title" content="Tools2Do Blog — Health, Tech & Pakistan News">
-    <meta property="og:description" content="Stay informed with expert articles on health outbreaks, government schemes, and trending world news.">
-    <meta property="og:type" content="website">
-    <link rel="canonical" href="https://tools2do.com/blog/">
+    <title>Tools2Do | Pakistan's Premier Online Citizen Services & Utility Portal 2026</title>
+    <meta name="description" content="Access verified Pakistan government schemes, check BISP 8171 payment status, duplicate electricity bills, petrol relief registration, and the best Palworld Breeding Calculator — all in one place.">
+    <meta name="keywords" content="pakistan online tools, 8171 check online, hazeco bill check, cm punjab petrol scheme, matric results 2026, citizen portal pakistan, palworld breeding calculator">
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        :root {
-            --navy: #0F172A;
-            --navy-light: #1E293B;
-            --gold: #B45309;
-            --gold-hover: #92400E;
-            --slate: #F8FAFC;
-            --text-gray: #475569;
-            --emerald: #059669;
-            --blue: #2563EB;
-            --red: #DC2626;
-        }
-        *, *::before, *::after { box-sizing: border-box; }
+        :root { --navy: #0F172A; --navy-light: #1E293B; --gold: #B45309; --gold-hover: #92400E; --slate: #F8FAFC; --text-gray: #475569; --emerald: #059669; --blue: #2563EB; }
         body { font-family: 'Poppins', sans-serif; margin: 0; background-color: var(--slate); color: var(--navy); }
 
-        /* NAV */
         nav { background: var(--navy); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; }
         .logo { color: white; font-size: 1.6rem; font-weight: 700; text-decoration: none; }
         .logo span { color: var(--gold); }
+
         .nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
         .nav-links a { color: white; text-decoration: none; font-size: 0.9rem; }
-        .nav-links a:hover { color: #FCD34D; }
 
-        /* HEADER */
-        header { background: linear-gradient(135deg, #0F172A, #1E293B); color: white; padding: 60px 20px 80px; text-align: center; }
+        header { background: linear-gradient(135deg, #0F172A, #1E293B); color: white; padding: 70px 20px; text-align: center; }
         header h1 { margin: 0 0 10px; font-size: 2.2rem; }
-        header p { margin: 0; opacity: 0.75; font-size: 1rem; }
-        .breadcrumb { font-size: 0.8rem; opacity: 0.5; margin-bottom: 15px; }
-        .breadcrumb a { color: #FCD34D; text-decoration: none; }
+        header p { margin: 0; opacity: 0.8; font-size: 1.05rem; }
 
-        /* CONTAINER */
-        .container { max-width: 1100px; margin: -40px auto 60px; padding: 0 20px; }
+        .container { max-width: 1200px; margin: -40px auto 40px; padding: 0 20px; }
 
-        /* CATEGORY FILTER */
-        .filter-bar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 30px; }
-        .filter-btn {
-            padding: 7px 18px; border-radius: 30px; border: none; cursor: pointer;
-            font-family: 'Poppins', sans-serif; font-size: 0.82rem; font-weight: 600;
-            background: white; color: var(--text-gray); box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-            transition: 0.2s;
+        .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+
+        .tool-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            border-top: 4px solid transparent;
         }
-        .filter-btn.active, .filter-btn:hover { background: var(--navy); color: white; }
 
-        /* BLOG GRID */
-        .blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px; }
+        .tool-card:hover { transform: translateY(-5px); box-shadow: 0 16px 35px rgba(0,0,0,0.1); }
+        .tool-card.gaming { border-top-color: #6366f1; background: linear-gradient(135deg, #fff, #f5f3ff); }
+        .tool-card.gaming:hover { box-shadow: 0 16px 35px rgba(99,102,241,0.2); }
 
-        /* BLOG CARD */
-        .blog-card {
-            background: white; border-radius: 14px; overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: 0.3s; text-decoration: none; color: inherit;
-            display: flex; flex-direction: column;
+        .tool-card h3 { margin: 10px 0 8px; font-size: 1.2rem; }
+        .tool-card p { margin: 0; color: var(--text-gray); font-size: 0.95rem; }
+
+        .status-badge {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: 600;
         }
-        .blog-card:hover { transform: translateY(-5px); box-shadow: 0 12px 35px rgba(0,0,0,0.12); }
-        .card-badge-bar { padding: 18px 22px 0; }
-        .category-badge {
-            font-size: 0.72rem; font-weight: 700; padding: 4px 12px; border-radius: 20px;
-            display: inline-block; letter-spacing: 0.5px; text-transform: uppercase;
-        }
-        .cat-health { background: #FEE2E2; color: #991B1B; }
-        .cat-pakistan { background: #D1FAE5; color: #065F46; }
-        .cat-tech { background: #DBEAFE; color: #1E40AF; }
-        .cat-world { background: #FEF3C7; color: #92400E; }
 
-        .card-body { padding: 16px 22px 22px; flex: 1; display: flex; flex-direction: column; }
-        .card-body h2 { font-size: 1.05rem; margin: 8px 0 10px; line-height: 1.5; }
-        .card-body p { color: var(--text-gray); font-size: 0.88rem; line-height: 1.6; margin: 0 0 16px; flex: 1; }
-        .card-meta { display: flex; align-items: center; justify-content: space-between; font-size: 0.78rem; color: #94A3B8; }
-        .card-meta .date { display: flex; align-items: center; gap: 5px; }
-        .read-link { color: var(--gold); font-weight: 600; font-size: 0.82rem; }
-        .card-img { width: 100%; height: 180px; object-fit: cover; }
-        .img-placeholder {
-            height: 180px; display: flex; align-items: center; justify-content: center;
-            font-size: 3.5rem;
-        }
-        .img-health { background: linear-gradient(135deg, #FEE2E2, #FECACA); }
-        .img-pakistan { background: linear-gradient(135deg, #D1FAE5, #A7F3D0); }
-        .img-tech { background: linear-gradient(135deg, #DBEAFE, #BFDBFE); }
-
-        /* HOT BADGE */
-        .hot-badge { background: #DC2626; color: white; font-size: 0.68rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; margin-left: 8px; animation: pulse 1.5s infinite; }
-        @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.6; } }
-
-        /* SIDEBAR UPCOMING */
-        .layout { display: grid; grid-template-columns: 1fr 320px; gap: 30px; align-items: start; }
-        @media(max-width: 900px) { .layout { grid-template-columns: 1fr; } }
-
-        .sidebar-card { background: white; border-radius: 14px; padding: 22px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
-        .sidebar-card h3 { margin: 0 0 16px; font-size: 1rem; border-left: 4px solid var(--gold); padding-left: 10px; }
-        .sidebar-item { padding: 12px 0; border-bottom: 1px solid #F1F5F9; display: flex; gap: 12px; align-items: flex-start; }
-        .sidebar-item:last-child { border: none; padding-bottom: 0; }
-        .sidebar-item .icon { font-size: 1.5rem; flex-shrink: 0; }
-        .sidebar-item h4 { margin: 0 0 3px; font-size: 0.88rem; }
-        .sidebar-item p { margin: 0; font-size: 0.78rem; color: var(--text-gray); }
+        .bg-green { background: #DCFCE7; color: #166534; }
+        .bg-blue { background: #DBEAFE; color: #1E3A8A; }
+        .bg-yellow { background: #FEF9C3; color: #854D0E; }
+        .bg-purple { background: #EDE9FE; color: #5B21B6; }
 
         footer {
-            background: var(--navy); color: white;
-            text-align: center; padding: 40px 20px; margin-top: 50px;
+            background: var(--navy);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
         }
         footer p { margin: 0; opacity: 0.7; font-size: 0.9rem; }
     </style>
 </head>
+
 <body>
 
 <nav>
-    <a href="../index.html" class="logo">Tools2Do<span>.com</span></a>
+    <a href="index.html" class="logo">Tools2Do<span>.com</span></a>
     <div class="nav-links">
-        <a href="../index.html">Home</a>
-        <a href="../bisp-8171.html">BISP</a>
-        <a href="../electricity-bill.html">Bills</a>
-        <a href="../petrol-subsidy.html">Petrol</a>
-        <a href="../palworld/">Palworld</a>
-        <a href="index.html" style="color:#FCD34D; font-weight:600;">Blog</a>
+        <a href="index.html">Home</a>
+        <a href="bisp-8171.html">BISP</a>
+        <a href="electricity-bill.html">Bills</a>
+        <a href="petrol-subsidy.html">Petrol</a>
+        <a href="palworld/index.html">Palworld</a>
     </div>
 </nav>
 
 <header>
-    <div class="breadcrumb"><a href="../index.html">Home</a> › Blog</div>
-    <h1>📰 Tools2Do Blog</h1>
-    <p>Health alerts, Pakistan updates, tech news & more — explained simply.</p>
+    <h1>Pakistan's Digital Utility Hub</h1>
+    <p>Government tools + trending online calculators — all in one place.</p>
 </header>
 
 <main class="container">
 
-    <div class="filter-bar">
-        <button class="filter-btn active">All Posts</button>
-        <button class="filter-btn">🏥 Health</button>
-        <button class="filter-btn">🇵🇰 Pakistan</button>
-        <button class="filter-btn">💻 Tech</button>
-        <button class="filter-btn">🌍 World News</button>
-    </div>
+<div class="tool-grid">
 
-    <div class="layout">
-        <div class="blog-grid">
+    <a href="bisp-8171" class="tool-card">
+        <span class="status-badge bg-green">High Traffic</span>
+        <h3>BISP 8171 Check</h3>
+        <p>Check your Rs. 14,500 Benazir Kafaalat payment eligibility and NSER registration status online.</p>
+    </a>
 
-            <!-- POST 1: HANTAVIRUS (current) -->
-            <a href="what-is-hantavirus.html" class="blog-card">
-                <div class="img-placeholder img-health">🦠</div>
-                <div class="card-badge-bar">
-                    <span class="category-badge cat-health">Health</span>
-                    <span class="hot-badge">🔥 TRENDING</span>
-                </div>
-                <div class="card-body">
-                    <h2>What is Hantavirus? Symptoms, Transmission & 2026 Cruise Ship Outbreak Explained</h2>
-                    <p>A deadly hantavirus outbreak on a cruise ship has put the world on alert. Here's everything you need to know — symptoms, how it spreads, and how to protect yourself.</p>
-                    <div class="card-meta">
-                        <span class="date">📅 May 7, 2026</span>
-                        <span class="read-link">Read More →</span>
-                    </div>
-                </div>
-            </a>
+    <a href="electricity-bill" class="tool-card">
+        <span class="status-badge bg-blue">Active</span>
+        <h3>Electricity Bills</h3>
+        <p>Generate duplicate utility bills for HAZECO, LESCO, PESCO, MEPCO, K-Electric and more — instantly.</p>
+    </a>
 
-            <!-- PLACEHOLDER POST 2 -->
-            <a href="#" class="blog-card" style="opacity:0.6; pointer-events:none;">
-                <div class="img-placeholder img-pakistan">🇵🇰</div>
-                <div class="card-badge-bar">
-                    <span class="category-badge cat-pakistan">Pakistan</span>
-                </div>
-                <div class="card-body">
-                    <h2>BISP Kafaalat 14,500 Payment: How to Check Your Eligibility in 2026</h2>
-                    <p>Everything you need to know about the Benazir Income Support Programme's latest payment cycle and eligibility criteria.</p>
-                    <div class="card-meta">
-                        <span class="date">📅 Coming Soon</span>
-                        <span class="read-link">Coming Soon</span>
-                    </div>
-                </div>
-            </a>
+    <a href="petrol-subsidy" class="tool-card">
+        <span class="status-badge bg-green">Open</span>
+        <h3>Petrol Scheme 2026</h3>
+        <p>Apply for the CM Punjab Sasta Petrol Scheme via 9771 SMS and claim your Rs. 2,000 monthly discount.</p>
+    </a>
 
-            <!-- PLACEHOLDER POST 3 -->
-            <a href="#" class="blog-card" style="opacity:0.6; pointer-events:none;">
-                <div class="img-placeholder img-tech">⚡</div>
-                <div class="card-badge-bar">
-                    <span class="category-badge cat-pakistan">Pakistan</span>
-                </div>
-                <div class="card-body">
-                    <h2>Electricity Bills in Pakistan 2026: How to Get Your Duplicate Bill Online</h2>
-                    <p>Step-by-step guide to generating duplicate bills for LESCO, MEPCO, PESCO, HAZECO, and K-Electric in minutes.</p>
-                    <div class="card-meta">
-                        <span class="date">📅 Coming Soon</span>
-                        <span class="read-link">Coming Soon</span>
-                    </div>
-                </div>
-            </a>
+    <a href="#" class="tool-card">
+        <span class="status-badge bg-yellow">Coming Soon</span>
+        <h3>Matric Results 2026</h3>
+        <p>Check your board examination results online as soon as they are announced.</p>
+    </a>
 
-        </div>
+    <a href="palworld/" class="tool-card gaming">
+        <span class="status-badge bg-purple">🔥 Trending</span>
+        <h3>🎮 Palworld Breeding Calculator</h3>
+        <p>Find every Pal breeding combination instantly. Pick two parents → see offspring, or find all parents for any target Pal. Covers all 137+ Pals.</p>
+    </a>
 
-        <!-- SIDEBAR -->
-        <aside>
-            <div class="sidebar-card">
-                <h3>🔥 Trending Tools</h3>
-                <div class="sidebar-item">
-                    <span class="icon">💸</span>
-                    <div>
-                        <h4><a href="../bisp-8171.html" style="color:var(--navy);text-decoration:none;">BISP 8171 Check</a></h4>
-                        <p>Check Rs. 14,500 payment status</p>
-                    </div>
-                </div>
-                <div class="sidebar-item">
-                    <span class="icon">⛽</span>
-                    <div>
-                        <h4><a href="../petrol-subsidy.html" style="color:var(--navy);text-decoration:none;">Petrol Scheme 2026</a></h4>
-                        <p>CM Punjab Rs. 2,000 monthly discount</p>
-                    </div>
-                </div>
-                <div class="sidebar-item">
-                    <span class="icon">⚡</span>
-                    <div>
-                        <h4><a href="../electricity-bill.html" style="color:var(--navy);text-decoration:none;">Electricity Bills</a></h4>
-                        <p>Duplicate bill for all DISCOs</p>
-                    </div>
-                </div>
-                <div class="sidebar-item">
-                    <span class="icon">🎮</span>
-                    <div>
-                        <h4><a href="../palworld/" style="color:var(--navy);text-decoration:none;">Palworld Calculator</a></h4>
-                        <p>All 137+ Pal breeding combinations</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="sidebar-card" style="margin-top:20px;">
-                <h3>📌 Health Alert</h3>
-                <p style="font-size:0.85rem; color:var(--text-gray); margin:0 0 10px;">The WHO has confirmed a hantavirus outbreak on a cruise ship. Risk to general public remains <strong>LOW</strong>. Stay informed.</p>
-                <a href="what-is-hantavirus.html" style="display:inline-block; background:var(--gold); color:white; padding:8px 18px; border-radius:8px; font-size:0.82rem; font-weight:600; text-decoration:none;">Read Full Article →</a>
-            </div>
-        </aside>
-    </div>
+</div>
 
 </main>
 
