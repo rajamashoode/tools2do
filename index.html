@@ -51,6 +51,7 @@
         .tool-card:hover { transform: translateY(-5px); box-shadow: 0 16px 35px rgba(0,0,0,0.1); }
         .tool-card.gaming { border-top-color: #6366f1; background: linear-gradient(135deg, #fff, #f5f3ff); }
         .tool-card.gaming:hover { box-shadow: 0 16px 35px rgba(99,102,241,0.2); }
+        .tool-card.blog { border-top-color: var(--gold); }
 
         .tool-card h3 { margin: 10px 0 8px; font-size: 1.2rem; }
         .tool-card p { margin: 0; color: var(--text-gray); font-size: 0.95rem; }
@@ -68,6 +69,7 @@
         .bg-blue { background: #DBEAFE; color: #1E3A8A; }
         .bg-yellow { background: #FEF9C3; color: #854D0E; }
         .bg-purple { background: #EDE9FE; color: #5B21B6; }
+        .bg-red { background: #FEE2E2; color: #991B1B; }
 
         footer {
             background: var(--navy);
@@ -90,6 +92,7 @@
         <a href="electricity-bill.html">Bills</a>
         <a href="petrol-subsidy.html">Petrol</a>
         <a href="palworld/index.html">Palworld</a>
+        <a href="blog/index.html" style="color:var(--gold); font-weight:bold;">Blog</a>
     </div>
 </nav>
 
@@ -101,6 +104,13 @@
 <main class="container">
 
 <div class="tool-grid">
+
+    <!-- NEW BLOG CARD -->
+    <a href="blog/index.html" class="tool-card blog">
+        <span class="status-badge bg-red">📰 New Updates</span>
+        <h3>Tools2Do Blog</h3>
+        <p>Read the latest breaking health alerts, guides on government schemes, and utility updates in Pakistan.</p>
+    </a>
 
     <a href="bisp-8171" class="tool-card">
         <span class="status-badge bg-green">High Traffic</span>
