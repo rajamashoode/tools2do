@@ -3,9 +3,25 @@
 
   <url>
     <loc>https://tools2do.com/</loc>
-    <lastmod>2026-05-02</lastmod>
+    <lastmod>2026-05-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- Blog Index Page -->
+  <url>
+    <loc>https://tools2do.com/blog/index.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Hantavirus Blog Post -->
+  <url>
+    <loc>https://tools2do.com/blog/what-is-hantavirus.html</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
   </url>
 
   <url>
