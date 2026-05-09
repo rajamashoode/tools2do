@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CFHWRFE835"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CFHWRFE835');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palworld Breeding Calculator 2026 | Find All Pal Breeding Combos Instantly</title>
+    <meta name="description" content="The ultimate Palworld Breeding Calculator. Find every breeding combination, discover what two Pals produce, or find parents for any target Pal. Free, fast, and complete.">
+    <meta name="keywords" content="palworld breeding calculator, palworld breeding combos, palworld pal combinations, breed anubis palworld, palworld offspring calculator, palworld parent finder">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Palworld Breeding Calculator",
+      "url": "https://tools2do.com/palworld/",
+      "description": "Calculate Palworld breeding combinations. Find offspring from two parents or find all parents that produce a target Pal.",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Any"
+    }
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0F172A;
+            --navy-light: #1E293B;
+            --gold: #B45309;
+            --gold-hover: #92400E;
+            --slate: #F8FAFC;
+            --pal-dark: #0a0f1e;
+            --pal-mid: #111827;
+            --pal-accent: #6366f1;
+            --pal-accent2: #f59e0b;
+            --pal-green: #10b981;
+            --pal-red: #ef4444;
+            --pal-blue: #3b82f6;
+            --pal-purple: #8b5cf6;
+            --text-light: #e2e8f0;
+            --text-muted: #94a3b8;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: var(--pal-dark);
+            color: var(--text-light);
+            min-height: 100vh;
+        }
+
+        /* NAV */
+        nav {
+            background: var(--navy);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid rgba(99,102,241,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo { color: white; font-size: 1.5rem; font-weight: 700; text-decoration: none; font-family: 'Rajdhani', sans-serif; }
+        .logo span { color: var(--gold); }
+        .nav-links a { color: #cbd5e1; text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: color 0.2s; }
+        .nav-links a:hover { color: white; }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, #0a0f1e 0%, #1a1040 50%, #0f1a2e 100%);
+            padding: 60px 20px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(99,102,241,0.2);
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 60% 30%, rgba(99,102,241,0.12) 0%, transparent 60%),
+                        radial-gradient(ellipse at 20% 70%, rgba(245,158,11,0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .hero-badge {
+            background: rgba(99,102,241,0.2);
+            border: 1px solid rgba(99,102,241,0.4);
+            color: #a5b4fc;
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, #fff 30%, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .hero-stat { text-align: center; }
+        .hero-stat .num { font-family: 'Rajdhani', sans-serif; font-size: 2rem; font-weight: 700; color: var(--pal-accent2); }
+        .hero-stat .label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+
+        /* MAIN CALCULATOR */
+        .calc-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* MODE TABS */
+        .mode-tabs {
+            display: flex;
+            background: var(--pal-mid);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 6px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .mode-tab {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            border-radius: 8px;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+        .mode-tab.active {
+            background: var(--pal-accent);
+            color: white;
+            box-shadow: 0 4px 15px rgba(99,102,241,0.4);
+        }
+
+        /* CALCULATOR PANELS */
+        .calc-panel { display: none; }
+        .calc-panel.active { display: block; }
+
+        /* PAL SELECTOR GRID */
+        .selector-row {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 20px;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+        .vs-badge {
+            background: var(--pal-accent);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 0 20px rgba(99,102,241,0.5);
+            flex-shrink: 0;
+        }
+
+        .pal-selector-box {
+            background: var(--pal-mid);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .pal-selector-box label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .search-input {
+            width: 100%;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 8px;
+            padding: 12px 16px;
+            color: white;
+            font-family: 'Nunito', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .search-input:focus { border-color: var(--pal-accent); }
+        .search-input::placeholder { color: var(--text-muted); }
+
+        .pal-dropdown {
+            position: relative;
+            margin-top: 8px;
+        }
+        .dropdown-list {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0; right: 0;
+            background: #1a1f35;
+            border: 1px solid rgba(99,102,241,0.3);
+            border-radius: 8px;
+            max-height: 250px;
+            overflow-y: auto;
+            z-index: 50;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+        .dropdown-list.open { display: block; }
+        .dropdown-item {
+            padding: 10px 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.15s;
+            font-size: 0.95rem;
+        }
+        .dropdown-item:hover { background: rgba(99,102,241,0.2); }
+        .pal-element-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .selected-pal-display {
+            margin-top: 12px;
+            background: rgba(99,102,241,0.1);
+            border: 1px solid rgba(99,102,241,0.3);
+            border-radius: 8px;
+            padding: 14px;
+            display: none;
+            align-items: center;
+            gap: 12px;
+        }
+        .selected-pal-display.visible { display: flex; }
+        .pal-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .selected-pal-name { font-family: 'Rajdhani', sans-serif; font-size: 1.2rem; font-weight: 700; }
+        .selected-pal-meta { font-size: 0.8rem; color: var(--text-muted); margin-top: 2px; }
+
+        /* CALCULATE BUTTON */
+        .calc-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--pal-accent), #4f46e5);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.25s;
+            box-shadow: 0 4px 20px rgba(99,102,241,0.4);
+        }
+        .calc-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99,102,241,0.6);
+        }
+
+        /* RESULT */
+        .result-area {
+            margin-top: 30px;
+        }
+        .result-card {
+            background: var(--pal-mid);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            animation: fadeIn 0.4s ease;
+        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        .result-label {
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+        .result-pal-name {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #fff, var(--pal-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+        .result-pal-icon { font-size: 4rem; margin-bottom: 10px; }
+        .result-tags { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 15px; }
+        .result-tag {
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .tag-work { background: rgba(16,185,129,0.2); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.3); }
+        .tag-element { background: rgba(99,102,241,0.2); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.3); }
+        .tag-rank { background: rgba(245,158,11,0.2); color: #fcd34d; border: 1px solid rgba(245,158,11,0.3); }
+
+        /* COMBO TABLE */
+        .combos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .combo-card {
+            background: var(--pal-mid);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .combo-card:hover {
+            border-color: rgba(99,102,241,0.4);
+            transform: translateY(-2px);
+        }
+        .combo-parents {
+            flex: 1;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .combo-plus {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin: 2px 0;
+        }
+        .combo-parent-name { color: white; }
+        .combo-arrow { color: var(--pal-accent2); font-size: 1.2rem; }
+        .combo-result { font-family: 'Rajdhani', sans-serif; font-size: 1rem; font-weight: 700; color: var(--pal-accent); }
+
+        /* TABLE */
+        .result-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .result-table th {
+            background: rgba(99,102,241,0.2);
+            color: #a5b4fc;
+            padding: 12px 16px;
+            text-align: left;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+        .result-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.95rem;
+        }
+        .result-table tr:hover td { background: rgba(99,102,241,0.05); }
+
+        /* NO RESULT */
+        .no-result {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+        }
+        .no-result .icon { font-size: 3rem; margin-bottom: 15px; }
+
+        /* SECTION TITLE */
+        .section-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255,255,255,0.08);
+        }
+        .count-badge {
+            background: rgba(99,102,241,0.3);
+            color: #a5b4fc;
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        /* PAL ENCYCLOPEDIA */
+        .pal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .pal-card-mini {
+            background: var(--pal-mid);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 10px;
+            padding: 14px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .pal-card-mini:hover {
+            border-color: rgba(99,102,241,0.5);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        .pal-card-mini .icon { font-size: 2rem; margin-bottom: 6px; }
+        .pal-card-mini .name { font-family: 'Rajdhani', sans-serif; font-size: 1rem; font-weight: 700; }
+        .pal-card-mini .rank-num { font-size: 0.75rem; color: var(--text-muted); }
+        .element-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-top: 4px;
+        }
+
+        /* FILTER BAR */
+        .filter-bar {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        .filter-btn {
+            padding: 7px 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: transparent;
+            color: var(--text-muted);
+            border-radius: 50px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .filter-btn.active, .filter-btn:hover {
+            border-color: var(--pal-accent);
+            color: white;
+            background: rgba(99,102,241,0.2);
+        }
+        .search-filter {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        /* INFO SECTION */
+        .info-section {
+            background: var(--pal-mid);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 40px;
+            margin-top: 50px;
+        }
+        .info-section h2 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #a5b4fc;
+        }
+        .info-section h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--pal-accent2);
+            margin: 25px 0 10px;
+        }
+        .info-section p { color: var(--text-muted); line-height: 1.8; margin-bottom: 10px; }
+        .info-section ul { color: var(--text-muted); line-height: 1.8; padding-left: 20px; }
+        .info-section li { margin-bottom: 6px; }
+        .formula-box {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(99,102,241,0.3);
+            border-radius: 8px;
+            padding: 20px;
+            font-family: monospace;
+            color: #a5b4fc;
+            font-size: 1rem;
+            margin: 15px 0;
+        }
+
+        /* SPECIAL COMBOS */
+        .special-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .special-card {
+            background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.05));
+            border: 1px solid rgba(99,102,241,0.3);
+            border-radius: 12px;
+            padding: 20px;
+        }
+        .special-card .child {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 8px;
+        }
+        .special-card .parents-text { font-size: 0.9rem; color: var(--text-muted); }
+        .special-card .parents-text b { color: #a5b4fc; }
+        .star { color: var(--pal-accent2); }
+
+        /* FOOTER */
+        footer {
+            background: var(--navy);
+            color: var(--text-muted);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        footer a { color: #a5b4fc; text-decoration: none; }
+
+        /* SCROLLBAR */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(99,102,241,0.4); border-radius: 3px; }
+
+        /* RESPONSIVE */
+        @media (max-width: 700px) {
+            .selector-row { grid-template-columns: 1fr; }
+            .vs-badge { display: none; }
+            .hero { padding: 40px 15px 30px; }
+        }
+
+        .element-fire { background: rgba(239,68,68,0.2); color: #fca5a5; border: 1px solid rgba(239,68,68,0.3); }
+        .element-water { background: rgba(59,130,246,0.2); color: #93c5fd; border: 1px solid rgba(59,130,246,0.3); }
+        .element-grass { background: rgba(16,185,129,0.2); color: #6ee7b7; border: 1px solid rgba(16,185,129,0.3); }
+        .element-electric { background: rgba(245,158,11,0.2); color: #fcd34d; border: 1px solid rgba(245,158,11,0.3); }
+        .element-ice { background: rgba(147,197,253,0.2); color: #bae6fd; border: 1px solid rgba(147,197,253,0.3); }
+        .element-ground { background: rgba(180,136,80,0.2); color: #d4a96a; border: 1px solid rgba(180,136,80,0.3); }
+        .element-dark { background: rgba(139,92,246,0.2); color: #c4b5fd; border: 1px solid rgba(139,92,246,0.3); }
+        .element-dragon { background: rgba(99,102,241,0.2); color: #a5b4fc; border: 1px solid rgba(99,102,241,0.3); }
+        .element-neutral { background: rgba(148,163,184,0.2); color: #cbd5e1; border: 1px solid rgba(148,163,184,0.3); }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="../" class="logo">Tools2Do<span>.com</span></a>
+    <div class="nav-links">
+        <a href="../">Home</a>
+        <a href="../bisp-8171/">BISP</a>
+        <a href="../electricity-bill/">Bills</a>
+        <a href="../petrol-subsidy/">Petrol</a>
+    </div>
+</nav>
+
+<div class="hero">
+    <div class="hero-badge">🎮 Palworld Tool</div>
+    <h1>Palworld Breeding Calculator</h1>
+    <p>Find any breeding combination instantly. Pick two parents to see offspring, or find every combo that produces your target Pal.</p>
+    <div class="hero-stats">
+        <div class="hero-stat"><div class="num" id="stat-pals">137</div><div class="label">Total Pals</div></div>
+        <div class="hero-stat"><div class="num" id="stat-combos">6k+</div><div class="label">Combinations</div></div>
+        <div class="hero-stat"><div class="num">12</div><div class="label">Elements</div></div>
+        <div class="hero-stat"><div class="num">Free</div><div class="label">No Login</div></div>
+    </div>
+</div>
+
+<div class="calc-container">
+
+    <!-- MODE TABS -->
+    <div class="mode-tabs">
+        <button class="mode-tab active" onclick="setMode('parents')">👫 Parents → Child</button>
+        <button class="mode-tab" onclick="setMode('target')">🎯 Find Parents For</button>
+        <button class="mode-tab" onclick="setMode('browse')">📖 Browse All Pals</button>
+    </div>
+
+    <!-- PANEL 1: PARENTS TO CHILD -->
+    <div class="calc-panel active" id="panel-parents">
+        <div class="selector-row">
+            <div class="pal-selector-box">
+                <label>Parent 1 (Father)</label>
+                <div class="pal-dropdown">
+                    <input type="text" class="search-input" id="search-p1" placeholder="Search Pal name..." oninput="filterDropdown('p1')" onfocus="openDropdown('p1')" onblur="closeDropdown('p1')">
+                    <div class="dropdown-list" id="dropdown-p1"></div>
+                </div>
+                <div class="selected-pal-display" id="selected-p1">
+                    <div class="pal-avatar" id="p1-avatar">🐾</div>
+                    <div>
+                        <div class="selected-pal-name" id="p1-name">—</div>
+                        <div class="selected-pal-meta" id="p1-meta">—</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vs-badge">+</div>
+
+            <div class="pal-selector-box">
+                <label>Parent 2 (Mother)</label>
+                <div class="pal-dropdown">
+                    <input type="text" class="search-input" id="search-p2" placeholder="Search Pal name..." oninput="filterDropdown('p2')" onfocus="openDropdown('p2')" onblur="closeDropdown('p2')">
+                    <div class="dropdown-list" id="dropdown-p2"></div>
+                </div>
+                <div class="selected-pal-display" id="selected-p2">
+                    <div class="pal-avatar" id="p2-avatar">🐾</div>
+                    <div>
+                        <div class="selected-pal-name" id="p2-name">—</div>
+                        <div class="selected-pal-meta" id="p2-meta">—</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="calc-btn" onclick="calculateOffspring()">⚡ CALCULATE OFFSPRING</button>
+
+        <div class="result-area" id="offspring-result"></div>
+    </div>
+
+    <!-- PANEL 2: FIND PARENTS -->
+    <div class="calc-panel" id="panel-target">
+        <div class="pal-selector-box" style="max-width: 500px; margin: 0 auto 25px;">
+            <label>Target Pal (What do you want to breed?)</label>
+            <div class="pal-dropdown">
+                <input type="text" class="search-input" id="search-target" placeholder="Search target Pal..." oninput="filterDropdown('target')" onfocus="openDropdown('target')" onblur="closeDropdown('target')">
+                <div class="dropdown-list" id="dropdown-target"></div>
+            </div>
+            <div class="selected-pal-display" id="selected-target">
+                <div class="pal-avatar" id="target-avatar">🎯</div>
+                <div>
+                    <div class="selected-pal-name" id="target-name">—</div>
+                    <div class="selected-pal-meta" id="target-meta">—</div>
+                </div>
+            </div>
+        </div>
+
+        <button class="calc-btn" onclick="findParents()" style="max-width: 500px; display: block; margin: 0 auto;">🔍 FIND ALL PARENT COMBOS</button>
+
+        <div class="result-area" id="parents-result"></div>
+    </div>
+
+    <!-- PANEL 3: BROWSE -->
+    <div class="calc-panel" id="panel-browse">
+        <div class="filter-bar">
+            <input type="text" class="search-input search-filter" placeholder="Search Pals..." id="browse-search" oninput="filterBrowse()">
+            <button class="filter-btn active" onclick="filterElement('all', this)">All</button>
+            <button class="filter-btn" onclick="filterElement('Neutral', this)">⚪ Neutral</button>
+            <button class="filter-btn" onclick="filterElement('Fire', this)">🔥 Fire</button>
+            <button class="filter-btn" onclick="filterElement('Water', this)">💧 Water</button>
+            <button class="filter-btn" onclick="filterElement('Leaf', this)">🌿 Grass</button>
+            <button class="filter-btn" onclick="filterElement('Electric', this)">⚡ Electric</button>
+            <button class="filter-btn" onclick="filterElement('Ice', this)">❄️ Ice</button>
+            <button class="filter-btn" onclick="filterElement('Ground', this)">🌍 Ground</button>
+            <button class="filter-btn" onclick="filterElement('Dark', this)">🌑 Dark</button>
+            <button class="filter-btn" onclick="filterElement('Dragon', this)">🐉 Dragon</button>
+        </div>
+        <div class="pal-grid" id="pal-browse-grid"></div>
+    </div>
+
+    <!-- SPECIAL COMBOS -->
+    <div style="margin-top: 50px;">
+        <div class="section-title">⭐ Best Breeding Combos <span class="count-badge">Top Picks</span></div>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin: 8px 0 20px;">These are the most sought-after breeding combinations for powerful Pals.</p>
+        <div class="special-grid" id="special-combos"></div>
+    </div>
+
+    <!-- INFO SECTION -->
+    <div class="info-section">
+        <h2>How Palworld Breeding Works</h2>
+        <p>Breeding in Palworld is a core mechanic that allows players to produce offspring Pals with desirable stats and passive skills. Understanding the formula unlocks the ability to systematically create the most powerful Pals.</p>
+
+        <h3>The Breeding Formula</h3>
+        <div class="formula-box">
+            Child Rank = Floor((Parent1 Rank + Parent2 Rank + 1) / 2)
+        </div>
+        <p>Every Pal has a hardcoded "Breeding Power" (rank) that ranges from 10 to 1500. The child's rank is determined by averaging the two parent ranks and rounding down. The resulting rank then maps to the closest matching Pal.</p>
+
+        <h3>Requirements to Breed</h3>
+        <ul>
+            <li>Unlock the <b>Breeding Farm</b> at Technology Level 19 (costs 100 Wood, 20 Stone, 50 Fiber)</li>
+            <li>Place one <b>male</b> and one <b>female</b> Pal in the Breeding Farm</li>
+            <li>Provide at least one <b>Cake</b> (requires Flour, Red Berries, Milk, Egg, Honey)</li>
+            <li>Wait for the egg to be laid, then use an <b>Egg Incubator</b> to hatch it</li>
+        </ul>
+
+        <h3>Passive Skill Inheritance</h3>
+        <p>Each parent passes down up to 2 of their passive skills to the offspring. This makes breeding chains extremely powerful — you can stack the best skills like <b>Legend</b>, <b>Musclehead</b>, <b>Ferocious</b>, and <b>Swift</b> onto a single Pal through multiple generations.</p>
+
+        <h3>Special (Unique) Breeding Combinations</h3>
+        <p>Certain Pals can ONLY be obtained through specific parent combinations, bypassing the standard formula entirely. These are called "unique combos" — for example, Jormuntide Ignis can only be bred from Jormuntide + Relaxaurus Lux. Our calculator accounts for all special combinations.</p>
+
+        <h3>Fusion Pals</h3>
+        <p>Some special breeding combinations produce a "Lux" or alternative variant Pal. These fusion Pals are often stronger than the base version and have unique Partner Skills. Notable fusions include: Mossanda Lux, Grizzbolt (from Mossanda + Grizzbolt), and Jormuntide Ignis.</p>
+    </div>
+</div>
+
+<footer><p>© 2026 Tools2Do.com — Free online tools. No login required.</p><p class="footer-links"><a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/privacy-policy/">Privacy Policy</a> · <a href="/terms-and-conditions/">Terms</a> · <a href="/disclaimer/">Disclaimer</a></p></footer>
+
+<script>
+// ============================================================
+// FULL PAL DATABASE - Breeding Power (rank) values
+// ============================================================
+const PALS = [
+  {id:1, name:"Lamball",       rank:1500, element:"Neutral",  icon:"🐑", work:["Handiwork 1","Transporting 1"]},
+  {id:2, name:"Cattiva",       rank:1490, element:"Neutral",  icon:"🐱", work:["Handiwork 1","Transporting 1","Mining 1","Gathering 1"]},
+  {id:3, name:"Chikipi",       rank:1480, element:"Neutral",  icon:"🐔", work:["Farming 1"]},
+  {id:4, name:"Lifmunk",       rank:1470, element:"Leaf",     icon:"🐿️", work:["Handiwork 1","Gathering 2","Lumbering 1","Planting 1","Medicine 1"]},
+  {id:5, name:"Foxparks",      rank:1460, element:"Fire",     icon:"🦊", work:["Kindling 1"]},
+  {id:6, name:"Fuack",         rank:1450, element:"Water",    icon:"🦆", work:["Watering 1","Transporting 1"]},
+  {id:7, name:"Sparkit",       rank:1440, element:"Electric", icon:"⚡", work:["Generating Electricity 1","Handiwork 1"]},
+  {id:8, name:"Tanzee",        rank:1430, element:"Leaf",     icon:"🐵", work:["Handiwork 1","Planting 1","Gathering 1","Lumbering 1","Transporting 1"]},
+  {id:9, name:"Rooby",         rank:1420, element:"Fire",     icon:"🦘", work:["Kindling 1","Transporting 1"]},
+  {id:10,name:"Pengullet",     rank:1410, element:"Water",    icon:"🐧", work:["Watering 1","Transporting 1","Mining 1"]},
+  {id:11,name:"Penking",       rank:790,  element:"Water",    icon:"🐧", work:["Handiwork 2","Watering 2","Transporting 3","Mining 2"]},
+  {id:12,name:"Jolthog",       rank:1400, element:"Electric", icon:"🦔", work:["Generating Electricity 1"]},
+  {id:13,name:"Jolthog Cryst", rank:1390, element:"Ice",      icon:"❄️", work:["Cooling 1"]},
+  {id:14,name:"Gumoss",        rank:1380, element:"Leaf",     icon:"🌿", work:["Planting 1","Lumbering 1"]},
+  {id:15,name:"Vixy",          rank:1370, element:"Neutral",  icon:"🦊", work:["Handiwork 1","Gathering 1","Mining 1"]},
+  {id:16,name:"Hoocrates",     rank:1360, element:"Dark",     icon:"🦉", work:["Handiwork 1","Transporting 1"]},
+  {id:17,name:"Teafant",       rank:1350, element:"Water",    icon:"🐘", work:["Watering 1"]},
+  {id:18,name:"Depresso",      rank:1340, element:"Dark",     icon:"😿", work:["Handiwork 1","Transporting 1","Mining 1"]},
+  {id:19,name:"Cremis",        rank:1330, element:"Neutral",  icon:"🐣", work:["Handiwork 1","Gathering 1","Farming 1"]},
+  {id:20,name:"Daedream",      rank:1320, element:"Dark",     icon:"👁️", work:["Handiwork 1","Transporting 1"]},
+  {id:21,name:"Rushoar",       rank:1310, element:"Ground",   icon:"🐗", work:["Mining 1"]},
+  {id:22,name:"Nox",           rank:1300, element:"Dark",     icon:"🦊", work:["Handiwork 1","Gathering 1"]},
+  {id:23,name:"Fuddler",       rank:1290, element:"Neutral",  icon:"🦔", work:["Mining 1","Handiwork 1"]},
+  {id:24,name:"Killamari",     rank:1280, element:"Dark",     icon:"🦑", work:["Handiwork 1","Transporting 1"]},
+  {id:25,name:"Mau",           rank:1270, element:"Dark",     icon:"😺", work:["Handiwork 1","Gathering 1"]},
+  {id:26,name:"Mau Cryst",     rank:1260, element:"Ice",      icon:"❄️", work:["Cooling 1","Handiwork 1"]},
+  {id:27,name:"Celaray",       rank:1250, element:"Water",    icon:"🌊", work:["Watering 1","Transporting 1"]},
+  {id:28,name:"Direhowl",      rank:1240, element:"Neutral",  icon:"🐺", work:["Transporting 2"]},
+  {id:29,name:"Tocotoco",      rank:1230, element:"Neutral",  icon:"🐦", work:["Transporting 1"]},
+  {id:30,name:"Flopie",        rank:1220, element:"Leaf",     icon:"🐰", work:["Planting 1","Handiwork 1","Gathering 2","Medicine 1"]},
+  {id:31,name:"Mozzarina",     rank:1210, element:"Neutral",  icon:"🐄", work:["Farming 1"]},
+  {id:32,name:"Bristla",       rank:1200, element:"Leaf",     icon:"🌵", work:["Planting 1","Handiwork 1","Gathering 2","Lumbering 1","Medicine 1"]},
+  {id:33,name:"Gobfin",        rank:1190, element:"Water",    icon:"🐟", work:["Handiwork 1","Transporting 1","Watering 1"]},
+  {id:34,name:"Gobfin Ignis",  rank:1180, element:"Fire",     icon:"🔥", work:["Kindling 1","Handiwork 1"]},
+  {id:35,name:"Hangyu",        rank:1170, element:"Ground",   icon:"🦅", work:["Handiwork 1","Transporting 1","Gathering 1"]},
+  {id:36,name:"Hangyu Cryst",  rank:1160, element:"Ice",      icon:"❄️", work:["Cooling 1","Handiwork 1"]},
+  {id:37,name:"Eikthyrdeer",   rank:1150, element:"Neutral",  icon:"🦌", work:["Lumbering 2"]},
+  {id:38,name:"Eikthyrdeer Terra",rank:1140,element:"Ground", icon:"🌍", work:["Lumbering 2","Mining 1"]},
+  {id:39,name:"Nitewing",      rank:1130, element:"Neutral",  icon:"🦅", work:["Transporting 3"]},
+  {id:40,name:"Ribunny",       rank:1120, element:"Neutral",  icon:"🐰", work:["Handiwork 1","Gathering 1","Medicine 1"]},
+  {id:41,name:"Incineram",     rank:1110, element:"Fire",     icon:"🦊", work:["Handiwork 2","Kindling 2","Lumbering 2"]},
+  {id:42,name:"Incineram Noct",rank:1100, element:"Dark",     icon:"🌑", work:["Handiwork 2","Kindling 1","Lumbering 2"]},
+  {id:43,name:"Cinnamoth",     rank:1090, element:"Leaf",     icon:"🦋", work:["Planting 2","Handiwork 1","Gathering 2","Medicine 2"]},
+  {id:44,name:"Arsox",         rank:1080, element:"Fire",     icon:"🐂", work:["Kindling 3","Lumbering 1"]},
+  {id:45,name:"Dumud",         rank:1070, element:"Ground",   icon:"🦀", work:["Mining 2","Watering 1","Transporting 1"]},
+  {id:46,name:"Cawgnito",      rank:1060, element:"Dark",     icon:"🐦", work:["Handiwork 1","Lumbering 1","Transporting 1","Mining 1"]},
+  {id:47,name:"Leezpunk",      rank:1050, element:"Dark",     icon:"🦝", work:["Handiwork 1","Gathering 1","Transporting 1","Mining 1"]},
+  {id:48,name:"Leezpunk Ignis",rank:1040, element:"Fire",     icon:"🔥", work:["Kindling 1","Transporting 1","Mining 1"]},
+  {id:49,name:"Loupmoon",      rank:1030, element:"Dark",     icon:"🌙", work:["Handiwork 1","Gathering 1","Lumbering 2"]},
+  {id:50,name:"Galeclaw",      rank:1020, element:"Neutral",  icon:"🦅", work:["Transporting 2"]},
+  {id:51,name:"Robinquill",    rank:1010, element:"Leaf",     icon:"🐦", work:["Handiwork 2","Planting 1","Gathering 2","Lumbering 1","Transporting 1","Medicine 2"]},
+  {id:52,name:"Robinquill Terra",rank:1000,element:"Ground",  icon:"🌍", work:["Handiwork 2","Planting 1","Gathering 2","Lumbering 1","Transporting 1","Mining 2"]},
+  {id:53,name:"Gorirat",       rank:990,  element:"Neutral",  icon:"🦍", work:["Handiwork 2","Lumbering 2","Transporting 1","Mining 1"]},
+  {id:54,name:"Beegarde",      rank:980,  element:"Leaf",     icon:"🐝", work:["Planting 1","Gathering 2","Farming 1"]},
+  {id:55,name:"Elizabee",      rank:970,  element:"Leaf",     icon:"🐝", work:["Handiwork 2","Planting 2","Gathering 2","Farming 1"]},
+  {id:56,name:"Grintale",      rank:960,  element:"Neutral",  icon:"🐱", work:["Gathering 3"]},
+  {id:57,name:"Swee",          rank:950,  element:"Ice",      icon:"❄️", work:["Cooling 1","Planting 1"]},
+  {id:58,name:"Sweepa",        rank:940,  element:"Ice",      icon:"❄️", work:["Cooling 2","Handiwork 1","Lumbering 2","Gathering 1"]},
+  {id:59,name:"Chillet",       rank:930,  element:"Ice",      icon:"🐆", work:["Cooling 2","Handiwork 1","Gathering 1"]},
+  {id:60,name:"Univolt",       rank:920,  element:"Electric", icon:"⚡", work:["Generating Electricity 2","Handiwork 1","Transporting 2","Lumbering 1"]},
+  {id:61,name:"Foxcicle",      rank:910,  element:"Ice",      icon:"🦊", work:["Cooling 2","Handiwork 1","Gathering 1"]},
+  {id:62,name:"Pyrin",         rank:900,  element:"Fire",     icon:"🦁", work:["Kindling 3","Lumbering 2"]},
+  {id:63,name:"Pyrin Noct",    rank:890,  element:"Dark",     icon:"🌑", work:["Kindling 3","Lumbering 2"]},
+  {id:64,name:"Reindrix",      rank:880,  element:"Ice",      icon:"🦌", work:["Cooling 2","Lumbering 2"]},
+  {id:65,name:"Rayhound",      rank:870,  element:"Electric", icon:"🐕", work:["Generating Electricity 2"]},
+  {id:66,name:"Kitsun",        rank:860,  element:"Fire",     icon:"🦊", work:["Kindling 2"]},
+  {id:67,name:"Dazzi",         rank:850,  element:"Electric", icon:"⚡", work:["Generating Electricity 2","Handiwork 1","Gathering 1","Transporting 1"]},
+  {id:68,name:"Lunaris",       rank:840,  element:"Neutral",  icon:"🌙", work:["Handiwork 2","Transporting 2","Gathering 1"]},
+  {id:69,name:"Dinossom",      rank:830,  element:"Leaf",     icon:"🦕", work:["Planting 2","Handiwork 1","Lumbering 2"]},
+  {id:70,name:"Dinossom Lux",  rank:820,  element:"Electric", icon:"⚡", work:["Generating Electricity 2","Planting 2","Lumbering 2"]},
+  {id:71,name:"Surfent",       rank:810,  element:"Water",    icon:"🐊", work:["Watering 3","Transporting 2"]},
+  {id:72,name:"Surfent Terra",  rank:800,  element:"Ground",   icon:"🌍", work:["Mining 3","Transporting 2"]},
+  {id:73,name:"Maraith",       rank:780,  element:"Dark",     icon:"💀", work:["Handiwork 1","Transporting 1","Mining 1"]},
+  {id:74,name:"Wixen",         rank:770,  element:"Fire",     icon:"🦊", work:["Kindling 2","Handiwork 3","Transporting 2"]},
+  {id:75,name:"Verdash",       rank:760,  element:"Leaf",     icon:"🌿", work:["Handiwork 3","Gathering 3","Lumbering 2","Transporting 3"]},
+  {id:76,name:"Vaelet",        rank:750,  element:"Leaf",     icon:"🌸", work:["Planting 3","Handiwork 1","Gathering 3","Medicine 3"]},
+  {id:77,name:"Sibelyx",       rank:740,  element:"Ice",      icon:"❄️", work:["Cooling 3","Farming 1","Medicine 2"]},
+  {id:78,name:"Elphidran",     rank:730,  element:"Dragon",   icon:"🐉", work:["Handiwork 1","Lumbering 2","Gathering 2","Transporting 3"]},
+  {id:79,name:"Elphidran Aqua",rank:720,  element:"Water",    icon:"💧", work:["Watering 3","Handiwork 1","Lumbering 2","Transporting 3"]},
+  {id:80,name:"Kelpsea",       rank:710,  element:"Water",    icon:"🌊", work:["Watering 1","Farming 1"]},
+  {id:81,name:"Kelpsea Ignis", rank:700,  element:"Fire",     icon:"🔥", work:["Kindling 1","Farming 1"]},
+  {id:82,name:"Azurobe",       rank:690,  element:"Water",    icon:"🐉", work:["Watering 3","Handiwork 1"]},
+  {id:83,name:"Cryolinx",      rank:680,  element:"Ice",      icon:"❄️", work:["Cooling 3","Lumbering 3","Handiwork 1"]},
+  {id:84,name:"Blazehowl",     rank:670,  element:"Fire",     icon:"🐺", work:["Kindling 3","Lumbering 2","Farming 1"]},
+  {id:85,name:"Blazehowl Noct",rank:660,  element:"Dark",     icon:"🌑", work:["Kindling 3","Lumbering 2"]},
+  {id:86,name:"Relaxaurus",    rank:650,  element:"Dragon",   icon:"🦎", work:["Watering 3","Transporting 3"]},
+  {id:87,name:"Relaxaurus Lux",rank:640,  element:"Electric", icon:"⚡", work:["Generating Electricity 3","Transporting 3"]},
+  {id:88,name:"Broncherry",    rank:630,  element:"Leaf",     icon:"🌿", work:["Planting 4","Gathering 3","Farming 1"]},
+  {id:89,name:"Broncherry Aqua",rank:620, element:"Water",    icon:"💧", work:["Watering 4","Gathering 3","Farming 1"]},
+  {id:90,name:"Petallia",      rank:610,  element:"Leaf",     icon:"🌺", work:["Planting 4","Handiwork 2","Gathering 3","Medicine 4"]},
+  {id:91,name:"Reptyro",       rank:600,  element:"Fire",     icon:"🦕", work:["Kindling 3","Mining 3"]},
+  {id:92,name:"Reptyro Cryst", rank:590,  element:"Ice",      icon:"❄️", work:["Cooling 3","Mining 3"]},
+  {id:93,name:"Kingpaca",      rank:580,  element:"Neutral",  icon:"🦙", work:["Gathering 3","Farming 1"]},
+  {id:94,name:"Kingpaca Cryst",rank:570,  element:"Ice",      icon:"❄️", work:["Cooling 3","Gathering 3","Farming 1"]},
+  {id:95,name:"Mammorest",     rank:560,  element:"Leaf",     icon:"🦣", work:["Planting 2","Lumbering 2","Mining 3","Gathering 3"]},
+  {id:96,name:"Mammorest Cryst",rank:550, element:"Ice",      icon:"❄️", work:["Cooling 2","Lumbering 2","Mining 3","Gathering 3"]},
+  {id:97,name:"Dumud",         rank:540,  element:"Ground",   icon:"🏔️", work:["Mining 2","Watering 1","Oil Extraction 2"]},
+  {id:98,name:"Wumpo",         rank:530,  element:"Ice",      icon:"🐻", work:["Handiwork 2","Lumbering 4","Transporting 4","Gathering 2"]},
+  {id:99,name:"Wumpo Botan",   rank:520,  element:"Leaf",     icon:"🌿", work:["Handiwork 2","Planting 4","Lumbering 3","Transporting 4"]},
+  {id:100,name:"Grizzbolt",    rank:510,  element:"Electric", icon:"⚡", work:["Generating Electricity 4","Handiwork 2","Lumbering 2","Transporting 2"]},
+  {id:101,name:"Lyleen",       rank:500,  element:"Leaf",     icon:"🌸", work:["Planting 4","Handiwork 3","Gathering 3","Medicine 4"]},
+  {id:102,name:"Lyleen Noct",  rank:490,  element:"Dark",     icon:"🌑", work:["Handiwork 3","Gathering 3","Medicine 4"]},
+  {id:103,name:"Faleris",      rank:480,  element:"Fire",     icon:"🦅", work:["Kindling 3","Transporting 4"]},
+  {id:104,name:"Faleris Aqua", rank:470,  element:"Water",    icon:"💧", work:["Watering 4","Transporting 4"]},
+  {id:105,name:"Mossanda",     rank:460,  element:"Leaf",     icon:"🐼", work:["Handiwork 3","Gathering 3","Lumbering 2","Transporting 3"]},
+  {id:106,name:"Mossanda Lux", rank:450,  element:"Electric", icon:"⚡", work:["Generating Electricity 3","Handiwork 3","Lumbering 2","Transporting 3"]},
+  {id:107,name:"Vanwyrm",      rank:440,  element:"Fire",     icon:"🐦", work:["Kindling 2","Transporting 3"]},
+  {id:108,name:"Vanwyrm Cryst",rank:430,  element:"Ice",      icon:"❄️", work:["Cooling 2","Transporting 3"]},
+  {id:109,name:"Bushi",        rank:420,  element:"Fire",     icon:"🗡️", work:["Kindling 2","Handiwork 3","Lumbering 3","Transporting 2"]},
+  {id:110,name:"Beakon",       rank:410,  element:"Electric", icon:"⚡", work:["Generating Electricity 3","Transporting 2"]},
+  {id:111,name:"Ragnahawk",    rank:400,  element:"Fire",     icon:"🦅", work:["Kindling 3","Transporting 3","Mining 2"]},
+  {id:112,name:"Katress",      rank:390,  element:"Dark",     icon:"🐱", work:["Handiwork 2","Transporting 2"]},
+  {id:113,name:"Katress Ignis",rank:380,  element:"Fire",     icon:"🔥", work:["Kindling 2","Handiwork 2","Transporting 2"]},
+  {id:114,name:"Quivern",      rank:370,  element:"Dragon",   icon:"🐉", work:["Handiwork 2","Gathering 3","Transporting 3","Mining 2"]},
+  {id:115,name:"Blazamut",     rank:360,  element:"Fire",     icon:"🦁", work:["Kindling 4","Mining 4"]},
+  {id:116,name:"Blazamut Ryu", rank:350,  element:"Dragon",   icon:"🐉", work:["Kindling 4","Mining 3","Dragon 4"]},
+  {id:117,name:"Helzephyr",    rank:340,  element:"Dark",     icon:"🦋", work:["Transporting 4"]},
+  {id:118,name:"Astegon",      rank:330,  element:"Dark",     icon:"🐉", work:["Handiwork 1","Mining 4"]},
+  {id:119,name:"Menasting",    rank:320,  element:"Dark",     icon:"🦂", work:["Mining 4","Transporting 3"]},
+  {id:120,name:"Anubis",       rank:310,  element:"Ground",   icon:"🐺", work:["Handiwork 4","Mining 3"]},
+  {id:121,name:"Jormuntide",   rank:300,  element:"Water",    icon:"🐉", work:["Watering 4","Transporting 2"]},
+  {id:122,name:"Jormuntide Ignis",rank:290,element:"Fire",   icon:"🔥", work:["Kindling 4","Transporting 2"]},
+  {id:123,name:"Suzaku",       rank:280,  element:"Fire",     icon:"🦅", work:["Kindling 3","Planting 2"]},
+  {id:124,name:"Suzaku Aqua",  rank:270,  element:"Water",    icon:"💧", work:["Watering 3","Planting 2"]},
+  {id:125,name:"Grintale",     rank:260,  element:"Neutral",  icon:"🐱", work:["Gathering 4"]},
+  {id:126,name:"Shadowbeak",   rank:250,  element:"Dark",     icon:"🐦", work:["Transporting 1"]},
+  {id:127,name:"Paladius",     rank:240,  element:"Neutral",  icon:"🐴", work:["Handiwork 4","Mining 4","Transporting 4"]},
+  {id:128,name:"Necromus",     rank:230,  element:"Dark",     icon:"🐉", work:["Handiwork 4","Mining 4","Transporting 4"]},
+  {id:129,name:"Frostallion",  rank:220,  element:"Ice",      icon:"🐴", work:["Cooling 3"]},
+  {id:130,name:"Frostallion Noct",rank:210,element:"Dark",   icon:"🌑", work:["Transporting 1"]},
+  {id:131,name:"Jetragon",     rank:200,  element:"Dragon",   icon:"🚀", work:["Gathering 4"]},
+  {id:132,name:"Orserk",       rank:180,  element:"Electric", icon:"🐉", work:["Generating Electricity 4","Handiwork 4","Transporting 3"]},
+  {id:133,name:"Cactye",       rank:170,  element:"Leaf",     icon:"🌵", work:["Planting 2","Gathering 1"]},
+  {id:134,name:"Lovander",     rank:160,  element:"Neutral",  icon:"💝", work:["Handiwork 1","Farming 1","Medicine 1"]},
+  {id:135,name:"Flambelle",    rank:150,  element:"Fire",     icon:"🔥", work:["Kindling 1","Farming 1"]},
+  {id:136,name:"Fenglope",     rank:140,  element:"Neutral",  icon:"🦌", work:["Gathering 2","Lumbering 1","Transporting 2"]},
+  {id:137,name:"Selyne",       rank:130,  element:"Dark",     icon:"🌙", work:["Handiwork 3","Gathering 3","Mining 3","Transporting 2"]},
+];
+
+// Special/Unique breeding combinations (override formula)
+const SPECIAL_COMBOS = [
+  {parent1:"Mossanda",       parent2:"Grizzbolt",      child:"Mossanda Lux"},
+  {parent1:"Jormuntide",     parent2:"Relaxaurus Lux", child:"Jormuntide Ignis"},
+  {parent1:"Dinossom",       parent2:"Rayhound",       child:"Dinossom Lux"},
+  {parent1:"Vanwyrm",        parent2:"Foxcicle",       child:"Vanwyrm Cryst"},
+  {parent1:"Incineram",      parent2:"Maraith",        child:"Incineram Noct"},
+  {parent1:"Leezpunk",       parent2:"Flambelle",      child:"Leezpunk Ignis"},
+  {parent1:"Blazehowl",      parent2:"Felbat",         child:"Blazehowl Noct"},
+  {parent1:"Gobfin",         parent2:"Rooby",          child:"Gobfin Ignis"},
+  {parent1:"Hangyu",         parent2:"Swee",           child:"Hangyu Cryst"},
+  {parent1:"Mau",            parent2:"Pengullet",      child:"Mau Cryst"},
+  {parent1:"Jolthog",        parent2:"Pengullet",      child:"Jolthog Cryst"},
+  {parent1:"Reptyro",        parent2:"Foxcicle",       child:"Reptyro Cryst"},
+  {parent1:"Surfent",        parent2:"Dumud",          child:"Surfent Terra"},
+  {parent1:"Robinquill",     parent2:"Fuddler",        child:"Robinquill Terra"},
+  {parent1:"Eikthyrdeer",    parent2:"Hangyu Cryst",   child:"Eikthyrdeer Terra"},
+  {parent1:"Broncherry",     parent2:"Fuack",          child:"Broncherry Aqua"},
+  {parent1:"Kingpaca",       parent2:"Swee",           child:"Kingpaca Cryst"},
+  {parent1:"Mammorest",      parent2:"Wumpo",          child:"Mammorest Cryst"},
+  {parent1:"Elphidran",      parent2:"Surfent",        child:"Elphidran Aqua"},
+  {parent1:"Pyrin",          parent2:"Katress",        child:"Pyrin Noct"},
+  {parent1:"Lyleen",         parent2:"Menasting",      child:"Lyleen Noct"},
+  {parent1:"Faleris",        parent2:"Surfent",        child:"Faleris Aqua"},
+  {parent1:"Katress",        parent2:"Rooby",          child:"Katress Ignis"},
+  {parent1:"Blazamut",       parent2:"Relaxaurus",     child:"Blazamut Ryu"},
+  {parent1:"Suzaku",         parent2:"Jormuntide",     child:"Suzaku Aqua"},
+  {parent1:"Frostallion",    parent2:"Helzephyr",      child:"Frostallion Noct"},
+  {parent1:"Wumpo",          parent2:"Verdash",        child:"Wumpo Botan"},
+  {parent1:"Kelpsea",        parent2:"Flambelle",      child:"Kelpsea Ignis"},
+];
+
+// Best combos for display
+const BEST_COMBOS = [
+  {child:"Anubis",       parent1:"Penking",    parent2:"Bushi",     why:"Handiwork 4 + Mining 3"},
+  {child:"Anubis",       parent1:"Sibelyx",    parent2:"Arsox",     why:"Alternative route"},
+  {child:"Orserk",       parent1:"Grizzbolt",  parent2:"Relaxaurus Lux", why:"Elec 4 + Handiwork 4"},
+  {child:"Jormuntide Ignis",parent1:"Jormuntide",parent2:"Relaxaurus Lux",why:"Unique combo — Kindling 4"},
+  {child:"Shadowbeak",   parent1:"Katress",    parent2:"Ignis combination",why:"Dark powerhouse"},
+  {child:"Blazamut",     parent1:"Reptyro",    parent2:"Helzephyr", why:"Kindling 4 + Mining 4"},
+  {child:"Lyleen",       parent1:"Mossanda",   parent2:"Petallia",  why:"Planting 4 + Medicine 4"},
+  {child:"Faleris",      parent1:"Vanwyrm",    parent2:"Ragnahawk", why:"Transporting 4"},
+  {child:"Paladius",     parent1:"Necromus",   parent2:"Shadowbeak",why:"All-rounder base Pal"},
+  {child:"Grizzbolt",    parent1:"Univolt",    parent2:"Mossanda",  why:"Electricity 4"},
+  {child:"Mossanda Lux", parent1:"Mossanda",   parent2:"Grizzbolt", why:"Unique — best electric worker"},
+  {child:"Jetragon",     parent1:"Helzephyr",  parent2:"Shadowbeak",why:"Fastest mount in game"},
+];
+
+// ============================================================
+// STATE
+// ============================================================
+let selectedPals = { p1: null, p2: null, target: null };
+let activeElement = 'all';
+
+function getPalByName(name) {
+  return PALS.find(p => p.name.toLowerCase() === name.toLowerCase());
+}
+
+function getElementClass(element) {
+  const map = { Fire:'fire', Water:'water', Leaf:'grass', Electric:'electric', Ice:'ice', Ground:'ground', Dark:'dark', Dragon:'dragon', Neutral:'neutral' };
+  return 'element-' + (map[element] || 'neutral');
+}
+
+function getElementColor(element) {
+  const map = { Fire:'#ef4444', Water:'#3b82f6', Leaf:'#10b981', Electric:'#f59e0b', Ice:'#93c5fd', Ground:'#b48850', Dark:'#8b5cf6', Dragon:'#6366f1', Neutral:'#94a3b8' };
+  return map[element] || '#94a3b8';
+}
+
+// ============================================================
+// DROPDOWN LOGIC
+// ============================================================
+function buildDropdown(id, filter = '') {
+  const list = document.getElementById('dropdown-' + id);
+  list.innerHTML = '';
+  const filtered = PALS.filter(p => p.name.toLowerCase().includes(filter.toLowerCase())).slice(0, 30);
+  filtered.forEach(pal => {
+    const item = document.createElement('div');
+    item.className = 'dropdown-item';
+    item.innerHTML = `<span style="color:${getElementColor(pal.element)}; font-size: 1.2rem;">${pal.icon}</span> <span>${pal.name}</span> <span style="margin-left:auto;font-size:0.75rem;color:#64748b;">${pal.element}</span>`;
+    item.onmousedown = () => selectPal(id, pal);
+    list.appendChild(item);
+  });
+}
+
+function filterDropdown(id) {
+  const val = document.getElementById('search-' + id).value;
+  buildDropdown(id, val);
+  document.getElementById('dropdown-' + id).classList.add('open');
+}
+
+function openDropdown(id) {
+  buildDropdown(id, document.getElementById('search-' + id).value);
+  document.getElementById('dropdown-' + id).classList.add('open');
+}
+
+function closeDropdown(id) {
+  setTimeout(() => { const el = document.getElementById('dropdown-' + id); if(el) el.classList.remove('open'); }, 200);
+}
+
+function selectPal(id, pal) {
+  selectedPals[id] = pal;
+  document.getElementById('search-' + id).value = pal.name;
+  const display = document.getElementById('selected-' + id);
+  display.classList.add('visible');
+  document.getElementById(id + '-avatar').textContent = pal.icon;
+  document.getElementById(id + '-avatar').style.background = getElementColor(pal.element) + '22';
+  document.getElementById(id + '-name').textContent = pal.name;
+  document.getElementById(id + '-meta').textContent = pal.element + ' · Rank ' + pal.rank + ' · ' + (pal.work[0] || '');
+  document.getElementById('dropdown-' + id).classList.remove('open');
+}
+
+// ============================================================
+// BREEDING FORMULA
+// ============================================================
+function calculateChildRank(r1, r2) {
+  return Math.floor((r1 + r2 + 1) / 2);
+}
+
+function findClosestPal(targetRank, exclude1, exclude2) {
+  let closest = null;
+  let minDiff = Infinity;
+  PALS.forEach(p => {
+    if (p.name === exclude1 || p.name === exclude2) return;
+    const diff = Math.abs(p.rank - targetRank);
+    if (diff < minDiff) { minDiff = diff; closest = p; }
+  });
+  return closest;
+}
+
+function checkSpecialCombo(p1name, p2name) {
+  return SPECIAL_COMBOS.find(c =>
+    (c.parent1 === p1name && c.parent2 === p2name) ||
+    (c.parent1 === p2name && c.parent2 === p1name)
+  );
+}
+
+// ============================================================
+// CALCULATE OFFSPRING
+// ============================================================
+function calculateOffspring() {
+  const p1 = selectedPals.p1, p2 = selectedPals.p2;
+  if (!p1 || !p2) { document.getElementById('offspring-result').innerHTML = '<div class="result-card"><div class="no-result"><div class="icon">⚠️</div><p>Please select both Parent 1 and Parent 2 first.</p></div></div>'; return; }
+  if (p1.name === p2.name) { document.getElementById('offspring-result').innerHTML = '<div class="result-card"><div class="no-result"><div class="icon">🔄</div><p>Same Pal! Breeding identical Pals produces the same species — useful for passing down passive skills.</p></div></div>'; return; }
+
+  const special = checkSpecialCombo(p1.name, p2.name);
+  let child, isSpecial = false;
+  if (special) {
+    child = getPalByName(special.child);
+    isSpecial = true;
+  } else {
+    const childRank = calculateChildRank(p1.rank, p2.rank);
+    child = findClosestPal(childRank, '', '');
+  }
+
+  if (!child) { document.getElementById('offspring-result').innerHTML = '<div class="result-card"><p>Could not determine offspring.</p></div>'; return; }
+
+  document.getElementById('offspring-result').innerHTML = `
+    <div class="result-card">
+      <div class="result-label">BREEDING RESULT ${isSpecial ? '⭐ UNIQUE COMBO' : ''}</div>
+      <div class="result-pal-icon">${child.icon}</div>
+      <div class="result-pal-name">${child.name}</div>
+      <div class="result-tags">
+        <span class="result-tag tag-element">${child.element}</span>
+        <span class="result-tag tag-rank">Rank ${child.rank}</span>
+        ${child.work.slice(0,3).map(w => `<span class="result-tag tag-work">${w}</span>`).join('')}
+      </div>
+      ${isSpecial ? '<p style="margin-top:15px;color:#a5b4fc;font-size:0.9rem;">⭐ This is a special unique combination that overrides the standard formula.</p>' : `<p style="margin-top:15px;color:#64748b;font-size:0.85rem;">Formula: ⌊(${p1.rank} + ${p2.rank} + 1) / 2⌋ = ${calculateChildRank(p1.rank, p2.rank)}</p>`}
+    </div>`;
+}
+
+// ============================================================
+// FIND PARENTS
+// ============================================================
+function findParents() {
+  const target = selectedPals.target;
+  if (!target) { document.getElementById('parents-result').innerHTML = '<div class="result-card"><div class="no-result"><div class="icon">⚠️</div><p>Please select a target Pal first.</p></div></div>'; return; }
+
+  const combos = [];
+
+  // Check special combos
+  SPECIAL_COMBOS.forEach(c => {
+    if (c.child === target.name) {
+      const p1 = getPalByName(c.parent1), p2 = getPalByName(c.parent2);
+      if (p1 && p2) combos.push({ p1, p2, isSpecial: true });
+    }
+  });
+
+  // Standard formula combos
+  PALS.forEach(p1 => {
+    PALS.forEach(p2 => {
+      if (p1.id >= p2.id) return;
+      if (checkSpecialCombo(p1.name, p2.name)) return; // skip specials already handled
+      const childRank = calculateChildRank(p1.rank, p2.rank);
+      const child = findClosestPal(childRank, '', '');
+      if (child && child.name === target.name) {
+        combos.push({ p1, p2, isSpecial: false });
+      }
+    });
+  });
+
+  if (combos.length === 0) {
+    document.getElementById('parents-result').innerHTML = `<div class="result-card"><div class="no-result"><div class="icon">🔍</div><p>No standard breeding combinations found for <b>${target.name}</b>. It may only be catchable in the wild or requires a special combination not yet mapped.</p></div></div>`;
+    return;
+  }
+
+  const specialOnes = combos.filter(c => c.isSpecial);
+  const normalOnes = combos.filter(c => !c.isSpecial);
+
+  let html = `<div style="margin-top:20px;"><div class="section-title">Parent Combinations for ${target.icon} ${target.name} <span class="count-badge">${combos.length} combos</span></div>`;
+
+  if (specialOnes.length > 0) {
+    html += `<p style="color:#a5b4fc;font-size:0.85rem;margin:10px 0 15px;">⭐ Unique combinations (override formula):</p>`;
+    html += `<div class="combos-grid">`;
+    specialOnes.forEach(c => {
+      html += `<div class="combo-card" style="border-color:rgba(99,102,241,0.5);background:rgba(99,102,241,0.08);">
+        <div style="font-size:1.8rem;">${c.p1.icon}</div>
+        <div class="combo-parents"><div class="combo-parent-name">${c.p1.name}</div><div class="combo-plus">+ ${c.p2.name}</div></div>
+        <div style="font-size:1.5rem;">${c.p2.icon}</div>
+        <div style="color:#a5b4fc;font-size:0.8rem;font-weight:700;">⭐ UNIQUE</div>
+      </div>`;
+    });
+    html += `</div>`;
+  }
+
+  if (normalOnes.length > 0) {
+    html += `<p style="color:#64748b;font-size:0.85rem;margin:15px 0 10px;">Standard formula combinations (showing first 30):</p>`;
+    html += `<div class="combos-grid">`;
+    normalOnes.slice(0, 30).forEach(c => {
+      html += `<div class="combo-card">
+        <span style="font-size:1.4rem;">${c.p1.icon}</span>
+        <div class="combo-parents"><div class="combo-parent-name">${c.p1.name}</div><div class="combo-plus">+ ${c.p2.name}</div></div>
+        <span style="font-size:1.4rem;">${c.p2.icon}</span>
+      </div>`;
+    });
+    html += `</div>`;
+    if (normalOnes.length > 30) html += `<p style="color:#64748b;text-align:center;margin-top:10px;">... and ${normalOnes.length - 30} more combinations</p>`;
+  }
+
+  html += `</div>`;
+  document.getElementById('parents-result').innerHTML = html;
+}
+
+// ============================================================
+// BROWSE ALL PALS
+// ============================================================
+function renderBrowse() {
+  const grid = document.getElementById('pal-browse-grid');
+  const search = document.getElementById('browse-search') ? document.getElementById('browse-search').value.toLowerCase() : '';
+  const filtered = PALS.filter(p => {
+    const matchSearch = p.name.toLowerCase().includes(search);
+    const matchElement = activeElement === 'all' || p.element === activeElement;
+    return matchSearch && matchElement;
+  });
+
+  grid.innerHTML = filtered.map(pal => `
+    <div class="pal-card-mini" onclick="quickBreedFor('${pal.name}')">
+      <div class="icon">${pal.icon}</div>
+      <div class="name">${pal.name}</div>
+      <span class="element-badge ${getElementClass(pal.element)}">${pal.element}</span>
+      <div class="rank-num">Rank ${pal.rank}</div>
+    </div>
+  `).join('');
+}
+
+function filterBrowse() { renderBrowse(); }
+
+function filterElement(el, btn) {
+  activeElement = el;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderBrowse();
+}
+
+function quickBreedFor(palName) {
+  setMode('target');
+  const pal = getPalByName(palName);
+  if (pal) {
+    selectPal('target', pal);
+    findParents();
+  }
+}
+
+// ============================================================
+// SPECIAL COMBOS DISPLAY
+// ============================================================
+function renderSpecialCombos() {
+  document.getElementById('special-combos').innerHTML = BEST_COMBOS.map(c => {
+    const childPal = getPalByName(c.child);
+    return `<div class="special-card">
+      <div class="child">${childPal ? childPal.icon : '🐾'} ${c.child}</div>
+      <div class="parents-text"><b>${c.parent1}</b> + <b>${c.parent2}</b></div>
+      <div style="font-size:0.8rem;color:#64748b;margin-top:6px;">${c.why}</div>
+    </div>`;
+  }).join('');
+}
+
+// ============================================================
+// MODE TABS
+// ============================================================
+function setMode(mode) {
+  document.querySelectorAll('.mode-tab').forEach((t, i) => {
+    const modes = ['parents', 'target', 'browse'];
+    t.classList.toggle('active', modes[i] === mode);
+  });
+  document.querySelectorAll('.calc-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('panel-' + mode).classList.add('active');
+  if (mode === 'browse') renderBrowse();
+}
+
+// ============================================================
+// INIT
+// ============================================================
+document.addEventListener('DOMContentLoaded', () => {
+  renderSpecialCombos();
+  document.getElementById('stat-pals').textContent = PALS.length;
+  // Calculate approx combo count
+  const approxCombos = Math.floor((PALS.length * (PALS.length - 1)) / 2);
+  document.getElementById('stat-combos').textContent = approxCombos > 1000 ? Math.floor(approxCombos/1000) + 'k+' : approxCombos;
+});
+</script>
+
+</body>
+</html>
