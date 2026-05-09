@@ -1,0 +1,10 @@
+<!DOCTYPE html><html lang="en"><head><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CFHWRFE835"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CFHWRFE835');
+</script><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Regex Tester - Free Online Tool | Tools2Do</title><meta name="description" content="Test a regular expression against your text."><link rel="canonical" href="https://tools2do.com/tools/regex-tester/"><link rel="stylesheet" href="/assets/style.css"></head><body><nav><a class="logo" href="/">Tools2Do<span>.com</span></a><div class="nav-links"><a href="/tools/">All Tools</a><a href="/bisp-8171/">BISP</a><a href="/electricity-bill/">Bills</a><a href="/blog/">Blog</a></div></nav><header class="hero"><h1>Regex Tester</h1><p>Test a regular expression against your text.</p></header><main class="wrap tool-layout"><section class="card tool-box"><label>Regular expression</label><input id="pattern" placeholder="Example: \bword\b"><label>Text to test</label><textarea id="input"></textarea><div class="row"><label><input id="global" type="checkbox" checked> Global</label><label><input id="ignore" type="checkbox" checked> Ignore case</label><button class="btn" onclick="runTool()">Test Regex</button></div><div id="out" class="result"></div><script>function runTool(){try{let flags=(global.checked?'g':'')+(ignore.checked?'i':'');let r=new RegExp(pattern.value,flags);let m=[...input.value.matchAll(r)];out.textContent=m.length+' match(es) found:
+'+m.map(x=>x[0]).join('
+')}catch(e){out.textContent='Regex error: '+e.message}}</script></section><div class="ad-slot">AdSense ad space</div><section class="card"><h2>About this tool</h2><p>This free tool works directly in your browser. For most text, developer and image tools, your file or text is processed on your own device.</p></section></main><footer><p>© 2026 Tools2Do.com — Free online tools. No login required.</p></footer></body></html>
