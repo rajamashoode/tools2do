@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0F172A"/>
+  <!-- Accent bar -->
+  <rect x="0" y="0" width="8" height="630" fill="#B45309"/>
+  <!-- Gold accent bottom strip -->
+  <rect x="0" y="590" width="1200" height="40" fill="#1E293B"/>
+  
+  <!-- Logo -->
+  <text x="80" y="160" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="88" fill="white">Tools2Do</text>
+  <text x="730" y="160" font-family="Arial Black, Arial, sans-serif" font-weight="900" font-size="88" fill="#B45309">.com</text>
+  
+  <!-- Tagline -->
+  <text x="80" y="230" font-family="Arial, sans-serif" font-size="36" fill="#94A3B8">Free Online Tools — No Login Required</text>
+  
+  <!-- Tool category pills -->
+  <rect x="80" y="290" width="200" height="52" rx="26" fill="#1E293B"/>
+  <text x="180" y="323" font-family="Arial, sans-serif" font-size="22" fill="#FCD34D" text-anchor="middle">Text Tools</text>
+  
+  <rect x="298" y="290" width="230" height="52" rx="26" fill="#1E293B"/>
+  <text x="413" y="323" font-family="Arial, sans-serif" font-size="22" fill="#FCD34D" text-anchor="middle">Image Tools</text>
+  
+  <rect x="546" y="290" width="210" height="52" rx="26" fill="#1E293B"/>
+  <text x="651" y="323" font-family="Arial, sans-serif" font-size="22" fill="#FCD34D" text-anchor="middle">PDF Tools</text>
+  
+  <rect x="774" y="290" width="260" height="52" rx="26" fill="#1E293B"/>
+  <text x="904" y="323" font-family="Arial, sans-serif" font-size="22" fill="#FCD34D" text-anchor="middle">Developer Tools</text>
+  
+  <!-- Feature bullets -->
+  <text x="80" y="420" font-family="Arial, sans-serif" font-size="28" fill="#E2E8F0">✓  Works in your browser — no upload needed</text>
+  <text x="80" y="468" font-family="Arial, sans-serif" font-size="28" fill="#E2E8F0">✓  Free forever — no account or signup</text>
+  <text x="80" y="516" font-family="Arial, sans-serif" font-size="28" fill="#E2E8F0">✓  50+ tools for text, images, code and PDFs</text>
+  
+  <!-- Bottom URL -->
+  <text x="80" y="618" font-family="Arial, sans-serif" font-size="22" fill="#64748B">tools2do.com</text>
+</svg>
