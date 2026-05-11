@@ -1,9 +1,127 @@
-<!DOCTYPE html><html lang="en"><head><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CFHWRFE835"></script>
+<!DOCTYPE html>
+
+<html lang="en"><head><!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CFHWRFE835"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-CFHWRFE835');
-</script><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Image to JPG / PNG / WebP Converter - Free Online Image Tool | Tools2Do</title><meta name="description" content="Convert images between JPG, PNG and WebP formats online."><meta name="robots" content="index, follow"><link rel="canonical" href="https://tools2do.com/tools/image-converter/"><link rel="stylesheet" href="/assets/style.css"><meta property="og:title" content="Image to JPG / PNG / WebP Converter - Free Online Image Tool | Tools2Do"><meta property="og:description" content="Convert images between JPG, PNG and WebP formats online."><meta property="og:type" content="website"><meta property="og:url" content="https://tools2do.com/tools/image-converter/"><meta property="og:site_name" content="Tools2Do"><meta name="twitter:card" content="summary"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Image to JPG / PNG / WebP Converter", "url": "https://tools2do.com/tools/image-converter/", "description": "Convert images between JPG, PNG and WebP formats online.", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Image to JPG / PNG / WebP Converter?", "acceptedAnswer": {"@type": "Answer", "text": "The Image to JPG / PNG / WebP Converter is a free online image tool from Tools2Do that helps you convert images between JPG, PNG and WebP formats online."}}, {"@type": "Question", "name": "Is the Image to JPG / PNG / WebP Converter free to use?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, the Image to JPG / PNG / WebP Converter is free to use on Tools2Do and does not require signup."}}, {"@type": "Question", "name": "Does this tool upload my files?", "acceptedAnswer": {"@type": "Answer", "text": "Most processing is handled in your browser, so your files do not need to be sent to a server for normal use."}}, {"@type": "Question", "name": "Can I use the Image to JPG / PNG / WebP Converter on mobile?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, this tool is designed to work on desktop, tablet and mobile browsers."}}]}</script></head><body><nav><a class="logo" href="/">Tools2Do<span>.com</span></a><button class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button><div class="nav-links"><a href="/tools/">All Tools</a><a href="/bisp-8171/">BISP</a><a href="/electricity-bill/">Bills</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a></div></nav><header class="hero"><span class="pill">Image Tools</span><h1>Image to JPG / PNG / WebP Converter</h1><p>Convert images between JPG, PNG and WebP formats online. Fast, free, mobile-friendly and built for everyday use.</p></header><main class="wrap content-grid"><article><section class="card tool-box" id="tool"><h2>Use the Image to JPG / PNG / WebP Converter</h2><p class="notice">Choose an image. The processing runs in your browser.</p><input id="file" type="file" accept="image/*"><div class="row"><input id="w" type="number" placeholder="Width optional" style="max-width:180px"><input id="h" type="number" placeholder="Height optional" style="max-width:180px"><select id="format" style="max-width:160px"><option value="image/jpeg">JPG</option><option value="image/png">PNG</option><option value="image/webp">WebP</option></select><input id="quality" type="number" value="80" min="1" max="100" style="max-width:120px"><button class="btn" onclick="processImg()">Process Image</button></div><canvas id="canvas" style="max-width:100%;display:block;margin:15px 0"></canvas><a id="download" class="btn green" style="display:none;text-decoration:none" download="tools2do-image">Download Image</a><script>function processImg(){let f=file.files[0]; if(!f){alert('Choose an image first');return} let img=new Image(); img.onload=()=>{let width=Number(w.value)||img.width, height=Number(h.value)||Math.round(img.height*(width/img.width)); canvas.width=width; canvas.height=height; canvas.getContext('2d').drawImage(img,0,0,width,height); canvas.toBlob(b=>{download.href=URL.createObjectURL(b);download.style.display='inline-block';download.download='tools2do-image.'+(format.value.includes('png')?'png':format.value.includes('webp')?'webp':'jpg')},format.value,(Number(quality.value)||80)/100)}; img.src=URL.createObjectURL(f)}</script></section><div class="ad-slot" aria-hidden="true"><!-- AdSense ad — replace with your ca-pub ad code --></div><section class="card seo-section"><h2 id="about">What is the Image to JPG / PNG / WebP Converter?</h2><p>The Image to JPG / PNG / WebP Converter on Tools2Do is a free online utility made for quick, simple and practical work. It helps you convert images between JPG, PNG and WebP formats online, without installing extra software or creating an account.</p><p>This page is designed as a complete tool page, not just a small widget. You can use the tool above, read the steps below, check common use cases and open related tools from the same category.</p><h2 id="how-to">How to use this tool</h2><ol><li>Click the file input and choose your source image.</li><li>Select the target format: JPG, PNG or WebP.</li><li>Click <strong>Process Image</strong> to convert in your browser.</li><li>Preview the output and click <strong>Download Image</strong> to save.</li></ol><h2>Key features</h2><ul><li>Free and simple to use</li><li>Works in modern browsers</li><li>No account or login required</li><li>Mobile-friendly layout</li><li>Useful for students, developers, writers and everyday users</li></ul><h2>Common use cases</h2><ul><li>Converting PNG screenshots to JPG for smaller file sizes</li><li>Converting images to WebP for modern web performance</li><li>Changing image format to meet a platform's upload requirements</li><li>Batch converting photos between formats for a project</li></ul><h2>Why use Tools2Do?</h2><p>Tools2Do focuses on fast online tools with clean pages, useful explanations and easy navigation. The goal is to help users complete small tasks quickly, whether they are working on text, code, images, PDFs or utility information.</p><h2 id="faq">Frequently asked questions</h2><div class="faq"><details><summary>What is the Image to JPG / PNG / WebP Converter?</summary><p>The Image to JPG / PNG / WebP Converter is a free online image tool from Tools2Do that helps you convert images between JPG, PNG and WebP formats online.</p></details><details><summary>Is the Image to JPG / PNG / WebP Converter free to use?</summary><p>Yes, the Image to JPG / PNG / WebP Converter is free to use on Tools2Do and does not require signup.</p></details><details><summary>Does this tool upload my files?</summary><p>Most processing is handled in your browser, so your files do not need to be sent to a server for normal use.</p></details><details><summary>Can I use the Image to JPG / PNG / WebP Converter on mobile?</summary><p>Yes, this tool is designed to work on desktop, tablet and mobile browsers.</p></details></div></section></article><aside><div class="ad-slot" aria-hidden="true"><!-- AdSense ad — replace with your ca-pub ad code --></div><section class="card toc"><h3>On this page</h3><a href="#tool">Use tool</a><a href="#about">About</a><a href="#how-to">How to use</a><a href="#faq">FAQ</a></section><section class="card related"><h3>Related tools</h3><a href="/tools/image-compressor/">Image Compressor</a><a href="/tools/image-resizer/">Image Resizer</a><a href="/tools/">View all tools</a></section></aside></main><footer><p>© 2026 Tools2Do.com — Free online tools. No login required.</p><p class="footer-links"><a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/privacy-policy/">Privacy Policy</a> · <a href="/terms-and-conditions/">Terms</a> · <a href="/disclaimer/">Disclaimer</a></p></footer></body></html>
+</script><meta charset="utf-8"/><link href="/favicon.svg" rel="icon" type="image/svg+xml"/><link href="/favicon.ico" rel="icon" sizes="any"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Image to JPG / PNG / WebP Converter - Free Online Image Tool | Tools2Do</title><meta content="Convert images between JPG, PNG and WebP formats online." name="description"/><meta content="index, follow" name="robots"/><link href="https://tools2do.com/tools/image-converter/" rel="canonical"/><link href="/assets/style.css" rel="stylesheet"/><meta content="Image to JPG / PNG / WebP Converter - Free Online Image Tool | Tools2Do" property="og:title"/><meta content="Convert images between JPG, PNG and WebP formats online." property="og:description"/><meta content="website" property="og:type"/><meta content="https://tools2do.com/tools/image-converter/" property="og:url"/><meta content="Tools2Do" property="og:site_name"/><meta content="https://tools2do.com/og-image.svg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://tools2do.com/og-image.svg" name="twitter:image"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Image to JPG / PNG / WebP Converter", "url": "https://tools2do.com/tools/image-converter/", "description": "Convert images between JPG, PNG and WebP formats online.", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the Image to JPG / PNG / WebP Converter?", "acceptedAnswer": {"@type": "Answer", "text": "The Image to JPG / PNG / WebP Converter is a free online image tool from Tools2Do that helps you convert images between JPG, PNG and WebP formats online."}}, {"@type": "Question", "name": "Is the Image to JPG / PNG / WebP Converter free to use?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, the Image to JPG / PNG / WebP Converter is free to use on Tools2Do and does not require signup."}}, {"@type": "Question", "name": "Does this tool upload my files?", "acceptedAnswer": {"@type": "Answer", "text": "Most processing is handled in your browser, so your files do not need to be sent to a server for normal use."}}, {"@type": "Question", "name": "Can I use the Image to JPG / PNG / WebP Converter on mobile?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, this tool is designed to work on desktop, tablet and mobile browsers."}}]}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Tools2Do",
+  "url": "https://tools2do.com",
+  "logo": "https://tools2do.com/favicon.svg"
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Tools2Do",
+  "url": "https://tools2do.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://tools2do.com/tools/",
+    "query-input": "required name=search_term_string"
+  }
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Image to JPG / PNG / WebP Converter - Free Online Image Tool | Tools2Do",
+  "description": "Convert images between JPG, PNG and WebP formats online.",
+  "url": "https://tools2do.com/tools/image-converter/"
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Image to JPG / PNG / WebP Converter - Free Online Image Tool | Tools2Do",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}</script><meta content="Tools2Do" name="author"/><meta content="Image to JPG / PNG / WebP Converter - Free Online Image Tool | Tools2Do" name="twitter:title"/><meta content="Convert images between JPG, PNG and WebP formats online." name="twitter:description"/><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://tools2do.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Image to JPG / PNG / WebP Converter - Free Online Image Tool | Tools2Do",
+      "item": "https://tools2do.com/tools/image-converter/"
+    }
+  ]
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this tool free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all tools on Tools2Do are free to use."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need an account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No account or signup is required."
+      }
+    }
+  ]
+}</script></head><body><nav><a class="logo" href="/">Tools2Do<span>.com</span></a><button aria-label="Menu" class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')"><span></span><span></span><span></span></button><div class="nav-links"><a href="/tools/">All Tools</a><a href="/bisp-8171/">BISP</a><a href="/electricity-bill/">Bills</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a></div></nav><header class="hero"><span class="pill">Image Tools</span><h1>Image to JPG / PNG / WebP Converter</h1><p>Convert images between JPG, PNG and WebP formats online. Fast, free, mobile-friendly and built for everyday use.</p></header><main class="wrap content-grid"><article><section class="card tool-box" id="tool"><h2>Use the Image to JPG / PNG / WebP Converter</h2><p class="notice">Choose an image. The processing runs in your browser.</p><input accept="image/*" id="file" type="file"/><div class="row"><input id="w" placeholder="Width optional" style="max-width:180px" type="number"/><input id="h" placeholder="Height optional" style="max-width:180px" type="number"/><select id="format" style="max-width:160px"><option value="image/jpeg">JPG</option><option value="image/png">PNG</option><option value="image/webp">WebP</option></select><input id="quality" max="100" min="1" style="max-width:120px" type="number" value="80"/><button class="btn" onclick="processImg()">Process Image</button></div><canvas id="canvas" style="max-width:100%;display:block;margin:15px 0"></canvas><a class="btn green" download="tools2do-image" id="download" style="display:none;text-decoration:none">Download Image</a><script>function processImg(){let f=file.files[0]; if(!f){alert('Choose an image first');return} let img=new Image(); img.onload=()=>{let width=Number(w.value)||img.width, height=Number(h.value)||Math.round(img.height*(width/img.width)); canvas.width=width; canvas.height=height; canvas.getContext('2d').drawImage(img,0,0,width,height); canvas.toBlob(b=>{download.href=URL.createObjectURL(b);download.style.display='inline-block';download.download='tools2do-image.'+(format.value.includes('png')?'png':format.value.includes('webp')?'webp':'jpg')},format.value,(Number(quality.value)||80)/100)}; img.src=URL.createObjectURL(f)}</script></section><div aria-hidden="true" class="ad-slot"><!-- AdSense ad — replace with your ca-pub ad code --></div><section class="card seo-section"><h2 id="about">What is the Image to JPG / PNG / WebP Converter?</h2><p>The Image to JPG / PNG / WebP Converter on Tools2Do is a free online utility made for quick, simple and practical work. It helps you convert images between JPG, PNG and WebP formats online, without installing extra software or creating an account.</p><p>This page is designed as a complete tool page, not just a small widget. You can use the tool above, read the steps below, check common use cases and open related tools from the same category.</p><h2 id="how-to">How to use this tool</h2><ol><li>Click the file input and choose your source image.</li><li>Select the target format: JPG, PNG or WebP.</li><li>Click <strong>Process Image</strong> to convert in your browser.</li><li>Preview the output and click <strong>Download Image</strong> to save.</li></ol><h2>Key features</h2><ul><li>Free and simple to use</li><li>Works in modern browsers</li><li>No account or login required</li><li>Mobile-friendly layout</li><li>Useful for students, developers, writers and everyday users</li></ul><h2>Common use cases</h2><ul><li>Converting PNG screenshots to JPG for smaller file sizes</li><li>Converting images to WebP for modern web performance</li><li>Changing image format to meet a platform's upload requirements</li><li>Batch converting photos between formats for a project</li></ul><h2>Why use Tools2Do?</h2><p>Tools2Do focuses on fast online tools with clean pages, useful explanations and easy navigation. The goal is to help users complete small tasks quickly, whether they are working on text, code, images, PDFs or utility information.</p><h2 id="faq">Frequently asked questions</h2><div class="faq"><details><summary>What is the Image to JPG / PNG / WebP Converter?</summary><p>The Image to JPG / PNG / WebP Converter is a free online image tool from Tools2Do that helps you convert images between JPG, PNG and WebP formats online.</p></details><details><summary>Is the Image to JPG / PNG / WebP Converter free to use?</summary><p>Yes, the Image to JPG / PNG / WebP Converter is free to use on Tools2Do and does not require signup.</p></details><details><summary>Does this tool upload my files?</summary><p>Most processing is handled in your browser, so your files do not need to be sent to a server for normal use.</p></details><details><summary>Can I use the Image to JPG / PNG / WebP Converter on mobile?</summary><p>Yes, this tool is designed to work on desktop, tablet and mobile browsers.</p></details></div></section></article><aside><div aria-hidden="true" class="ad-slot"><!-- AdSense ad — replace with your ca-pub ad code --></div><section class="card toc"><h3>On this page</h3><a href="#tool">Use tool</a><a href="#about">About</a><a href="#how-to">How to use</a><a href="#faq">FAQ</a></section><section class="card related"><h3>Related tools</h3><a href="/tools/image-compressor/">Image Compressor</a><a href="/tools/image-resizer/">Image Resizer</a><a href="/tools/">View all tools</a></section></aside>
+<section class="card seo-section">
+<h2>Frequently Asked Questions</h2>
+<h3>Is this tool free to use?</h3>
+<p>Yes, all tools on Tools2Do are completely free and work directly in your browser.</p>
+<h3>Do I need to create an account?</h3>
+<p>No registration or login is required to use any tool.</p>
+<h3>Is my data uploaded to servers?</h3>
+<p>Most tools process data directly in your browser for privacy and speed.</p>
+</section>
+<section class="card seo-content" style="padding:20px;margin-top:20px;">
+<h2>About Image to JPG / PNG / WebP Converter - Free Online Image Tool | Tools2Do</h2>
+<p>
+      Image to JPG / PNG / WebP Converter - Free Online Image Tool | Tools2Do on Tools2Do is designed to help users work faster, improve productivity,
+      and complete tasks directly in the browser without installing software.
+      Our platform focuses on speed, privacy, accuracy, and ease of use.
+      </p>
+<h2>Why Use This Tool?</h2>
+<ul>
+<li>Fast browser-based processing</li>
+<li>No installation required</li>
+<li>Mobile-friendly design</li>
+<li>Completely free access</li>
+<li>Secure and user-friendly interface</li>
+</ul>
+<h2>Best Practices</h2>
+<p>
+      For optimal performance, ensure your browser is updated and avoid uploading
+      extremely large files when unnecessary. Our tools are optimized for modern devices.
+      </p>
+</section>
+</main><footer><p>© 2026 Tools2Do.com — Free online tools. No login required.</p><p class="footer-links"><a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/privacy-policy/">Privacy Policy</a> · <a href="/terms-and-conditions/">Terms</a> · <a href="/disclaimer/">Disclaimer</a></p>
+<p>
+        Explore more tools:
+        <a href="/tools/json-formatter/">JSON Formatter</a> ·
+        <a href="/tools/word-counter/">Word Counter</a> ·
+        <a href="/tools/image-compressor/">Image Compressor</a>
+</p>
+</footer><script>
+        document.querySelectorAll('.copy-btn').forEach(btn=>{
+            btn.addEventListener('click',()=>{
+                navigator.clipboard.writeText('Example copied!');
+                btn.innerText='Copied!';
+            });
+        });
+        </script></body></html>

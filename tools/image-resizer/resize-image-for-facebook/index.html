@@ -1,11 +1,84 @@
-<!DOCTYPE html><html lang="en"><head><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CFHWRFE835"></script>
+<!DOCTYPE html>
+
+<html lang="en"><head><!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CFHWRFE835"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-CFHWRFE835');
-</script><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Resize Image for Facebook - Free Online Tool | Tools2Do</title><meta name="description" content="Resize images to Facebook post, cover and profile photo dimensions online. No upload needed."><meta name="robots" content="index, follow"><link rel="canonical" href="https://tools2do.com/tools/image-resizer/resize-image-for-facebook/"><link rel="stylesheet" href="/assets/style.css"><meta property="og:title" content="Resize Image for Facebook - Free Online Tool | Tools2Do"><meta property="og:description" content="Resize images to Facebook post, cover and profile photo dimensions online. No upload needed."><meta property="og:type" content="website"><meta property="og:url" content="https://tools2do.com/tools/image-resizer/resize-image-for-facebook/"><meta property="og:site_name" content="Tools2Do"><meta name="twitter:card" content="summary"><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Resize Image for Facebook", "url": "https://tools2do.com/tools/image-resizer/resize-image-for-facebook/", "description": "Resize images to Facebook post, cover and profile photo dimensions online. No upload needed.", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does Facebook still compress my image after resizing?", "acceptedAnswer": {"@type": "Answer", "text": "Facebook applies its own compression to all uploads. Using the recommended dimensions reduces the amount of resampling, which minimises quality loss. Save as JPG at high quality for best results."}}, {"@type": "Question", "name": "What is the best format for Facebook images?", "acceptedAnswer": {"@type": "Answer", "text": "JPG is recommended for photos and cover images. PNG is better for graphics with text or transparent backgrounds. Avoid uploading very small or very large images."}}, {"@type": "Question", "name": "Can I use this for Facebook ads?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Facebook ad images typically use 1200\u00d7628 or 1080\u00d71080 px. Use the custom size fields if the preset does not match your exact ad spec."}}]}</script></head><body><nav><a class="logo" href="/">Tools2Do<span>.com</span></a><button class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button><div class="nav-links"><a href="/tools/">All Tools</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a></div></nav><header class="hero"><span class="pill">Image Resizer</span><h1>Resize Image for Facebook</h1><p>Resize any image to Facebook post, cover photo or profile picture dimensions in your browser.</p></header><main class="wrap content-grid"><article><section class="card tool-box" id="tool"><h2>Resize Image for Facebook</h2><label>Select preset or enter custom size</label><div class="row"><select id="preset" onchange="applyPreset()" style="max-width:300px"><option value="">— Select Facebook preset —</option><option value="1200,630">Facebook Post (1200×630)</option><option value="820,312">Cover Photo (820×312)</option><option value="180,180">Profile Picture (180×180)</option><option value="1200,1200">Square Post (1200×1200)</option><option value="1080,1920">Story (1080×1920)</option></select></div><input id="file" type="file" accept="image/*" style="margin:10px 0"><div class="row"><input id="w" type="number" placeholder="Width (px)" style="max-width:160px"><input id="h" type="number" placeholder="Height (px)" style="max-width:160px"><select id="format" style="max-width:160px"><option value="image/jpeg">JPG</option><option value="image/png">PNG</option><option value="image/webp">WebP</option></select><button class="btn" onclick="processImg()">Resize Image</button></div><canvas id="canvas" style="max-width:100%;display:block;margin:15px 0;border-radius:12px"></canvas><a id="download" class="btn green" style="display:none;text-decoration:none">Download Resized Image</a><script>function applyPreset(){const v=document.getElementById('preset').value;if(!v)return;const[pw,ph]=v.split(',');document.getElementById('w').value=pw;document.getElementById('h').value=ph;}function processImg(){const f=document.getElementById('file').files[0];if(!f){alert('Choose an image first');return}const img=new Image();img.onload=function(){const tw=parseInt(document.getElementById('w').value)||img.width;const th=parseInt(document.getElementById('h').value)||img.height;const c=document.getElementById('canvas');c.width=tw;c.height=th;const ctx=c.getContext('2d');const scale=Math.max(tw/img.width,th/img.height);const sw=img.width*scale,sh=img.height*scale;ctx.drawImage(img,(tw-sw)/2,(th-sh)/2,sw,sh);const fmt=document.getElementById('format').value;c.toBlob(b=>{const dl=document.getElementById('download');dl.href=URL.createObjectURL(b);const ext=fmt.includes('webp')?'webp':fmt.includes('png')?'png':'jpg';dl.download='facebook-image.'+ext;dl.style.display='inline-block';},fmt,0.9);};img.src=URL.createObjectURL(f);}</script></section><div class="ad-slot" aria-hidden="true"><!-- AdSense ad — replace with your ca-pub ad code --></div><section class="card seo-section"><h2 id="about">Facebook image size guide</h2>
+</script><meta charset="utf-8"/><link href="/favicon.svg" rel="icon" type="image/svg+xml"/><link href="/favicon.ico" rel="icon" sizes="any"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Resize Image for Facebook - Free Online Tool | Tools2Do</title><meta content="Resize images to Facebook post, cover and profile photo dimensions online. No upload needed." name="description"/><meta content="index, follow" name="robots"/><link href="https://tools2do.com/tools/image-resizer/resize-image-for-facebook/" rel="canonical"/><link href="/assets/style.css" rel="stylesheet"/><meta content="Resize Image for Facebook - Free Online Tool | Tools2Do" property="og:title"/><meta content="Resize images to Facebook post, cover and profile photo dimensions online. No upload needed." property="og:description"/><meta content="website" property="og:type"/><meta content="https://tools2do.com/tools/image-resizer/resize-image-for-facebook/" property="og:url"/><meta content="Tools2Do" property="og:site_name"/><meta content="https://tools2do.com/og-image.svg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://tools2do.com/og-image.svg" name="twitter:image"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Resize Image for Facebook", "url": "https://tools2do.com/tools/image-resizer/resize-image-for-facebook/", "description": "Resize images to Facebook post, cover and profile photo dimensions online. No upload needed.", "applicationCategory": "UtilityApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does Facebook still compress my image after resizing?", "acceptedAnswer": {"@type": "Answer", "text": "Facebook applies its own compression to all uploads. Using the recommended dimensions reduces the amount of resampling, which minimises quality loss. Save as JPG at high quality for best results."}}, {"@type": "Question", "name": "What is the best format for Facebook images?", "acceptedAnswer": {"@type": "Answer", "text": "JPG is recommended for photos and cover images. PNG is better for graphics with text or transparent backgrounds. Avoid uploading very small or very large images."}}, {"@type": "Question", "name": "Can I use this for Facebook ads?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Facebook ad images typically use 1200\u00d7628 or 1080\u00d71080 px. Use the custom size fields if the preset does not match your exact ad spec."}}]}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Tools2Do",
+  "url": "https://tools2do.com",
+  "logo": "https://tools2do.com/favicon.svg"
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Tools2Do",
+  "url": "https://tools2do.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://tools2do.com/tools/",
+    "query-input": "required name=search_term_string"
+  }
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Resize Image for Facebook - Free Online Tool | Tools2Do",
+  "description": "Resize images to Facebook post, cover and profile photo dimensions online. No upload needed.",
+  "url": "https://tools2do.com/tools/image-resizer/resize-image-for-facebook/"
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Resize Image for Facebook - Free Online Tool | Tools2Do",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}</script><meta content="Tools2Do" name="author"/><meta content="Resize Image for Facebook - Free Online Tool | Tools2Do" name="twitter:title"/><meta content="Resize images to Facebook post, cover and profile photo dimensions online. No upload needed." name="twitter:description"/><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://tools2do.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Resize Image for Facebook - Free Online Tool | Tools2Do",
+      "item": "https://tools2do.com/tools/image-resizer/resize-image-for-facebook/"
+    }
+  ]
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this tool free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all tools on Tools2Do are free to use."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need an account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No account or signup is required."
+      }
+    }
+  ]
+}</script></head><body><nav><a class="logo" href="/">Tools2Do<span>.com</span></a><button aria-label="Menu" class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')"><span></span><span></span><span></span></button><div class="nav-links"><a href="/tools/">All Tools</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a></div></nav><header class="hero"><span class="pill">Image Resizer</span><h1>Resize Image for Facebook</h1><p>Resize any image to Facebook post, cover photo or profile picture dimensions in your browser.</p></header><main class="wrap content-grid"><article><section class="card tool-box" id="tool"><h2>Resize Image for Facebook</h2><label>Select preset or enter custom size</label><div class="row"><select id="preset" onchange="applyPreset()" style="max-width:300px"><option value="">— Select Facebook preset —</option><option value="1200,630">Facebook Post (1200×630)</option><option value="820,312">Cover Photo (820×312)</option><option value="180,180">Profile Picture (180×180)</option><option value="1200,1200">Square Post (1200×1200)</option><option value="1080,1920">Story (1080×1920)</option></select></div><input accept="image/*" id="file" style="margin:10px 0" type="file"/><div class="row"><input id="w" placeholder="Width (px)" style="max-width:160px" type="number"/><input id="h" placeholder="Height (px)" style="max-width:160px" type="number"/><select id="format" style="max-width:160px"><option value="image/jpeg">JPG</option><option value="image/png">PNG</option><option value="image/webp">WebP</option></select><button class="btn" onclick="processImg()">Resize Image</button></div><canvas id="canvas" style="max-width:100%;display:block;margin:15px 0;border-radius:12px"></canvas><a class="btn green" id="download" style="display:none;text-decoration:none">Download Resized Image</a><script>function applyPreset(){const v=document.getElementById('preset').value;if(!v)return;const[pw,ph]=v.split(',');document.getElementById('w').value=pw;document.getElementById('h').value=ph;}function processImg(){const f=document.getElementById('file').files[0];if(!f){alert('Choose an image first');return}const img=new Image();img.onload=function(){const tw=parseInt(document.getElementById('w').value)||img.width;const th=parseInt(document.getElementById('h').value)||img.height;const c=document.getElementById('canvas');c.width=tw;c.height=th;const ctx=c.getContext('2d');const scale=Math.max(tw/img.width,th/img.height);const sw=img.width*scale,sh=img.height*scale;ctx.drawImage(img,(tw-sw)/2,(th-sh)/2,sw,sh);const fmt=document.getElementById('format').value;c.toBlob(b=>{const dl=document.getElementById('download');dl.href=URL.createObjectURL(b);const ext=fmt.includes('webp')?'webp':fmt.includes('png')?'png':'jpg';dl.download='facebook-image.'+ext;dl.style.display='inline-block';},fmt,0.9);};img.src=URL.createObjectURL(f);}</script></section><div aria-hidden="true" class="ad-slot"><!-- AdSense ad — replace with your ca-pub ad code --></div><section class="card seo-section"><h2 id="about">Facebook image size guide</h2>
 <p>Facebook crops and compresses images that do not match its recommended dimensions. Using the correct size prevents blurry crops, white borders and quality loss. This tool lets you resize to any Facebook preset or enter a custom size — all processing happens in your browser.</p>
 <h2 id="how-to">How to resize an image for Facebook</h2>
 <ol><li>Choose a preset from the dropdown (Post, Cover, Profile, Story) or enter custom dimensions.</li><li>Select your image file.</li><li>Choose the output format (JPG recommended for photos).</li><li>Click <strong>Resize Image</strong> and download the result.</li></ol>
@@ -18,4 +91,49 @@
 <details><summary>Why does Facebook still compress my image after resizing?</summary><p>Facebook applies its own compression to all uploads. Using the recommended dimensions reduces the amount of resampling, which minimises quality loss. Save as JPG at high quality for best results.</p></details>
 <details><summary>What is the best format for Facebook images?</summary><p>JPG is recommended for photos and cover images. PNG is better for graphics with text or transparent backgrounds. Avoid uploading very small or very large images.</p></details>
 <details><summary>Can I use this for Facebook ads?</summary><p>Yes. Facebook ad images typically use 1200×628 or 1080×1080 px. Use the custom size fields if the preset does not match your exact ad spec.</p></details>
-</div></section></article><aside><div class="ad-slot" aria-hidden="true"><!-- AdSense ad — replace with your ca-pub ad code --></div><section class="card toc"><h3>On this page</h3><a href="#tool">Use tool</a><a href="#about">About</a><a href="#how-to">How to use</a><a href="#faq">FAQ</a></section><section class="card related"><h3>Related tools</h3><a href="/tools/image-resizer/">Image Resizer</a><a href="/tools/image-resizer/resize-image-for-instagram/">Resize Image for Instagram</a><a href="/tools/image-resizer/passport-size-photo-resizer/">Passport Size Photo Resizer</a><a href="/tools/image-compressor/">Image Compressor</a></section></aside></main><footer><p>© 2026 Tools2Do.com — Free online tools. No login required.</p><p class="footer-links"><a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/privacy-policy/">Privacy Policy</a> · <a href="/terms-and-conditions/">Terms</a> · <a href="/disclaimer/">Disclaimer</a></p></footer></body></html>
+</div></section></article><aside><div aria-hidden="true" class="ad-slot"><!-- AdSense ad — replace with your ca-pub ad code --></div><section class="card toc"><h3>On this page</h3><a href="#tool">Use tool</a><a href="#about">About</a><a href="#how-to">How to use</a><a href="#faq">FAQ</a></section><section class="card related"><h3>Related tools</h3><a href="/tools/image-resizer/">Image Resizer</a><a href="/tools/image-resizer/resize-image-for-instagram/">Resize Image for Instagram</a><a href="/tools/image-resizer/passport-size-photo-resizer/">Passport Size Photo Resizer</a><a href="/tools/image-compressor/">Image Compressor</a></section></aside>
+<section class="card seo-section">
+<h2>Frequently Asked Questions</h2>
+<h3>Is this tool free to use?</h3>
+<p>Yes, all tools on Tools2Do are completely free and work directly in your browser.</p>
+<h3>Do I need to create an account?</h3>
+<p>No registration or login is required to use any tool.</p>
+<h3>Is my data uploaded to servers?</h3>
+<p>Most tools process data directly in your browser for privacy and speed.</p>
+</section>
+<section class="card seo-content" style="padding:20px;margin-top:20px;">
+<h2>About Resize Image for Facebook - Free Online Tool | Tools2Do</h2>
+<p>
+      Resize Image for Facebook - Free Online Tool | Tools2Do on Tools2Do is designed to help users work faster, improve productivity,
+      and complete tasks directly in the browser without installing software.
+      Our platform focuses on speed, privacy, accuracy, and ease of use.
+      </p>
+<h2>Why Use This Tool?</h2>
+<ul>
+<li>Fast browser-based processing</li>
+<li>No installation required</li>
+<li>Mobile-friendly design</li>
+<li>Completely free access</li>
+<li>Secure and user-friendly interface</li>
+</ul>
+<h2>Best Practices</h2>
+<p>
+      For optimal performance, ensure your browser is updated and avoid uploading
+      extremely large files when unnecessary. Our tools are optimized for modern devices.
+      </p>
+</section>
+</main><footer><p>© 2026 Tools2Do.com — Free online tools. No login required.</p><p class="footer-links"><a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/privacy-policy/">Privacy Policy</a> · <a href="/terms-and-conditions/">Terms</a> · <a href="/disclaimer/">Disclaimer</a></p>
+<p>
+        Explore more tools:
+        <a href="/tools/json-formatter/">JSON Formatter</a> ·
+        <a href="/tools/word-counter/">Word Counter</a> ·
+        <a href="/tools/image-compressor/">Image Compressor</a>
+</p>
+</footer><script>
+        document.querySelectorAll('.copy-btn').forEach(btn=>{
+            btn.addEventListener('click',()=>{
+                navigator.clipboard.writeText('Example copied!');
+                btn.innerText='Copied!';
+            });
+        });
+        </script></body></html>

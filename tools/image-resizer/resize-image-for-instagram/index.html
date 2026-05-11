@@ -1,8 +1,126 @@
-<!DOCTYPE html><html lang="en"><head><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CFHWRFE835"></script>
+<!DOCTYPE html>
+
+<html lang="en"><head><!-- Google tag (gtag.js) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-CFHWRFE835"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-CFHWRFE835');
-</script><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Resize Image for Instagram - Free Online Photo Tool | Tools2Do</title><meta name="description" content="Resize photos for Instagram posts, square images and social media uploads online."><meta name="robots" content="index, follow"><link rel="canonical" href="https://tools2do.com/tools/image-resizer/resize-image-for-instagram/"><link rel="stylesheet" href="/assets/style.css"><meta property="og:title" content="Resize Image for Instagram - Free Online Photo Tool | Tools2Do"><meta property="og:description" content="Resize photos for Instagram posts, square images and social media uploads online."><meta property="og:type" content="website"><meta property="og:url" content="https://tools2do.com/tools/image-resizer/resize-image-for-instagram/"><meta property="og:site_name" content="Tools2Do"><meta name="twitter:card" content="summary"><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Resize Image for Instagram","url":"https://tools2do.com/tools/image-resizer/resize-image-for-instagram/","description":"Resize photos for Instagram posts, square images and social media uploads online.","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Resize Image for Instagram?","acceptedAnswer":{"@type":"Answer","text":"The Resize Image for Instagram is a free image resizing tool built for Instagram posts and social media images."}},{"@type":"Question","name":"Does this work on GitHub Pages?","acceptedAnswer":{"@type":"Answer","text":"Yes. The resizing uses browser JavaScript and canvas, so it works on a static website."}},{"@type":"Question","name":"Will resizing reduce file size?","acceptedAnswer":{"@type":"Answer","text":"Usually yes, because smaller dimensions often create a smaller file, but final size also depends on image detail and output quality."}},{"@type":"Question","name":"Can I use it on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes. It works in modern mobile and desktop browsers."}}]}</script></head><body><nav><a class="logo" href="/">Tools2Do<span>.com</span></a><button class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button><div class="nav-links"><a href="/tools/">All Tools</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a></div></nav><header class="hero"><span class="pill">Image Resizer</span><h1>Resize Image for Instagram</h1><p>Resize photos for Instagram posts, square images and social media uploads online.</p></header><main class="wrap content-grid"><article><section class="card tool-box" id="tool"><h2>Use the Resize Image for Instagram</h2><label>Select image</label><input id="file" type="file" accept="image/*"><div class="row"><div style="flex:1"><label>Width</label><input id="w" type="number" value="1080"></div><div style="flex:1"><label>Height</label><input id="h" type="number" value="1080"></div></div><div class="row"><button class="btn" onclick="resizeImage()">Resize Image</button><a id="download" class="btn secondary" style="display:none;text-decoration:none" download="resized-image.jpg">Download</a></div><canvas id="canvas" style="max-width:100%;display:none;border-radius:12px"></canvas><div id="out" class="result">Choose an image and enter target width and height.</div><script>function resizeImage(){const f=document.getElementById('file').files[0];if(!f){document.getElementById('out').textContent='Please choose an image first.';return}const img=new Image();img.onload=function(){const c=document.getElementById('canvas');c.width=parseInt(document.getElementById('w').value)||1080;c.height=parseInt(document.getElementById('h').value)||1080;c.style.display='block';c.getContext('2d').drawImage(img,0,0,c.width,c.height);c.toBlob(b=>{const a=document.getElementById('download');a.href=URL.createObjectURL(b);a.style.display='inline-block';document.getElementById('out').textContent='Resized to '+c.width+' × '+c.height+' px | File size: '+Math.round(b.size/1024)+' KB';},'image/jpeg',0.88)};img.src=URL.createObjectURL(f);}</script></section><div class="ad-slot" aria-hidden="true"><!-- AdSense ad — replace with your ca-pub ad code --></div><section class="card seo-section"><h2 id="about">What is the Resize Image for Instagram?</h2><p>The Resize Image for Instagram helps you quickly create an image with the right dimensions for Instagram posts and social media images. Instead of opening heavy editing software, you can upload a picture, enter the width and height, resize it in your browser and download the result.</p><h2>How to use this image resizer</h2><ol><li>Select your image file.</li><li>Enter the required width and height in pixels.</li><li>Click <strong>Resize Image</strong>.</li><li>Download the resized image and use it where needed.</li></ol><h2>Recommended guidance</h2><p>For Instagram, square 1080 × 1080 images are widely used, while portrait and landscape posts may use different dimensions. Choose the format that fits your post design.</p><h2>Common use cases</h2><ul><li>Preparing images for social media profiles and posts.</li><li>Creating smaller images for websites and blogs.</li><li>Making photos fit online application or document requirements.</li><li>Reducing oversized images before uploading.</li></ul><h2 id="faq">Frequently asked questions</h2><div class="faq"><details><summary>What is the Resize Image for Instagram?</summary><p>The Resize Image for Instagram is a free image resizing tool built for Instagram posts and social media images.</p></details><details><summary>Does this work on GitHub Pages?</summary><p>Yes. The resizing uses browser JavaScript and canvas, so it works on a static website.</p></details><details><summary>Will resizing reduce file size?</summary><p>Usually yes, because smaller dimensions often create a smaller file, but final size also depends on image detail and output quality.</p></details><details><summary>Can I use it on mobile?</summary><p>Yes. It works in modern mobile and desktop browsers.</p></details></div></section></article><aside><div class="ad-slot" aria-hidden="true"><!-- AdSense ad — replace with your ca-pub ad code --></div><section class="card related"><h3>Related image tools</h3><a href="/tools/image-resizer/passport-size-photo-resizer/">Passport Size Photo Resizer</a><a href="/tools/image-resizer/resize-image-for-instagram/">Resize Image for Instagram</a><a href="/tools/image-resizer/">Image Resizer</a><a href="/tools/image-compressor/compress-image-to-100kb/">Compress Image to 100KB</a><a href="/tools/image-compressor/compress-image-to-200kb/">Compress Image to 200KB</a><a href="/tools/image-converter/">Image Converter</a></section></aside></main><footer><p>© 2026 Tools2Do.com — Free online tools. No login required.</p><p class="footer-links"><a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/privacy-policy/">Privacy Policy</a> · <a href="/terms-and-conditions/">Terms</a> · <a href="/disclaimer/">Disclaimer</a></p></footer></body></html>
+</script><meta charset="utf-8"/><link href="/favicon.svg" rel="icon" type="image/svg+xml"/><link href="/favicon.ico" rel="icon" sizes="any"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Resize Image for Instagram - Free Online Photo Tool | Tools2Do</title><meta content="Resize photos for Instagram posts, square images and social media uploads online." name="description"/><meta content="index, follow" name="robots"/><link href="https://tools2do.com/tools/image-resizer/resize-image-for-instagram/" rel="canonical"/><link href="/assets/style.css" rel="stylesheet"/><meta content="Resize Image for Instagram - Free Online Photo Tool | Tools2Do" property="og:title"/><meta content="Resize photos for Instagram posts, square images and social media uploads online." property="og:description"/><meta content="website" property="og:type"/><meta content="https://tools2do.com/tools/image-resizer/resize-image-for-instagram/" property="og:url"/><meta content="Tools2Do" property="og:site_name"/><meta content="https://tools2do.com/og-image.svg" property="og:image"/><meta content="1200" property="og:image:width"/><meta content="630" property="og:image:height"/><meta content="summary_large_image" name="twitter:card"/><meta content="https://tools2do.com/og-image.svg" name="twitter:image"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Resize Image for Instagram","url":"https://tools2do.com/tools/image-resizer/resize-image-for-instagram/","description":"Resize photos for Instagram posts, square images and social media uploads online.","applicationCategory":"MultimediaApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Resize Image for Instagram?","acceptedAnswer":{"@type":"Answer","text":"The Resize Image for Instagram is a free image resizing tool built for Instagram posts and social media images."}},{"@type":"Question","name":"Does this work on GitHub Pages?","acceptedAnswer":{"@type":"Answer","text":"Yes. The resizing uses browser JavaScript and canvas, so it works on a static website."}},{"@type":"Question","name":"Will resizing reduce file size?","acceptedAnswer":{"@type":"Answer","text":"Usually yes, because smaller dimensions often create a smaller file, but final size also depends on image detail and output quality."}},{"@type":"Question","name":"Can I use it on mobile?","acceptedAnswer":{"@type":"Answer","text":"Yes. It works in modern mobile and desktop browsers."}}]}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Tools2Do",
+  "url": "https://tools2do.com",
+  "logo": "https://tools2do.com/favicon.svg"
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Tools2Do",
+  "url": "https://tools2do.com",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://tools2do.com/tools/",
+    "query-input": "required name=search_term_string"
+  }
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Resize Image for Instagram - Free Online Photo Tool | Tools2Do",
+  "description": "Resize photos for Instagram posts, square images and social media uploads online.",
+  "url": "https://tools2do.com/tools/image-resizer/resize-image-for-instagram/"
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Resize Image for Instagram - Free Online Photo Tool | Tools2Do",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}</script><meta content="Tools2Do" name="author"/><meta content="Resize Image for Instagram - Free Online Photo Tool | Tools2Do" name="twitter:title"/><meta content="Resize photos for Instagram posts, square images and social media uploads online." name="twitter:description"/><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://tools2do.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Resize Image for Instagram - Free Online Photo Tool | Tools2Do",
+      "item": "https://tools2do.com/tools/image-resizer/resize-image-for-instagram/"
+    }
+  ]
+}</script><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is this tool free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, all tools on Tools2Do are free to use."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need an account?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No account or signup is required."
+      }
+    }
+  ]
+}</script></head><body><nav><a class="logo" href="/">Tools2Do<span>.com</span></a><button aria-label="Menu" class="hamburger" onclick="this.nextElementSibling.classList.toggle('open')"><span></span><span></span><span></span></button><div class="nav-links"><a href="/tools/">All Tools</a><a href="/blog/">Blog</a><a href="/about/">About</a><a href="/contact/">Contact</a></div></nav><header class="hero"><span class="pill">Image Resizer</span><h1>Resize Image for Instagram</h1><p>Resize photos for Instagram posts, square images and social media uploads online.</p></header><main class="wrap content-grid"><article><section class="card tool-box" id="tool"><h2>Use the Resize Image for Instagram</h2><label>Select image</label><input accept="image/*" id="file" type="file"/><div class="row"><div style="flex:1"><label>Width</label><input id="w" type="number" value="1080"/></div><div style="flex:1"><label>Height</label><input id="h" type="number" value="1080"/></div></div><div class="row"><button class="btn" onclick="resizeImage()">Resize Image</button><a class="btn secondary" download="resized-image.jpg" id="download" style="display:none;text-decoration:none">Download</a></div><canvas id="canvas" style="max-width:100%;display:none;border-radius:12px"></canvas><div class="result" id="out">Choose an image and enter target width and height.</div><script>function resizeImage(){const f=document.getElementById('file').files[0];if(!f){document.getElementById('out').textContent='Please choose an image first.';return}const img=new Image();img.onload=function(){const c=document.getElementById('canvas');c.width=parseInt(document.getElementById('w').value)||1080;c.height=parseInt(document.getElementById('h').value)||1080;c.style.display='block';c.getContext('2d').drawImage(img,0,0,c.width,c.height);c.toBlob(b=>{const a=document.getElementById('download');a.href=URL.createObjectURL(b);a.style.display='inline-block';document.getElementById('out').textContent='Resized to '+c.width+' × '+c.height+' px | File size: '+Math.round(b.size/1024)+' KB';},'image/jpeg',0.88)};img.src=URL.createObjectURL(f);}</script></section><div aria-hidden="true" class="ad-slot"><!-- AdSense ad — replace with your ca-pub ad code --></div><section class="card seo-section"><h2 id="about">What is the Resize Image for Instagram?</h2><p>The Resize Image for Instagram helps you quickly create an image with the right dimensions for Instagram posts and social media images. Instead of opening heavy editing software, you can upload a picture, enter the width and height, resize it in your browser and download the result.</p><h2>How to use this image resizer</h2><ol><li>Select your image file.</li><li>Enter the required width and height in pixels.</li><li>Click <strong>Resize Image</strong>.</li><li>Download the resized image and use it where needed.</li></ol><h2>Recommended guidance</h2><p>For Instagram, square 1080 × 1080 images are widely used, while portrait and landscape posts may use different dimensions. Choose the format that fits your post design.</p><h2>Common use cases</h2><ul><li>Preparing images for social media profiles and posts.</li><li>Creating smaller images for websites and blogs.</li><li>Making photos fit online application or document requirements.</li><li>Reducing oversized images before uploading.</li></ul><h2 id="faq">Frequently asked questions</h2><div class="faq"><details><summary>What is the Resize Image for Instagram?</summary><p>The Resize Image for Instagram is a free image resizing tool built for Instagram posts and social media images.</p></details><details><summary>Does this work on GitHub Pages?</summary><p>Yes. The resizing uses browser JavaScript and canvas, so it works on a static website.</p></details><details><summary>Will resizing reduce file size?</summary><p>Usually yes, because smaller dimensions often create a smaller file, but final size also depends on image detail and output quality.</p></details><details><summary>Can I use it on mobile?</summary><p>Yes. It works in modern mobile and desktop browsers.</p></details></div></section></article><aside><div aria-hidden="true" class="ad-slot"><!-- AdSense ad — replace with your ca-pub ad code --></div><section class="card related"><h3>Related image tools</h3><a href="/tools/image-resizer/passport-size-photo-resizer/">Passport Size Photo Resizer</a><a href="/tools/image-resizer/resize-image-for-instagram/">Resize Image for Instagram</a><a href="/tools/image-resizer/">Image Resizer</a><a href="/tools/image-compressor/compress-image-to-100kb/">Compress Image to 100KB</a><a href="/tools/image-compressor/compress-image-to-200kb/">Compress Image to 200KB</a><a href="/tools/image-converter/">Image Converter</a></section></aside>
+<section class="card seo-section">
+<h2>Frequently Asked Questions</h2>
+<h3>Is this tool free to use?</h3>
+<p>Yes, all tools on Tools2Do are completely free and work directly in your browser.</p>
+<h3>Do I need to create an account?</h3>
+<p>No registration or login is required to use any tool.</p>
+<h3>Is my data uploaded to servers?</h3>
+<p>Most tools process data directly in your browser for privacy and speed.</p>
+</section>
+<section class="card seo-content" style="padding:20px;margin-top:20px;">
+<h2>About Resize Image for Instagram - Free Online Photo Tool | Tools2Do</h2>
+<p>
+      Resize Image for Instagram - Free Online Photo Tool | Tools2Do on Tools2Do is designed to help users work faster, improve productivity,
+      and complete tasks directly in the browser without installing software.
+      Our platform focuses on speed, privacy, accuracy, and ease of use.
+      </p>
+<h2>Why Use This Tool?</h2>
+<ul>
+<li>Fast browser-based processing</li>
+<li>No installation required</li>
+<li>Mobile-friendly design</li>
+<li>Completely free access</li>
+<li>Secure and user-friendly interface</li>
+</ul>
+<h2>Best Practices</h2>
+<p>
+      For optimal performance, ensure your browser is updated and avoid uploading
+      extremely large files when unnecessary. Our tools are optimized for modern devices.
+      </p>
+</section>
+</main><footer><p>© 2026 Tools2Do.com — Free online tools. No login required.</p><p class="footer-links"><a href="/about/">About</a> · <a href="/contact/">Contact</a> · <a href="/privacy-policy/">Privacy Policy</a> · <a href="/terms-and-conditions/">Terms</a> · <a href="/disclaimer/">Disclaimer</a></p>
+<p>
+        Explore more tools:
+        <a href="/tools/json-formatter/">JSON Formatter</a> ·
+        <a href="/tools/word-counter/">Word Counter</a> ·
+        <a href="/tools/image-compressor/">Image Compressor</a>
+</p>
+</footer><script>
+        document.querySelectorAll('.copy-btn').forEach(btn=>{
+            btn.addEventListener('click',()=>{
+                navigator.clipboard.writeText('Example copied!');
+                btn.innerText='Copied!';
+            });
+        });
+        </script></body></html>
