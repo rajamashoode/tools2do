@@ -1,0 +1,20 @@
+Tools2Do Vercel Non-WWW Final Build
+
+Final canonical domain: https://tools2do.com/
+
+Changes applied:
+- Replaced all https://www.tools2do.com absolute URLs with https://tools2do.com
+- Updated canonical tags, Open Graph URLs, Twitter image URLs, and JSON-LD URLs to non-www
+- Updated sitemap.xml to non-www URLs
+- Updated robots.txt sitemap line to https://tools2do.com/sitemap.xml
+- Updated CNAME to tools2do.com
+- Added/kept vercel.json permanent redirects for index.html, legacy .html pages, and blog .html posts
+- Kept BISP safer wording and trust/disclaimer section
+- Kept homepage/tool count at 50+
+
+Vercel domain setting required:
+- tools2do.com should connect to Production
+- www.tools2do.com should redirect to https://tools2do.com/
+
+After deploying, submit this sitemap in Google Search Console:
+https://tools2do.com/sitemap.xml
