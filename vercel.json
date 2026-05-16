@@ -80,6 +80,21 @@
       "source": "/blog/recently-released-ufo-files-2026.html",
       "destination": "/blog/recently-released-ufo-files-2026/",
       "permanent": true
+    },
+    {
+      "source": "/bisp-8171",
+      "destination": "/bisp-8171/",
+      "permanent": true
+    },
+    {
+      "source": "/electricity-bill",
+      "destination": "/electricity-bill/",
+      "permanent": true
+    },
+    {
+      "source": "/petrol-subsidy",
+      "destination": "/petrol-subsidy/",
+      "permanent": true
     }
   ]
 }
