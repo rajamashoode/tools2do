@@ -1,0 +1,61 @@
+{
+  "cleanUrls": false,
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/index.html",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/petrol-subsidy.html",
+      "destination": "/petrol-subsidy/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us.html",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us.html",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy.html",
+      "destination": "/privacy-policy/",
+      "permanent": true
+    },
+    {
+      "source": "/terms-and-conditions.html",
+      "destination": "/terms-and-conditions/",
+      "permanent": true
+    },
+    {
+      "source": "/bisp-8171",
+      "destination": "/bisp-8171/",
+      "permanent": true
+    },
+    {
+      "source": "/electricity-bill",
+      "destination": "/electricity-bill/",
+      "permanent": true
+    },
+    {
+      "source": "/petrol-subsidy",
+      "destination": "/petrol-subsidy/",
+      "permanent": true
+    },
+    {
+      "source": "/tools/image-resizer",
+      "destination": "/tools/image-resizer/",
+      "permanent": true
+    }
+  ]
+}
