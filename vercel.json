@@ -1,5 +1,4 @@
 {
-  "cleanUrls": false,
   "trailingSlash": true,
   "redirects": [
     {
@@ -10,11 +9,6 @@
     {
       "source": "/blog/index.html",
       "destination": "/blog/",
-      "permanent": true
-    },
-    {
-      "source": "/petrol-subsidy.html",
-      "destination": "/petrol-subsidy/",
       "permanent": true
     },
     {
@@ -38,23 +32,53 @@
       "permanent": true
     },
     {
-      "source": "/bisp-8171",
-      "destination": "/bisp-8171/",
-      "permanent": true
-    },
-    {
-      "source": "/electricity-bill",
-      "destination": "/electricity-bill/",
-      "permanent": true
-    },
-    {
-      "source": "/petrol-subsidy",
+      "source": "/petrol-subsidy.html",
       "destination": "/petrol-subsidy/",
       "permanent": true
     },
     {
-      "source": "/tools/image-resizer",
-      "destination": "/tools/image-resizer/",
+      "source": "/editorial-policy.html",
+      "destination": "/editorial-policy/",
+      "permanent": true
+    },
+    {
+      "source": "/bisp-8171.html",
+      "destination": "/bisp-8171/",
+      "permanent": true
+    },
+    {
+      "source": "/electricity-bill.html",
+      "destination": "/electricity-bill/",
+      "permanent": true
+    },
+    {
+      "source": "/palworld.html",
+      "destination": "/palworld/",
+      "permanent": true
+    },
+    {
+      "source": "/disclaimer.html",
+      "destination": "/disclaimer/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-is-hantavirus.html",
+      "destination": "/blog/what-is-hantavirus/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-resize-images-for-social-media.html",
+      "destination": "/blog/how-to-resize-images-for-social-media/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/word-count-tips-for-seo.html",
+      "destination": "/blog/word-count-tips-for-seo/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/recently-released-ufo-files-2026.html",
+      "destination": "/blog/recently-released-ufo-files-2026/",
       "permanent": true
     }
   ]
