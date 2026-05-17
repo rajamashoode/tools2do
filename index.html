@@ -223,6 +223,18 @@ font-size:17px;
 }
 }
 </style>
+
+<style>
+.card{
+transition:all .25s ease;
+cursor:pointer;
+}
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 0 25px rgba(109,94,252,0.25);
+}
+</style>
+
 </head>
 
 <body>
@@ -264,29 +276,29 @@ Tools2Do provides powerful browser-based tools for developers, creators, student
 
 <div class="grid">
 
-<div class="card">
+<a href="/developer-tools/" class="card" style="text-decoration:none;color:inherit;display:block;">
 <div class="icon">💻</div>
 <h3>Developer Tools</h3>
 <p>JSON formatter, Base64 encoder, validators, formatters, and developer utilities.</p>
-</div>
+</a>
 
-<div class="card">
+<a href="/image-tools/" class="card" style="text-decoration:none;color:inherit;display:block;">
 <div class="icon">🖼️</div>
 <h3>Image Tools</h3>
 <p>Compress, resize, convert, and optimize images directly in your browser.</p>
-</div>
+</a>
 
-<div class="card">
+<a href="/text-tools/" class="card" style="text-decoration:none;color:inherit;display:block;">
 <div class="icon">📝</div>
 <h3>Text Utilities</h3>
 <p>Word counters, case converters, text cleaners, and formatting utilities.</p>
-</div>
+</a>
 
-<div class="card">
+<a href="/ai-tools/" class="card" style="text-decoration:none;color:inherit;display:block;">
 <div class="icon">⚡</div>
 <h3>AI & Productivity</h3>
 <p>Smart utilities and productivity tools designed to save time and improve workflow.</p>
-</div>
+</a>
 
 </div>
 </div>

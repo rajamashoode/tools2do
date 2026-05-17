@@ -1,0 +1,18 @@
+Tools2Do update: 10 new tools plus 20 pSEO child pages added.
+
+New parent tools:
+1. Password Generator
+2. UUID Generator
+3. Timestamp Converter
+4. Slug Generator
+5. QR Code Generator
+6. CSV to JSON Converter
+7. Color Converter
+8. Percentage Calculator
+9. Age Calculator
+10. Unit Converter
+
+Each parent tool and pSEO page includes title, meta description, canonical, Open Graph tags, WebApplication schema, FAQ schema, Breadcrumb schema, useful body copy, FAQ content, related internal links and browser-based functionality where possible.
+
+Final canonical domain: https://tools2do.com/
+Upload the contents of this ZIP to the GitHub repository connected to Vercel. Vercel will deploy automatically.
