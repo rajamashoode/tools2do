@@ -11,5 +11,26 @@
 </head>
 <body>
 <p>This page has moved to <a href="/about/">https://tools2do.com/about/</a>.</p>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const mapping = {
+        'btn-image': 'image-tools',
+        'btn-pdf': 'pdf-tools',
+        'btn-text': 'text-tools',
+        'btn-developer': 'developer-tools',
+        'btn-popular': 'popular-tools'
+    };
+    Object.keys(mapping).forEach(btnClass => {
+        const btn = document.querySelector(`.${btnClass}`);
+        if(btn) {
+            btn.addEventListener('click', () => {
+                window.location.href = `tools.html#${mapping[btnClass]}`;
+            });
+        }
+    });
+});
+</script>
+
 </body>
 </html>

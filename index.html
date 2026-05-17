@@ -223,18 +223,6 @@ font-size:17px;
 }
 }
 </style>
-
-<style>
-.card{
-transition:all .25s ease;
-cursor:pointer;
-}
-.card:hover{
-transform:translateY(-6px);
-box-shadow:0 0 25px rgba(109,94,252,0.25);
-}
-</style>
-
 </head>
 
 <body>
@@ -276,29 +264,29 @@ Tools2Do provides powerful browser-based tools for developers, creators, student
 
 <div class="grid">
 
-<a href="/developer-tools/" class="card" style="text-decoration:none;color:inherit;display:block;">
+<div class="card">
 <div class="icon">💻</div>
 <h3>Developer Tools</h3>
 <p>JSON formatter, Base64 encoder, validators, formatters, and developer utilities.</p>
-</a>
+</div>
 
-<a href="/image-tools/" class="card" style="text-decoration:none;color:inherit;display:block;">
+<div class="card">
 <div class="icon">🖼️</div>
 <h3>Image Tools</h3>
 <p>Compress, resize, convert, and optimize images directly in your browser.</p>
-</a>
+</div>
 
-<a href="/text-tools/" class="card" style="text-decoration:none;color:inherit;display:block;">
+<div class="card">
 <div class="icon">📝</div>
 <h3>Text Utilities</h3>
 <p>Word counters, case converters, text cleaners, and formatting utilities.</p>
-</a>
+</div>
 
-<a href="/ai-tools/" class="card" style="text-decoration:none;color:inherit;display:block;">
+<div class="card">
 <div class="icon">⚡</div>
 <h3>AI & Productivity</h3>
 <p>Smart utilities and productivity tools designed to save time and improve workflow.</p>
-</a>
+</div>
 
 </div>
 </div>
@@ -371,6 +359,27 @@ Tools2Do provides powerful browser-based tools for developers, creators, student
 <p>© 2026 Tools2Do — Modern Online Utilities Platform</p>
 </div>
 </footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const mapping = {
+        'btn-image': 'image-tools',
+        'btn-pdf': 'pdf-tools',
+        'btn-text': 'text-tools',
+        'btn-developer': 'developer-tools',
+        'btn-popular': 'popular-tools'
+    };
+    Object.keys(mapping).forEach(btnClass => {
+        const btn = document.querySelector(`.${btnClass}`);
+        if(btn) {
+            btn.addEventListener('click', () => {
+                window.location.href = `tools.html#${mapping[btnClass]}`;
+            });
+        }
+    });
+});
+</script>
 
 </body>
 </html>
