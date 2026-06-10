@@ -3,11 +3,26 @@
 import { type ChangeEvent, type DragEvent, useRef, useState } from 'react';
 import { FileDown, FilePlus, Trash2 } from 'lucide-react';
 
-type PDFLib = typeof import('pdf-lib');
+type PdfPage = unknown;
+
+type PdfDocument = {
+  getPageIndices: () => number[];
+  getPageCount: () => number;
+  copyPages: (src: PdfDocument, indices: number[]) => Promise<PdfPage[]>;
+  addPage: (page: PdfPage) => void;
+  save: () => Promise<Uint8Array>;
+};
+
+type PDFLibGlobal = {
+  PDFDocument: {
+    create: () => Promise<PdfDocument>;
+    load: (bytes: ArrayBuffer) => Promise<PdfDocument>;
+  };
+};
 
 declare global {
   interface Window {
-    PDFLib: PDFLib;
+    PDFLib?: PDFLibGlobal;
   }
 }
 
@@ -106,6 +121,10 @@ export function PdfMergeSplit(): React.ReactElement {
       setStatus('Loading PDF library...');
       await loadPDFLib();
 
+      if (!window.PDFLib) {
+        throw new Error('PDF library was not loaded.');
+      }
+
       const { PDFDocument } = window.PDFLib;
 
       setStatus(`Merging ${files.length} PDF${files.length > 1 ? 's' : ''}...`);
@@ -149,6 +168,10 @@ export function PdfMergeSplit(): React.ReactElement {
     try {
       setStatus('Loading PDF library...');
       await loadPDFLib();
+
+      if (!window.PDFLib) {
+        throw new Error('PDF library was not loaded.');
+      }
 
       const { PDFDocument } = window.PDFLib;
 
