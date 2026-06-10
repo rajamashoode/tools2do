@@ -60,10 +60,15 @@ export function PdfMergeSplit(): React.ReactElement {
     });
   }
 
-  function saveBlob(bytes: Uint8Array): void {
-    const blob = new Blob([bytes], { type: 'application/pdf' });
-    setPdfUrl(URL.createObjectURL(blob));
-  }
+function saveBlob(bytes: Uint8Array): void {
+  const arrayBuffer = bytes.buffer.slice(
+    bytes.byteOffset,
+    bytes.byteOffset + bytes.byteLength
+  ) as ArrayBuffer;
+
+  const blob = new Blob([arrayBuffer], { type: 'application/pdf' });
+  setPdfUrl(URL.createObjectURL(blob));
+}
 
   async function merge(): Promise<void> {
     if (!files.length) { setError('Add at least one PDF.'); return; }
