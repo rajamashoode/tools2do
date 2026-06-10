@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, Plus_Jakarta_Sans } from 'next/font/google';
+import Script from 'next/script';
 import type { ReactNode } from 'react';
 import '@/app/globals.css';
 import { Footer } from '@/components/Footer';
@@ -27,18 +28,46 @@ export const metadata: Metadata = {
     template: '%s | Tools2Do',
   },
   description:
-    'Fast free browser tools for developers and mobile-first Pakistan utility helpers. No signup, no server processing.',
+    'Free browser-based tools for developers and Pakistan utility helpers. JSON formatter, image compressor, LESCO bill checker and 40+ more tools. No signup, no upload.',
+  keywords: ['online tools', 'developer tools', 'LESCO bill', 'image compressor', 'JSON formatter', 'Pakistan utilities'],
   openGraph: {
     siteName: 'Tools2Do',
     type: 'website',
+    url: 'https://tools2do.com',
+    title: 'Tools2Do – Free Online Developer Tools & Pakistan Utilities',
+    description: 'Free browser-based tools for developers and Pakistan utility helpers. 40+ tools, no signup.',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Tools2Do – Free Online Developer Tools & Pakistan Utilities',
+    description: 'Free browser-based tools for developers and Pakistan utility helpers. 40+ tools, no signup.',
+  },
+  robots: { index: true, follow: true },
+  alternates: { canonical: 'https://tools2do.com' },
 };
+
+const GA_ID = 'G-CFHWRFE835';
 
 type Props = { children: ReactNode };
 
 export default function RootLayout({ children }: Props): React.ReactElement {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_ID}');
+          `}
+        </Script>
+      </head>
       <body
         className={`${inter.variable} ${jakarta.variable} bg-[var(--bg-canvas)] font-sans text-[var(--text-primary)] antialiased`}
       >
