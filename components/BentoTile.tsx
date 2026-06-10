@@ -4,10 +4,10 @@ import Link from 'next/link';
 import {
   AlignJustify, AlignLeft, ArrowLeftRight, ArrowRight, BadgeCheck,
   Binary, BookOpenText, Braces, Calendar, Calculator, Clock3,
-  Eraser, FileCode2, Fingerprint, Flame, Fuel, Hash, ImageDown,
-  KeyRound, Link as LinkIcon, Palette, Phone, Pipette, QrCode,
-  ReceiptText, Regex, Repeat, Replace, ShieldCheck, Table2, Type,
-  WholeWord, Zap,
+  Crop, Eraser, FileCode2, FileDown, FilePlus, Fingerprint,
+  Flame, Fuel, Hash, ImageDown, KeyRound, Link as LinkIcon,
+  Palette, Phone, Pipette, QrCode, ReceiptText, Regex, Repeat,
+  Replace, ShieldCheck, Table2, Type, WholeWord, Zap,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import type { Tool } from '@/lib/tools-registry';
@@ -15,10 +15,10 @@ import type { Tool } from '@/lib/tools-registry';
 const ICONS: Record<string, LucideIcon> = {
   AlignJustify, AlignLeft, ArrowLeftRight, ArrowRight, BadgeCheck,
   Binary, BookOpenText, Braces, Calendar, Calculator, Clock3,
-  Eraser, FileCode2, Fingerprint, Flame, Fuel, Hash, ImageDown,
-  KeyRound, Link: LinkIcon, Palette, Phone, Pipette, QrCode,
-  ReceiptText, Regex, Repeat, Replace, ShieldCheck, Table2, Type,
-  WholeWord, Zap,
+  Crop, Eraser, FileCode2, FileDown, FilePlus, Fingerprint,
+  Flame, Fuel, Hash, ImageDown, KeyRound, Link: LinkIcon,
+  Palette, Phone, Pipette, QrCode, ReceiptText, Regex, Repeat,
+  Replace, ShieldCheck, Table2, Type, WholeWord, Zap,
 };
 
 const sizeClasses: Record<Tool['tileSize'], string> = {
@@ -31,7 +31,6 @@ type Props = { tool: Tool };
 
 export function BentoTile({ tool }: Props): React.ReactElement {
   const Icon = ICONS[tool.icon] ?? Braces;
-
   return (
     <Link
       href={tool.slug}
@@ -53,14 +52,11 @@ export function BentoTile({ tool }: Props): React.ReactElement {
           <span className="rounded-full bg-[var(--accent-indigo)] px-2 py-1 text-xs font-bold text-white">New</span>
         )}
       </div>
-
       <div className="mt-3 space-y-2">
         <p className="text-base font-bold leading-snug text-[var(--text-primary)]">{tool.name}</p>
-
         {tool.tileSize !== 'small' && (
           <p className="text-sm leading-6 text-[var(--text-secondary)]">{tool.description}</p>
         )}
-
         {tool.tileSize === 'large' && (
           <div className="mt-2 rounded-2xl border border-[var(--border-default)] bg-[var(--bg-canvas)] p-3">
             <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-[var(--text-muted)]">Quick Preview</p>
@@ -70,7 +66,6 @@ export function BentoTile({ tool }: Props): React.ReactElement {
             </div>
           </div>
         )}
-
         <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--accent-action)] opacity-0 transition-opacity duration-200 group-hover:opacity-100" aria-hidden="true">
           Open tool <ArrowRight className="h-4 w-4" />
         </span>

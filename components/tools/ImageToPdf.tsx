@@ -31,8 +31,7 @@ export function ImageToPdf(): React.ReactElement {
       setStatus('Loading PDF library...');
       await loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js');
 
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const { jsPDF } = (window as any).jspdf;
+      const { jsPDF } = (window as Window & { jspdf: { jsPDF: typeof import('jspdf').jsPDF } }).jspdf;
       const pdf = new jsPDF();
       setStatus(`Creating PDF from ${files.length} image${files.length > 1 ? 's' : ''}...`);
 
