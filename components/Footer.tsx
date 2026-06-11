@@ -26,16 +26,40 @@ const pkTools = [
   {href:'/pk',                         label:'All Pakistan Tools →'},
 ];
 
+const companyLinks = [
+  {href:'/about',          label:'About'},
+  {href:'/contact',        label:'Contact'},
+  {href:'/privacy-policy', label:'Privacy Policy'},
+  {href:'/terms',          label:'Terms of Service'},
+  {href:'/feed.xml',       label:'RSS Feed'},
+];
+
+const socialLinks = [
+  { href: 'https://github.com/rajamashoode/tools2do', label: 'GitHub' },
+  { href: 'https://x.com/rajamashoodelahi', label: 'X / Twitter' },
+  { href: 'https://linkedin.com/in/rajamashoodelahi', label: 'LinkedIn' },
+  { href: 'https://facebook.com/rajamashoodelahi', label: 'Facebook' },
+  { href: 'https://instagram.com/rajamashoodelahi', label: 'Instagram' },
+  { href: 'https://youtube.com/@rajamashoodelahi', label: 'YouTube' },
+  { href: 'https://tools2do.com/feed.xml', label: 'RSS Feed' },
+];
+
 export function Footer(): React.ReactElement {
   return (
     <footer className="border-t border-[var(--border-default)] bg-[var(--bg-surface)] mt-16">
-      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 md:grid-cols-3 md:px-6">
+      <div className="mx-auto grid max-w-7xl gap-8 px-4 py-12 md:grid-cols-4 md:px-6">
         <div>
           <p className="text-xl font-extrabold text-[var(--text-primary)]">
             tools2do<span className="text-[var(--accent-action)]">.com</span>
           </p>
           <p className="mt-3 max-w-sm text-sm leading-6 text-[var(--text-secondary)]">
-            40+ free browser utilities for developers worldwide and practical Pakistan utility helpers. No signup. No server processing. Ever.
+            40+ free browser utilities for developers worldwide and practical Pakistan utility helpers. No signup. No server processing whenever possible.
+          </p>
+          <p className="mt-4 text-sm text-[var(--text-secondary)]">
+            Contact:{' '}
+            <a href="mailto:support@tools2do.com" className="font-semibold text-[var(--accent-action)] hover:underline">
+              support@tools2do.com
+            </a>
           </p>
         </div>
 
@@ -52,14 +76,40 @@ export function Footer(): React.ReactElement {
             <Link key={t.href} href={t.href} className="text-[var(--text-secondary)] hover:text-[var(--accent-action)] transition-colors">{t.label}</Link>
           ))}
         </nav>
+
+        <div className="grid gap-6 text-sm content-start">
+          <nav aria-label="Company pages" className="grid gap-1.5">
+            <h2 className="font-bold text-[var(--text-primary)] mb-1">Company</h2>
+            {companyLinks.map(t => (
+              <Link key={t.href} href={t.href} className="text-[var(--text-secondary)] hover:text-[var(--accent-action)] transition-colors">{t.label}</Link>
+            ))}
+          </nav>
+
+          <nav aria-label="Social profiles" className="grid gap-1.5">
+            <h2 className="font-bold text-[var(--text-primary)] mb-1">Social</h2>
+            {socialLinks.map(s => (
+              <a
+                key={s.href}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--text-secondary)] hover:text-[var(--accent-action)] transition-colors"
+              >
+                {s.label}
+              </a>
+            ))}
+          </nav>
+        </div>
       </div>
 
       <div className="border-t border-[var(--border-default)] px-4 py-4 text-center text-xs text-[var(--text-muted)]">
-        © {new Date().getFullYear()} Tools2Do.com ·{' '}
+        © {new Date().getFullYear()} Tools2Do.com · Independent online tools platform ·{' '}
         <Link href="/privacy-policy" className="hover:text-[var(--accent-action)]">Privacy Policy</Link>
         {' '}·{' '}
-        <Link href="/about" className="hover:text-[var(--accent-action)]">About</Link>
-        {' '}· Ad-supported · All tools run locally in your browser.
+        <Link href="/terms" className="hover:text-[var(--accent-action)]">Terms</Link>
+        {' '}·{' '}
+        <Link href="/contact" className="hover:text-[var(--accent-action)]">Contact</Link>
+        {' '}· All tools run locally in your browser whenever possible.
       </div>
     </footer>
   );

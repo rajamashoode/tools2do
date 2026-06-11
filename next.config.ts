@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Homepage legacy PHP URL → homepage (301 permanent)
+      { source: '/index.php', destination: '/', permanent: true },
+
       // ============================================================
       // OLD TOOL URLS → NEW URLS (301 permanent)
       // ============================================================
