@@ -1,4 +1,3 @@
-import Script from 'next/script';
 import { AdSlot } from '@/components/AdSlot';
 import { BentoGrid } from '@/components/BentoGrid';
 import { HeroSearchBar } from '@/components/HeroSearchBar';
@@ -43,10 +42,9 @@ const faqSchema = {
 export default function HomePage(): React.ReactElement {
   return (
     <>
-      <Script
+      <script
         id="homepage-faq-schema"
         type="application/ld+json"
-        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 

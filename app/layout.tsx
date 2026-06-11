@@ -81,6 +81,27 @@ const websiteSchema = {
   publisher: {
     '@id': `${SITE_URL}/#organization`,
   },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: `${SITE_URL}/?q={search_term_string}`,
+    'query-input': 'required name=search_term_string',
+  },
+};
+
+const siteNavigationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Tools2Do Site Navigation',
+  itemListElement: [
+    { '@type': 'SiteNavigationElement', position: 1, name: 'Home', url: SITE_URL },
+    { '@type': 'SiteNavigationElement', position: 2, name: 'Pakistan Utilities', url: `${SITE_URL}/pk` },
+    { '@type': 'SiteNavigationElement', position: 3, name: 'About', url: `${SITE_URL}/about` },
+    { '@type': 'SiteNavigationElement', position: 4, name: 'Team', url: `${SITE_URL}/team` },
+    { '@type': 'SiteNavigationElement', position: 5, name: 'Contact', url: `${SITE_URL}/contact` },
+    { '@type': 'SiteNavigationElement', position: 6, name: 'Terms of Service', url: `${SITE_URL}/terms` },
+    { '@type': 'SiteNavigationElement', position: 7, name: 'Privacy Policy', url: `${SITE_URL}/privacy-policy` },
+    { '@type': 'SiteNavigationElement', position: 8, name: 'HTML Sitemap', url: `${SITE_URL}/html-sitemap` },
+  ],
 };
 
 type Props = { children: ReactNode };
@@ -89,18 +110,21 @@ export default function RootLayout({ children }: Props): React.ReactElement {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Structured data */}
-        <Script
+        {/* Structured data: regular server-rendered script tags for audit crawlers */}
+        <script
           id="organization-schema"
           type="application/ld+json"
-          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
-        <Script
+        <script
           id="website-schema"
           type="application/ld+json"
-          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          id="site-navigation-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteNavigationSchema) }}
         />
         {/* Google Analytics */}
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />

@@ -28,7 +28,9 @@ const pkTools = [
 
 const companyLinks = [
   {href:'/about',          label:'About'},
+  {href:'/team',           label:'Team'},
   {href:'/contact',        label:'Contact'},
+  {href:'/html-sitemap',   label:'HTML Sitemap'},
   {href:'/privacy-policy', label:'Privacy Policy'},
   {href:'/terms',          label:'Terms of Service'},
   {href:'/feed.xml',       label:'RSS Feed'},
