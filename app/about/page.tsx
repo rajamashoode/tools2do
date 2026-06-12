@@ -46,10 +46,10 @@ export default function About(): React.ReactElement {
           <p>Found a bug or want to suggest a tool? Reach out on social media:</p>
           <div className="mt-3 flex flex-wrap gap-3">
             {[
-              { label: 'TikTok', href: 'https://tiktok.com/@rajamashoode' },
-              { label: 'Facebook', href: 'https://facebook.com/rajamashoode' },
-              { label: 'Instagram', href: 'https://instagram.com/rajamashoode' },
-              { label: 'LinkedIn', href: 'https://linkedin.com/in/rajamashoode' },
+              { label: 'TikTok', href: 'https://tiktok.com/@rajamashoodelahi' },
+              { label: 'Facebook', href: 'https://facebook.com/rajamashoodelahi' },
+              { label: 'Instagram', href: 'https://instagram.com/rajamashoodelahi' },
+              { label: 'LinkedIn', href: 'https://linkedin.com/in/rajamashoodelahi' },
             ].map(s => (
               <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className="rounded-xl border border-[var(--border-default)] px-4 py-2 text-sm font-semibold hover:bg-[var(--bg-surface-hover)] hover:border-[var(--accent-indigo)] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-indigo)]">
                 {s.label}

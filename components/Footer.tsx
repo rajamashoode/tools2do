@@ -27,13 +27,12 @@ const pkTools = [
 ];
 
 const socialLinks = [
-  { href: 'https://github.com/rajamashoode/tools2do', label: 'GitHub'     },
-  { href: 'https://x.com/rajamashoode',               label: 'X / Twitter'},
-  { href: 'https://linkedin.com/in/rajamashoode',     label: 'LinkedIn'   },
-  { href: 'https://facebook.com/rajamashoode',        label: 'Facebook'   },
-  { href: 'https://instagram.com/rajamashoode',       label: 'Instagram'  },
-  { href: 'https://tiktok.com/@rajamashoode',         label: 'TikTok'     },
-  { href: 'https://youtube.com/@rajamashoode',        label: 'YouTube'    },
+  { href: 'https://github.com/rajamashoode/tools2do',      label: 'GitHub'    },
+  { href: 'https://instagram.com/rajamashoodelahi',        label: 'Instagram' },
+  { href: 'https://linkedin.com/in/rajamashoodelahi',      label: 'LinkedIn'  },
+  { href: 'https://facebook.com/rajamashoodelahi',         label: 'Facebook'  },
+  { href: 'https://tiktok.com/@rajamashoodelahi',          label: 'TikTok'    },
+  { href: 'https://youtube.com/@rajamashoodelahi',         label: 'YouTube'   },
 ];
 
 export function Footer(): React.ReactElement {
@@ -52,7 +51,7 @@ export function Footer(): React.ReactElement {
             </p>
             <p className="mt-3 text-sm text-[var(--text-secondary)]">
               📍 Abbottabad, Pakistan<br />
-              ✉️ <a href="mailto:support@tools2do.com" className="hover:text-[var(--accent-action)] transition-colors">support@tools2do.com</a>
+              ✉️ <a href="mailto:rajamashoodelahi@gmail.com" className="hover:text-[var(--accent-action)] transition-colors">rajamashoodelahi@gmail.com</a>
             </p>
           </div>
 

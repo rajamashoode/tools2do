@@ -20,10 +20,10 @@ export default function ContactPage(): React.ReactElement {
           <h2 className="text-[length:var(--text-h2)] font-bold text-[var(--text-primary)] mb-3">Email</h2>
           <p className="text-[var(--text-secondary)]">For support, bug reports, corrections, and general questions:</p>
           <a
-            href="mailto:support@tools2do.com"
+            href="mailto:rajamashoodelahi@gmail.com"
             className="mt-3 inline-flex items-center gap-2 rounded-xl bg-[var(--accent-action)] px-5 py-3 font-bold text-white hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-indigo)]"
           >
-            support@tools2do.com
+            rajamashoodelahi@gmail.com
           </a>
         </div>
 
@@ -45,11 +45,11 @@ export default function ContactPage(): React.ReactElement {
           <div className="flex flex-wrap gap-2">
             {[
               { label: 'GitHub',     href: 'https://github.com/rajamashoode/tools2do' },
-              { label: 'X / Twitter',href: 'https://x.com/rajamashoode'               },
-              { label: 'LinkedIn',   href: 'https://linkedin.com/in/rajamashoode'     },
-              { label: 'Facebook',   href: 'https://facebook.com/rajamashoode'        },
-              { label: 'Instagram',  href: 'https://instagram.com/rajamashoode'       },
-              { label: 'TikTok',     href: 'https://tiktok.com/@rajamashoode'         },
+              { label: 'Instagram',href: 'https://instagram.com/rajamashoodelahi'               },
+              { label: 'LinkedIn',   href: 'https://linkedin.com/in/rajamashoodelahi'     },
+              { label: 'Facebook',   href: 'https://facebook.com/rajamashoodelahi'        },
+              { label: 'Instagram',  href: 'https://instagram.com/rajamashoodelahi'       },
+              { label: 'TikTok',     href: 'https://tiktok.com/@rajamashoodelahi'         },
             ].map(s => (
               <a
                 key={s.href}
