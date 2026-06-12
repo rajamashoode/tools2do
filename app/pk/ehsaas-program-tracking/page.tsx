@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export function generateMetadata(): Metadata {
   return {
-    title: 'Ehsaas Program 8171 Tracking | Tools2Do',
+    title: 'Ehsaas Program 8171 Tracking',
     description: 'Check your Ehsaas Program eligibility and payment status using your CNIC.',
     alternates: { canonical: 'https://tools2do.com/pk/ehsaas-program-tracking' },
   };

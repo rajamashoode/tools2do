@@ -4,9 +4,9 @@ import { LescoBillChecker } from '@/components/tools/LescoBillChecker';
 
 export function generateMetadata(): Metadata {
   return {
-    title: 'LESCO Bill Check Online – Enter 14-Digit Reference Number | Tools2Do',
+    title: 'LESCO Bill Check Online – Enter 14-Digit Reference Number',
     description: 'LESCO bill check online with 14-digit reference number. Fast duplicate bill helper for Lahore users, Consumer ID and CNIC guidance.',
-    openGraph: { title: 'LESCO Bill Check Online – Enter 14-Digit Reference Number | Tools2Do', description: 'LESCO bill check online with 14-digit reference number. Fast duplicate bill helper for Lahore users, Consumer ID and CNIC guidance.', images: ['/images/check-lesco-bill-og.png'], url: 'https://tools2do.com/pk/check-lesco-bill', type: 'website' },
+    openGraph: { title: 'LESCO Bill Check Online – Enter 14-Digit Reference Number', description: 'LESCO bill check online with 14-digit reference number. Fast duplicate bill helper for Lahore users, Consumer ID and CNIC guidance.', images: ['/images/check-lesco-bill-og.png'], url: 'https://tools2do.com/pk/check-lesco-bill', type: 'website' },
     alternates: { canonical: 'https://tools2do.com/pk/check-lesco-bill', languages: { 'en-PK': 'https://tools2do.com/pk/check-lesco-bill', 'ur-PK': 'https://tools2do.com/pk/check-lesco-bill?lang=ur' } }
   };
 }

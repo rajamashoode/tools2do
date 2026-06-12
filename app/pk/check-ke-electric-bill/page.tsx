@@ -4,9 +4,9 @@ import { LescoBillChecker } from '@/components/tools/LescoBillChecker';
 
 export function generateMetadata(): Metadata {
   return {
-    title: 'K-Electric Bill Check Online – Enter Account Number | Tools2Do',
+    title: 'K-Electric Bill Check Online – Enter Account Number',
     description: 'K-Electric bill check online helper for Karachi users with account number, reference guidance and duplicate bill steps.',
-    openGraph: { title: 'K-Electric Bill Check Online – Enter Account Number | Tools2Do', description: 'K-Electric bill check online helper for Karachi users with account number, reference guidance and duplicate bill steps.', images: ['/images/check-ke-electric-bill-og.png'], url: 'https://tools2do.com/pk/check-ke-electric-bill', type: 'website' },
+    openGraph: { title: 'K-Electric Bill Check Online – Enter Account Number', description: 'K-Electric bill check online helper for Karachi users with account number, reference guidance and duplicate bill steps.', images: ['/images/check-ke-electric-bill-og.png'], url: 'https://tools2do.com/pk/check-ke-electric-bill', type: 'website' },
     alternates: { canonical: 'https://tools2do.com/pk/check-ke-electric-bill', languages: { 'en-PK': 'https://tools2do.com/pk/check-ke-electric-bill', 'ur-PK': 'https://tools2do.com/pk/check-ke-electric-bill?lang=ur' } }
   };
 }

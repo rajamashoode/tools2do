@@ -4,9 +4,9 @@ import { LescoBillChecker } from '@/components/tools/LescoBillChecker';
 
 export function generateMetadata(): Metadata {
   return {
-    title: 'IESCO Bill Check Online – Enter 14-Digit Reference Number | Tools2Do',
+    title: 'IESCO Bill Check Online – Enter 14-Digit Reference Number',
     description: 'IESCO bill check online helper for Islamabad and Rawalpindi users with reference number and duplicate bill guidance.',
-    openGraph: { title: 'IESCO Bill Check Online – Enter 14-Digit Reference Number | Tools2Do', description: 'IESCO bill check online helper for Islamabad and Rawalpindi users with reference number and duplicate bill guidance.', images: ['/images/check-iesco-bill-og.png'], url: 'https://tools2do.com/pk/check-iesco-bill', type: 'website' },
+    openGraph: { title: 'IESCO Bill Check Online – Enter 14-Digit Reference Number', description: 'IESCO bill check online helper for Islamabad and Rawalpindi users with reference number and duplicate bill guidance.', images: ['/images/check-iesco-bill-og.png'], url: 'https://tools2do.com/pk/check-iesco-bill', type: 'website' },
     alternates: { canonical: 'https://tools2do.com/pk/check-iesco-bill', languages: { 'en-PK': 'https://tools2do.com/pk/check-iesco-bill', 'ur-PK': 'https://tools2do.com/pk/check-iesco-bill?lang=ur' } }
   };
 }

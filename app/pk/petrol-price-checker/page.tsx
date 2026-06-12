@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export function generateMetadata(): Metadata {
   return {
-    title: 'Pakistan Petrol Price Checker | Tools2Do',
+    title: 'Pakistan Petrol Price Checker',
     description: 'Check current petrol and diesel prices in Pakistan updated monthly by OGRA.',
     alternates: { canonical: 'https://tools2do.com/pk/petrol-price-checker' },
   };

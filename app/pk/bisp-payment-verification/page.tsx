@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export function generateMetadata(): Metadata {
   return {
-    title: 'BISP Payment Verification | Tools2Do',
+    title: 'BISP Payment Verification',
     description: 'Verify your BISP Benazir Income Support Programme payment status using your CNIC.',
     alternates: { canonical: 'https://tools2do.com/pk/bisp-payment-verification' },
   };

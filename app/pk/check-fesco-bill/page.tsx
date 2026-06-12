@@ -4,9 +4,9 @@ import { BillChecker } from '@/components/tools/BillChecker';
 
 export function generateMetadata(): Metadata {
   return {
-    title: 'FESCO Bill Checker Online – 14-Digit Reference Number | Tools2Do',
+    title: 'FESCO Bill Checker Online – 14-Digit Reference Number',
     description: 'FESCO bill check online. Enter your 14-digit reference number for Faisalabad and surrounding areas. Fast mobile-friendly helper.',
-    openGraph: { title: 'FESCO Bill Checker Online | Tools2Do', url: 'https://tools2do.com/pk/check-fesco-bill', type: 'website' },
+    openGraph: { title: 'FESCO Bill Checker Online', url: 'https://tools2do.com/pk/check-fesco-bill', type: 'website' },
     alternates: { canonical: 'https://tools2do.com/pk/check-fesco-bill' },
   };
 }

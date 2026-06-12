@@ -2,16 +2,12 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
-  trailingSlash: false,
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [375, 640, 750, 828, 1080, 1200, 1920],
   },
   async redirects() {
     return [
-      // Homepage legacy PHP URL → homepage (301 permanent)
-      { source: '/index.php', destination: '/', permanent: true },
-
       // ============================================================
       // OLD TOOL URLS → NEW URLS (301 permanent)
       // ============================================================

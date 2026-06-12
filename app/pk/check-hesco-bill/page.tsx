@@ -4,9 +4,9 @@ import { BillChecker } from '@/components/tools/BillChecker';
 
 export function generateMetadata(): Metadata {
   return {
-    title: 'HESCO Bill Checker Online – 14-Digit Reference Number | Tools2Do',
+    title: 'HESCO Bill Checker Online – 14-Digit Reference Number',
     description: 'HESCO bill check online. Enter your 14-digit reference number for Hyderabad and surrounding areas. Fast mobile-friendly helper.',
-    openGraph: { title: 'HESCO Bill Checker Online | Tools2Do', url: 'https://tools2do.com/pk/check-hesco-bill', type: 'website' },
+    openGraph: { title: 'HESCO Bill Checker Online', url: 'https://tools2do.com/pk/check-hesco-bill', type: 'website' },
     alternates: { canonical: 'https://tools2do.com/pk/check-hesco-bill' },
   };
 }

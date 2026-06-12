@@ -4,9 +4,9 @@ import { LescoBillChecker } from '@/components/tools/LescoBillChecker';
 
 export function generateMetadata(): Metadata {
   return {
-    title: 'MEPCO Bill Check Online – Enter 14-Digit Reference Number | Tools2Do',
+    title: 'MEPCO Bill Check Online – Enter 14-Digit Reference Number',
     description: 'MEPCO bill check online helper for Multan users with 14-digit reference number, Consumer ID and duplicate bill steps.',
-    openGraph: { title: 'MEPCO Bill Check Online – Enter 14-Digit Reference Number | Tools2Do', description: 'MEPCO bill check online helper for Multan users with 14-digit reference number, Consumer ID and duplicate bill steps.', images: ['/images/check-mepco-bill-og.png'], url: 'https://tools2do.com/pk/check-mepco-bill', type: 'website' },
+    openGraph: { title: 'MEPCO Bill Check Online – Enter 14-Digit Reference Number', description: 'MEPCO bill check online helper for Multan users with 14-digit reference number, Consumer ID and duplicate bill steps.', images: ['/images/check-mepco-bill-og.png'], url: 'https://tools2do.com/pk/check-mepco-bill', type: 'website' },
     alternates: { canonical: 'https://tools2do.com/pk/check-mepco-bill', languages: { 'en-PK': 'https://tools2do.com/pk/check-mepco-bill', 'ur-PK': 'https://tools2do.com/pk/check-mepco-bill?lang=ur' } }
   };
 }

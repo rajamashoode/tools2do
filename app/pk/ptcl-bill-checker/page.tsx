@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export function generateMetadata(): Metadata {
   return {
-    title: 'PTCL Bill Checker | Tools2Do',
+    title: 'PTCL Bill Checker',
     description: 'Validate your PTCL consumer number and access your telephone and broadband bill.',
     alternates: { canonical: 'https://tools2do.com/pk/ptcl-bill-checker' },
   };

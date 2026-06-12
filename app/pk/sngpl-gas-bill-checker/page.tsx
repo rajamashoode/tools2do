@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 export function generateMetadata(): Metadata {
   return {
-    title: 'SNGPL Gas Bill Checker | Tools2Do',
+    title: 'SNGPL Gas Bill Checker',
     description: 'Check your SNGPL Sui Northern Gas bill using your consumer number or reference.',
     alternates: { canonical: 'https://tools2do.com/pk/sngpl-gas-bill-checker' },
   };

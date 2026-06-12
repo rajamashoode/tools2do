@@ -4,9 +4,9 @@ import { BillChecker } from '@/components/tools/BillChecker';
 
 export function generateMetadata(): Metadata {
   return {
-    title: 'GEPCO Bill Checker Online – 14-Digit Reference Number | Tools2Do',
+    title: 'GEPCO Bill Checker Online – 14-Digit Reference Number',
     description: 'GEPCO bill check online. Enter your 14-digit reference number for Gujranwala and surrounding areas. Fast mobile-friendly helper.',
-    openGraph: { title: 'GEPCO Bill Checker Online | Tools2Do', url: 'https://tools2do.com/pk/check-gepco-bill', type: 'website' },
+    openGraph: { title: 'GEPCO Bill Checker Online', url: 'https://tools2do.com/pk/check-gepco-bill', type: 'website' },
     alternates: { canonical: 'https://tools2do.com/pk/check-gepco-bill' },
   };
 }

@@ -3,7 +3,7 @@ import { ElectricitySubsidyCalculator } from '@/components/tools/ElectricitySubs
 
 export function generateMetadata(): Metadata {
   return {
-    title: 'Electricity Unit Subsidy Calculator | Tools2Do',
+    title: 'Electricity Unit Subsidy Calculator',
     description: 'Estimate your electricity subsidy eligibility based on monthly unit consumption.',
     alternates: { canonical: 'https://tools2do.com/pk/electricity-unit-subsidy-calculator' },
   };

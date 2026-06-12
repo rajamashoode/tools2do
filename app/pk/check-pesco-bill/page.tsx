@@ -4,9 +4,9 @@ import { BillChecker } from '@/components/tools/BillChecker';
 
 export function generateMetadata(): Metadata {
   return {
-    title: 'PESCO Bill Checker Online – 14-Digit Reference Number | Tools2Do',
+    title: 'PESCO Bill Checker Online – 14-Digit Reference Number',
     description: 'PESCO bill check online. Enter your 14-digit reference number for Peshawar and surrounding areas. Fast mobile-friendly helper.',
-    openGraph: { title: 'PESCO Bill Checker Online | Tools2Do', url: 'https://tools2do.com/pk/check-pesco-bill', type: 'website' },
+    openGraph: { title: 'PESCO Bill Checker Online', url: 'https://tools2do.com/pk/check-pesco-bill', type: 'website' },
     alternates: { canonical: 'https://tools2do.com/pk/check-pesco-bill' },
   };
 }

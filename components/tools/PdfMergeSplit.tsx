@@ -126,10 +126,9 @@ export function PdfMergeSplit(): React.ReactElement {
       }
 
       const { PDFDocument } = window.PDFLib;
+      const out = await PDFDocument.create();
 
       setStatus(`Merging ${files.length} PDF${files.length > 1 ? 's' : ''}...`);
-
-      const out = await PDFDocument.create();
 
       for (const file of files) {
         const bytes = await fileToBytes(file);
