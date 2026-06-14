@@ -3,8 +3,8 @@ import Script from 'next/script';
 import { RemoveExtraSpaces } from '@/components/tools/RemoveExtraSpaces';
 
 export const metadata: Metadata = {
-  title: 'Remove Extra Spaces',
-  description: 'Clean text by removing duplicate spaces and line breaks.',
+  title: 'Remove Extra Spaces Online Free – Clean Text Instantly',
+  description: 'Remove extra spaces, duplicate spaces and blank lines from text online free. Clean and format text instantly in your browser. No signup, no limits.',
   alternates: { canonical: 'https://tools2do.com/tools/remove-extra-spaces' },
 };
 

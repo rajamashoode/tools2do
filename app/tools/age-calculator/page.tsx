@@ -3,8 +3,8 @@ import Script from 'next/script';
 import { AgeCalculator } from '@/components/tools/AgeCalculator';
 
 export const metadata: Metadata = {
-  title: 'Age Calculator',
-  description: 'Calculate exact age in years, months and days.',
+  title: 'Age Calculator Online Free – Calculate Exact Age in Years Months Days',
+  description: 'Calculate your exact age in years, months and days free online. Enter date of birth and get age instantly with next birthday countdown. No signup required.',
   alternates: { canonical: 'https://tools2do.com/tools/age-calculator' },
 };
 

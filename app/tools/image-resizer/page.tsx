@@ -3,8 +3,8 @@ import Script from 'next/script';
 import { ImageResizer } from '@/components/tools/ImageResizer';
 
 export const metadata: Metadata = {
-  title: 'Image Resizer – Resize Images Online Free',
-  description: 'Resize images to custom dimensions or use quick presets for Instagram, Facebook, Twitter and passport photos. Batch support, rename before download.',
+  title: 'Image Resizer Online Free – Resize JPG PNG WebP in Seconds',
+  description: 'Resize images online free — no signup, no upload. Batch resize JPG, PNG, WebP with Instagram, Facebook, Twitter presets or custom px. Runs in your browser.',
   alternates: { canonical: 'https://tools2do.com/tools/image-resizer' },
 };
 

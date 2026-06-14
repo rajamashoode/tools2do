@@ -3,8 +3,8 @@ import Script from 'next/script';
 import { WordCounter } from '@/components/tools/WordCounter';
 
 export const metadata: Metadata = {
-  title: 'Word Counter',
-  description: 'Count words, characters, sentences and reading time.',
+  title: 'Word Counter Online Free – Count Words Characters Sentences Instantly',
+  description: 'Free online word counter. Count words, characters, sentences, paragraphs and reading time instantly. No signup. Paste text and get results in seconds.',
   alternates: { canonical: 'https://tools2do.com/tools/word-counter' },
 };
 

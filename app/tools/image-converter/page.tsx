@@ -3,8 +3,8 @@ import Script from 'next/script';
 import { ImageConverter } from '@/components/tools/ImageConverter';
 
 export const metadata: Metadata = {
-  title: 'Image Converter – Convert JPG, PNG, WebP Online',
-  description: 'Convert images to JPG, PNG or WebP format. Supports batch conversion, custom dimensions, quality control and file rename. Runs in your browser.',
+  title: 'Image Converter Online Free – Convert JPG PNG WebP Instantly',
+  description: 'Convert images online free. JPG to WebP, PNG to JPG, WebP to PNG — batch convert multiple files, resize dimensions, adjust quality. No upload, no signup.',
   alternates: { canonical: 'https://tools2do.com/tools/image-converter' },
 };
 

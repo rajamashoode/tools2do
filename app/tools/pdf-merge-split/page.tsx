@@ -3,8 +3,8 @@ import Script from 'next/script';
 import { PdfMergeSplit } from '@/components/tools/PdfMergeSplit';
 
 export const metadata: Metadata = {
-  title: 'PDF Merge & Split – Combine or Extract PDF Pages Online',
-  description: 'Merge multiple PDF files into one, or split a PDF by extracting specific pages. Custom file name, runs entirely in your browser.',
+  title: 'PDF Merge & Split Online Free – Combine or Extract PDF Pages',
+  description: 'Merge multiple PDFs into one or split PDF pages online free. Extract pages by number like 1,3,5-7. No upload to server, runs in browser. No signup needed.',
   alternates: { canonical: 'https://tools2do.com/tools/pdf-merge-split' },
 };
 

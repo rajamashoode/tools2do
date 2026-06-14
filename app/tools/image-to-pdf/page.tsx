@@ -3,8 +3,8 @@ import Script from 'next/script';
 import { ImageToPdf } from '@/components/tools/ImageToPdf';
 
 export const metadata: Metadata = {
-  title: 'Image to PDF Converter – Convert Images to PDF Online',
-  description: 'Convert multiple images to a single PDF file. Each image becomes a page. Reorder images, set a custom PDF name, and download instantly.',
+  title: 'Image to PDF Converter Online Free – JPG PNG to PDF in Seconds',
+  description: 'Convert images to PDF free online. Upload JPG, PNG or WebP files — each image becomes a PDF page. Reorder, rename and download instantly. No signup required.',
   alternates: { canonical: 'https://tools2do.com/tools/image-to-pdf' },
 };
 
