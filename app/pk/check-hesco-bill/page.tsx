@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import { BillChecker } from '@/components/tools/BillChecker';
 
 export function generateMetadata(): Metadata {
@@ -11,28 +10,14 @@ export function generateMetadata(): Metadata {
   };
 }
 
-const jsonLd = {'@context':'https://schema.org','@graph':[
-  {'@type':'FAQPage','mainEntity':[
-    {'@type':'Question','name':'HESCO bill check online kaise karo?','acceptedAnswer':{'@type':'Answer','text':'HESCO bill check ke liye apna 14-digit Reference Number enter karein. Live bill ke liye official HESCO portal use karein.'}},
-    {'@type':'Question','name':'14-digit HESCO reference number kahan milta hai?','acceptedAnswer':{'@type':'Answer','text':'Reference number purane bill ke top section mein hota hai. Consumer ID se alag hota hai — bill par printed number copy karein.'}},
-    {'@type':'Question','name':'HESCO duplicate bill download kaise karein?','acceptedAnswer':{'@type':'Answer','text':'Official HESCO portal par reference number enter karein. Wahan print ya download browser ke PDF option se ho sakta hai.'}},
-    {'@type':'Question','name':'HESCO bill payment last date kya hoti hai?','acceptedAnswer':{'@type':'Answer','text':'Payment due date har bill par printed hoti hai. Late surcharge bachne ke liye due date se pehle payment karein.'}},
-    {'@type':'Question','name':'HESCO bill ka unit rate kya hai?','acceptedAnswer':{'@type':'Answer','text':'HESCO unit rates NEPRA ke quarterly notifications ke mutabiq change hote hain. Current rates official HESCO website par dekh saktay hain.'}}
-  ]},
-  {'@type':'WebApplication','name':'HESCO Bill Checker','applicationCategory':'UtilityApplication','operatingSystem':'Web Browser','offers':{'@type':'Offer','price':'0','priceCurrency':'PKR'},'url':'https://tools2do.com/pk/check-hesco-bill'},
-  {'@type':'BreadcrumbList','itemListElement':[
-    {'@type':'ListItem','position':1,'name':'Home','item':'https://tools2do.com'},
-    {'@type':'ListItem','position':2,'name':'Pakistan Utilities','item':'https://tools2do.com/pk'},
-    {'@type':'ListItem','position':3,'name':'HESCO Bill Checker','item':'https://tools2do.com/pk/check-hesco-bill'}
-  ]}
-]};
+const jsonLd = {'@context': 'https://schema.org', '@graph': [{'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': 'HESCO bill check online kaise karein?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'HESCO billing sheet check verification parameters 14-digit references key values mapping run perform ki jati hai. Hyderabad division, Badin, Jamshoro aur Sanghar zones utilities details verify kiye ja sakte hain.'}} ,{'@type': 'Question', 'name': 'HESCO reference settings duplicate key errors trace check kaise resolve karein?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Electricity database check updates main prefix configurations standard correct validation target link check verify target options configure guide checks perform execute checks follow check parameters match rules use karein.'}} ,{'@type': 'Question', 'name': 'HESCO regional helpline office contacts directory detail kya hai?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'HESCO head office Hussainabad, Hyderabad par based hai. Grid line problems ya meter replacement customer care helpline lines (022) 9260161 ya 118 central customer cell support active detail provide karti hain.'}} ,{'@type': 'Question', 'name': 'HESCO online duplicate layout sheets printing parameters options kya hain?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Print settings standard size A4 width setup run verification page commands select option landscape or portrait modes standard web formats verify execute copy download options select run save kar sakte hain.'}} ]}, {'@type': 'WebApplication', 'name': 'HESCO Bill Checker', 'applicationCategory': 'UtilityApplication', 'operatingSystem': 'Web Browser', 'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'PKR'}, 'url': 'https://tools2do.com/pk/check-hesco-bill'}, {'@type': 'BreadcrumbList', 'itemListElement': [{'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://tools2do.com'}, {'@type': 'ListItem', 'position': 2, 'name': 'Pakistan Utilities', 'item': 'https://tools2do.com/pk'}, {'@type': 'ListItem', 'position': 3, 'name': 'HESCO Bill Checker', 'item': 'https://tools2do.com/pk/check-hesco-bill'}]}]};
 
 const faqItems = (jsonLd['@graph'][0] as any).mainEntity;
 
 export default function Page(): React.ReactElement {
   return (
     <>
-      <Script id="check_hesco_bill-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script id="check_hesco_bill-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <article className="mx-auto max-w-5xl px-4 py-10 md:px-6">
         <h1 className="text-[length:var(--text-h1)] font-extrabold text-[var(--text-primary)]">HESCO Bill Checker – Hyderabad Electric Supply Company</h1>
         <p className="mt-4 max-w-3xl leading-7 text-[var(--text-secondary)]">Validate your HESCO reference number format and access the official bill portal for Hyderabad region. Fast, mobile-friendly, no data stored.</p>

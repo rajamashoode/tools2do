@@ -7,7 +7,7 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPolicy(): React.ReactElement {
-  const updated = 'June 2025';
+  const updated = 'June 2026';
   return (
     <article className="mx-auto max-w-3xl px-4 py-14 md:px-6">
       <h1 className="text-[length:var(--text-h1)] font-extrabold text-[var(--text-primary)]">Privacy Policy</h1>

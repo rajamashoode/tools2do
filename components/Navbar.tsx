@@ -5,6 +5,7 @@ import { GitFork, Menu, Search, X } from 'lucide-react';
 import { useState } from 'react';
 import { CommandPalette } from '@/components/CommandPalette';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import { siteConfig } from '@/lib/site-config';
 
 const navLinks = [
   { href: '/',                      label: 'Developer Tools'    },
@@ -49,7 +50,7 @@ export function Navbar(): React.ReactElement {
           {/* Desktop right actions */}
           <div className="hidden items-center gap-3 md:flex">
             <a
-              href="https://github.com/rajamashood/tools2do"
+              href={siteConfig.social.github}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-[var(--border-default)] bg-[var(--bg-surface)] px-3 py-2 text-sm text-[var(--text-primary)] hover:bg-[var(--bg-surface-hover)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-indigo)]"

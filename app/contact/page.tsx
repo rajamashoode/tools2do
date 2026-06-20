@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
   title: 'Contact Tools2Do',
@@ -20,10 +21,10 @@ export default function ContactPage(): React.ReactElement {
           <h2 className="text-[length:var(--text-h2)] font-bold text-[var(--text-primary)] mb-3">Email</h2>
           <p className="text-[var(--text-secondary)]">For support, bug reports, corrections, and general questions:</p>
           <a
-            href="mailto:rajamashoodelahi@gmail.com"
+            href={`mailto:${siteConfig.email}`}
             className="mt-3 inline-flex items-center gap-2 rounded-xl bg-[var(--accent-action)] px-5 py-3 font-bold text-white hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-indigo)]"
           >
-            rajamashoodelahi@gmail.com
+            {siteConfig.email}
           </a>
         </div>
 
@@ -44,12 +45,12 @@ export default function ContactPage(): React.ReactElement {
           <p className="text-[var(--text-secondary)] mb-4">You can also find Tools2Do updates through these profiles:</p>
           <div className="flex flex-wrap gap-2">
             {[
-              { label: 'GitHub',     href: 'https://github.com/rajamashoode/tools2do' },
-              { label: 'Instagram',href: 'https://instagram.com/rajamashoodelahi'               },
-              { label: 'LinkedIn',   href: 'https://linkedin.com/in/rajamashoodelahi'     },
-              { label: 'Facebook',   href: 'https://facebook.com/rajamashoodelahi'        },
-              { label: 'Instagram',  href: 'https://instagram.com/rajamashoodelahi'       },
-              { label: 'TikTok',     href: 'https://tiktok.com/@rajamashoodelahi'         },
+              { label: 'GitHub',    href: siteConfig.social.github },
+              { label: 'Instagram', href: siteConfig.social.instagram },
+              { label: 'LinkedIn',  href: siteConfig.social.linkedin },
+              { label: 'Facebook',  href: siteConfig.social.facebook },
+              { label: 'TikTok',    href: siteConfig.social.tiktok },
+              { label: 'YouTube',   href: siteConfig.social.youtube },
             ].map(s => (
               <a
                 key={s.href}

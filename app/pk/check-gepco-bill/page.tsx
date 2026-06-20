@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import { BillChecker } from '@/components/tools/BillChecker';
 
 export function generateMetadata(): Metadata {
@@ -11,28 +10,14 @@ export function generateMetadata(): Metadata {
   };
 }
 
-const jsonLd = {'@context':'https://schema.org','@graph':[
-  {'@type':'FAQPage','mainEntity':[
-    {'@type':'Question','name':'GEPCO bill check online kaise karo?','acceptedAnswer':{'@type':'Answer','text':'GEPCO bill check ke liye apna 14-digit Reference Number enter karein. Live bill ke liye official GEPCO portal use karein.'}},
-    {'@type':'Question','name':'14-digit GEPCO reference number kahan milta hai?','acceptedAnswer':{'@type':'Answer','text':'Reference number purane bill ke top section mein hota hai. Consumer ID se alag hota hai — bill par printed number copy karein.'}},
-    {'@type':'Question','name':'GEPCO duplicate bill download kaise karein?','acceptedAnswer':{'@type':'Answer','text':'Official GEPCO portal par reference number enter karein. Wahan print ya download browser ke PDF option se ho sakta hai.'}},
-    {'@type':'Question','name':'GEPCO bill payment last date kya hoti hai?','acceptedAnswer':{'@type':'Answer','text':'Payment due date har bill par printed hoti hai. Late surcharge bachne ke liye due date se pehle payment karein.'}},
-    {'@type':'Question','name':'GEPCO bill ka unit rate kya hai?','acceptedAnswer':{'@type':'Answer','text':'GEPCO unit rates NEPRA ke quarterly notifications ke mutabiq change hote hain. Current rates official GEPCO website par dekh saktay hain.'}}
-  ]},
-  {'@type':'WebApplication','name':'GEPCO Bill Checker','applicationCategory':'UtilityApplication','operatingSystem':'Web Browser','offers':{'@type':'Offer','price':'0','priceCurrency':'PKR'},'url':'https://tools2do.com/pk/check-gepco-bill'},
-  {'@type':'BreadcrumbList','itemListElement':[
-    {'@type':'ListItem','position':1,'name':'Home','item':'https://tools2do.com'},
-    {'@type':'ListItem','position':2,'name':'Pakistan Utilities','item':'https://tools2do.com/pk'},
-    {'@type':'ListItem','position':3,'name':'GEPCO Bill Checker','item':'https://tools2do.com/pk/check-gepco-bill'}
-  ]}
-]};
+const jsonLd = {'@context': 'https://schema.org', '@graph': [{'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': 'GEPCO bill check online kaise karein?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'GEPCO electricity bill validation check 14-digit unique reference identifier se trace hoti hai. Gujranwala, Sialkot, Gujarat aur Hafizabad region limits check parameters perform ho sakte hain.'}} ,{'@type': 'Question', 'name': 'GEPCO commercial aur industrial billing accounts details kahan dekhein?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'High-voltage industrial meters ya commercial connections check validation parameters standard domestic meters se differ karte hain. Inki official ledger print operations special query links verify kiye jate hain.'}} ,{'@type': 'Question', 'name': 'GEPCO corporate helpdesk location contact details kya hain?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'GEPCO headquarters Sialkot Road, Model Town Gujranwala par located hai. Billing errors verification help check customer complaints contact toll line (055) 9200507 hai.'}} ,{'@type': 'Question', 'name': 'GEPCO duplicate bills verify kaise hote hain?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Security barcode values print validation complete hone par official utility server direct authentication sheet provide karta hai, jo all banks/post office counters par acceptable hoti hai.'}} ]}, {'@type': 'WebApplication', 'name': 'GEPCO Bill Checker', 'applicationCategory': 'UtilityApplication', 'operatingSystem': 'Web Browser', 'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'PKR'}, 'url': 'https://tools2do.com/pk/check-gepco-bill'}, {'@type': 'BreadcrumbList', 'itemListElement': [{'@type': 'ListItem', 'position': 1, 'name': 'Home', 'item': 'https://tools2do.com'}, {'@type': 'ListItem', 'position': 2, 'name': 'Pakistan Utilities', 'item': 'https://tools2do.com/pk'}, {'@type': 'ListItem', 'position': 3, 'name': 'GEPCO Bill Checker', 'item': 'https://tools2do.com/pk/check-gepco-bill'}]}]};
 
 const faqItems = (jsonLd['@graph'][0] as any).mainEntity;
 
 export default function Page(): React.ReactElement {
   return (
     <>
-      <Script id="check_gepco_bill-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script id="check_gepco_bill-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <article className="mx-auto max-w-5xl px-4 py-10 md:px-6">
         <h1 className="text-[length:var(--text-h1)] font-extrabold text-[var(--text-primary)]">GEPCO Bill Checker – Gujranwala Electric Power Company</h1>
         <p className="mt-4 max-w-3xl leading-7 text-[var(--text-secondary)]">Validate your GEPCO reference number format and access the official bill portal for Gujranwala region. Fast, mobile-friendly, no data stored.</p>

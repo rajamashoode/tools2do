@@ -7,8 +7,8 @@ type Props = { params: Promise<{ slug: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const tool = TOOLS_REGISTRY.find((item) => item.slug === `/pk/${slug}`);
-  if (!tool) return { title: 'Utility Not Found' };
-  return { title: tool.name, description: tool.description, alternates: { canonical: `https://tools2do.com${tool.slug}` } };
+  if (!tool) return { title: 'Utility Not Found', robots: { index: false, follow: true } };
+  return { title: tool.name, description: tool.description, alternates: { canonical: `https://tools2do.com${tool.slug}` }, robots: { index: false, follow: true } };
 }
 
 export default async function GenericPakistanUtilityPage({ params }: Props): Promise<React.ReactElement> {

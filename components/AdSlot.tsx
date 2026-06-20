@@ -23,6 +23,7 @@ const containerClasses: Record<Position, string> = {
 export function AdSlot({ position }: Props): React.ReactElement {
   const ref     = useRef<HTMLDivElement | null>(null);
   const [visible, setVisible] = useState(false);
+  const [adFailed, setAdFailed] = useState(false);
   const pushed  = useRef(false);
 
   useEffect(() => {
@@ -44,8 +45,20 @@ export function AdSlot({ position }: Props): React.ReactElement {
       win.adsbygoogle = win.adsbygoogle ?? [];
       win.adsbygoogle.push({});
     } catch {
-      // AdSense not loaded — slot renders as placeholder
+      setAdFailed(true);
     }
+
+    const timer = setTimeout(() => {
+      const ins = ref.current?.querySelector('ins');
+      if (ins) {
+        const hasContent = ins.innerHTML.trim().length > 0;
+        const unfilled = ins.getAttribute('data-ad-status') === 'unfilled';
+        if (!hasContent || unfilled) {
+          setAdFailed(true);
+        }
+      }
+    }, 2000);
+    return () => clearTimeout(timer);
   }, [visible]);
 
   const clientId = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID ?? 'ca-pub-0000000000000000';
@@ -55,10 +68,10 @@ export function AdSlot({ position }: Props): React.ReactElement {
     <div
       ref={ref}
       style={reservedStyles[position]}
-      className={`${containerClasses[position]} rounded-2xl border border-dashed border-[var(--border-default)] bg-[var(--bg-surface)] p-2 text-center`}
-      aria-label={`${position} advertisement`}
+      className={`${containerClasses[position]} rounded-2xl ${adFailed ? '' : 'border border-dashed border-[var(--border-default)] bg-[var(--bg-surface)] p-2 text-center'}`}
+      aria-label={adFailed ? undefined : `${position} advertisement`}
     >
-      <p className="mb-1 text-xs text-[var(--text-muted)]">Advertisement</p>
+      {!adFailed && <p className="mb-1 text-xs text-[var(--text-muted)]">Advertisement</p>}
       {visible && (
         <ins
           className="adsbygoogle block"

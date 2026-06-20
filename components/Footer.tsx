@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { siteConfig } from '@/lib/site-config';
 
 const devTools = [
   { href: '/tools/json-formatter',        label: 'JSON Formatter'      },
@@ -27,12 +28,12 @@ const pkTools = [
 ];
 
 const socialLinks = [
-  { href: 'https://github.com/rajamashoode/tools2do',      label: 'GitHub'    },
-  { href: 'https://instagram.com/rajamashoodelahi',        label: 'Instagram' },
-  { href: 'https://linkedin.com/in/rajamashoodelahi',      label: 'LinkedIn'  },
-  { href: 'https://facebook.com/rajamashoodelahi',         label: 'Facebook'  },
-  { href: 'https://tiktok.com/@rajamashoodelahi',          label: 'TikTok'    },
-  { href: 'https://youtube.com/@rajamashoodelahi',         label: 'YouTube'   },
+  { href: siteConfig.social.github,    label: 'GitHub'    },
+  { href: siteConfig.social.instagram, label: 'Instagram' },
+  { href: siteConfig.social.linkedin,  label: 'LinkedIn'  },
+  { href: siteConfig.social.facebook,  label: 'Facebook'  },
+  { href: siteConfig.social.tiktok,    label: 'TikTok'    },
+  { href: siteConfig.social.youtube,   label: 'YouTube'   },
 ];
 
 export function Footer(): React.ReactElement {
@@ -51,13 +52,13 @@ export function Footer(): React.ReactElement {
             </p>
             <p className="mt-3 text-sm text-[var(--text-secondary)]">
               📍 Abbottabad, Pakistan<br />
-              ✉️ <a href="mailto:rajamashoodelahi@gmail.com" className="hover:text-[var(--accent-action)] transition-colors">rajamashoodelahi@gmail.com</a>
+              ✉️ <a href={`mailto:${siteConfig.email}`} className="hover:text-[var(--accent-action)] transition-colors">{siteConfig.email}</a>
             </p>
           </div>
 
           {/* Developer tools */}
           <nav aria-label="Developer tools" className="grid gap-1.5 text-sm">
-            <h2 className="font-bold text-[var(--text-primary)] mb-1">Developer Tools</h2>
+            <h3 className="font-bold text-[var(--text-primary)] mb-1">Developer Tools</h3>
             {devTools.map(t => (
               <Link key={t.href} href={t.href} className="text-[var(--text-secondary)] hover:text-[var(--accent-action)] transition-colors">{t.label}</Link>
             ))}
@@ -65,7 +66,7 @@ export function Footer(): React.ReactElement {
 
           {/* Pakistan utilities */}
           <nav aria-label="Pakistan utilities" className="grid gap-1.5 text-sm">
-            <h2 className="font-bold text-[var(--text-primary)] mb-1">Pakistan Utilities</h2>
+            <h3 className="font-bold text-[var(--text-primary)] mb-1">Pakistan Utilities</h3>
             {pkTools.map(t => (
               <Link key={t.href} href={t.href} className="text-[var(--text-secondary)] hover:text-[var(--accent-action)] transition-colors">{t.label}</Link>
             ))}
@@ -74,9 +75,10 @@ export function Footer(): React.ReactElement {
           {/* Company + Social */}
           <div className="grid gap-4 text-sm">
             <nav aria-label="Company links">
-              <h2 className="font-bold text-[var(--text-primary)] mb-1">Company</h2>
+              <h3 className="font-bold text-[var(--text-primary)] mb-1">Company</h3>
               <div className="grid gap-1.5">
                 <Link href="/about"          className="text-[var(--text-secondary)] hover:text-[var(--accent-action)] transition-colors">About</Link>
+                <Link href="/team"           className="text-[var(--text-secondary)] hover:text-[var(--accent-action)] transition-colors">Team</Link>
                 <Link href="/contact"        className="text-[var(--text-secondary)] hover:text-[var(--accent-action)] transition-colors">Contact</Link>
                 <Link href="/privacy-policy" className="text-[var(--text-secondary)] hover:text-[var(--accent-action)] transition-colors">Privacy Policy</Link>
                 <Link href="/terms"          className="text-[var(--text-secondary)] hover:text-[var(--accent-action)] transition-colors">Terms of Service</Link>
@@ -84,7 +86,7 @@ export function Footer(): React.ReactElement {
               </div>
             </nav>
             <nav aria-label="Social media profiles">
-              <h2 className="font-bold text-[var(--text-primary)] mb-1">Follow Us</h2>
+              <h3 className="font-bold text-[var(--text-primary)] mb-1">Follow Us</h3>
               <div className="grid gap-1.5">
                 {socialLinks.map(s => (
                   <a key={s.href} href={s.href} target="_blank" rel="noreferrer"

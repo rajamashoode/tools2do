@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Team',
+  title: 'Tools2Do Team – Our Editors, Developers & Maintainers',
   description:
     'Meet the Tools2Do team and learn who maintains the free browser-based tools and Pakistan utility guides on Tools2Do.com.',
   alternates: { canonical: 'https://tools2do.com/team' },
@@ -40,7 +41,7 @@ export default function TeamPage(): React.ReactElement {
             </p>
             <div className="mt-4 flex flex-wrap gap-3 text-sm">
               <a
-                href="https://github.com/rajamashoode/tools2do"
+                href={siteConfig.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-[var(--accent-action)] hover:underline"
@@ -48,7 +49,7 @@ export default function TeamPage(): React.ReactElement {
                 GitHub repository
               </a>
               <a
-                href="https://x.com/rajamashoodelahi"
+                href={siteConfig.social.twitter}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-[var(--accent-action)] hover:underline"
@@ -56,7 +57,7 @@ export default function TeamPage(): React.ReactElement {
                 X / Twitter
               </a>
               <a
-                href="https://linkedin.com/in/rajamashoodelahi"
+                href={siteConfig.social.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-semibold text-[var(--accent-action)] hover:underline"

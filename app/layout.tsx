@@ -7,6 +7,7 @@ import { Footer } from '@/components/Footer';
 import { Navbar } from '@/components/Navbar';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { BackToTop } from '@/components/BackToTop';
+import { siteConfig } from '@/lib/site-config';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap', weight: ['300','400','500','600','700','800','900'] });
 const jakarta = Plus_Jakarta_Sans({ subsets: ['latin'], variable: '--font-heading-var', display: 'swap', weight: ['400','500','600','700','800'] });
@@ -15,7 +16,6 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://tools2do.com'),
   title: { default: 'Tools2Do – Free Online Developer Tools & Pakistan Utilities', template: '%s | Tools2Do' },
   description: 'Free browser-based tools for developers and Pakistan utility helpers. JSON formatter, image compressor, LESCO bill checker and 40+ more tools. No signup, no upload.',
-  keywords: ['online tools','developer tools','LESCO bill','image compressor','JSON formatter','Pakistan utilities','free tools'],
   openGraph: {
     siteName: 'Tools2Do',
     type: 'website',
@@ -31,6 +31,8 @@ export const metadata: Metadata = {
 const GA_ID = 'G-CFHWRFE835';
 const ADSENSE_ID = process.env.NEXT_PUBLIC_ADSENSE_CLIENT_ID ?? 'ca-pub-0000000000000000';
 
+// Sitewide Organisation + WebSite schema — injected once here in the root layout.
+// Do NOT duplicate this block in any page.tsx file.
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -41,11 +43,8 @@ const websiteSchema = {
       name: 'Tools2Do',
       description: 'Free browser-based tools for developers and Pakistan utility helpers.',
       publisher: { '@id': 'https://tools2do.com/#organization' },
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: { '@type': 'EntryPoint', urlTemplate: 'https://tools2do.com/?q={search_term_string}' },
-        'query-input': 'required name=search_term_string',
-      },
+      // NOTE: SearchAction is intentionally omitted — the site has no server-rendered
+      // search results page at a stable URL. Add it only when a real /search page exists.
     },
     {
       '@type': 'Organization',
@@ -53,15 +52,15 @@ const websiteSchema = {
       name: 'Tools2Do',
       url: 'https://tools2do.com',
       logo: { '@type': 'ImageObject', url: 'https://tools2do.com/logo.svg' },
-      contactPoint: { '@type': 'ContactPoint', email: 'rajamashoodelahi@gmail.com', contactType: 'customer support' },
+      contactPoint: { '@type': 'ContactPoint', email: 'support@tools2do.com', contactType: 'customer support' },
       address: { '@type': 'PostalAddress', addressLocality: 'Abbottabad', addressCountry: 'PK' },
       sameAs: [
-        'https://github.com/rajamashoode/tools2do',
-        'https://instagram.com/rajamashoodelahi',
-        'https://linkedin.com/in/rajamashoodelahi',
-        'https://facebook.com/rajamashoodelahi',
-        'https://tiktok.com/@rajamashoodelahi',
-        'https://youtube.com/@rajamashoodelahi',
+        siteConfig.social.github,
+        siteConfig.social.instagram,
+        siteConfig.social.linkedin,
+        siteConfig.social.facebook,
+        siteConfig.social.tiktok,
+        siteConfig.social.youtube,
       ],
     },
   ],
@@ -89,10 +88,9 @@ export default function RootLayout({ children }: Props): React.ReactElement {
           strategy="afterInteractive"
         />
         {/* Organization + WebSite Schema */}
-        <Script
+        <script
           id="website-schema"
           type="application/ld+json"
-          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>

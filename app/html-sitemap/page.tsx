@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { GLOBAL_TOOLS, PK_TOOLS } from '@/lib/tools-registry';
 
 export const metadata: Metadata = {
-  title: 'HTML Sitemap',
+  title: 'HTML Sitemap – All Tools & Pages | Tools2Do',
   description:
-    'Browse the complete Tools2Do HTML sitemap, including online tools, Pakistan utility pages, and company pages.',
+    'Browse the complete Tools2Do sitemap including all free online tools, Pakistan utility pages, and company information.',
   alternates: { canonical: 'https://tools2do.com/html-sitemap' },
 };
 

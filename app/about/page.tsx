@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
   title: 'About – Tools2Do',
@@ -16,7 +17,7 @@ export default function About(): React.ReactElement {
         <section>
           <h2 className="text-[length:var(--text-h2)] font-bold text-[var(--text-primary)] mb-3">What is Tools2Do?</h2>
           <p>Tools2Do.com is a free collection of browser-based utility tools built for two audiences: developers and tech users worldwide who need fast everyday utilities, and Pakistani consumers who need quick access to utility bill helpers, government program tracking, and local services.</p>
-          <p className="mt-3">Every tool on this site runs entirely in your browser. No files are uploaded. No text is sent to a server. No account is needed.</p>
+          <p className="mt-3">Most tools on this site run entirely in your browser — no files are uploaded, no text is sent to our servers, and no account is needed. A small number of tools use trusted third-party APIs to deliver their functionality; for example, the QR Code Generator uses the QR Server API, which means your input text is sent to that external service. See our <a href="/privacy-policy" className="font-semibold text-[var(--accent-action)] hover:underline">Privacy Policy</a> for the full list of third-party services used.</p>
         </section>
 
         <section>
@@ -46,10 +47,10 @@ export default function About(): React.ReactElement {
           <p>Found a bug or want to suggest a tool? Reach out on social media:</p>
           <div className="mt-3 flex flex-wrap gap-3">
             {[
-              { label: 'TikTok', href: 'https://tiktok.com/@rajamashoodelahi' },
-              { label: 'Facebook', href: 'https://facebook.com/rajamashoodelahi' },
-              { label: 'Instagram', href: 'https://instagram.com/rajamashoodelahi' },
-              { label: 'LinkedIn', href: 'https://linkedin.com/in/rajamashoodelahi' },
+              { label: 'TikTok', href: siteConfig.social.tiktok },
+              { label: 'Facebook', href: siteConfig.social.facebook },
+              { label: 'Instagram', href: siteConfig.social.instagram },
+              { label: 'LinkedIn', href: siteConfig.social.linkedin },
             ].map(s => (
               <a key={s.label} href={s.href} target="_blank" rel="noreferrer" className="rounded-xl border border-[var(--border-default)] px-4 py-2 text-sm font-semibold hover:bg-[var(--bg-surface-hover)] hover:border-[var(--accent-indigo)] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-indigo)]">
                 {s.label}
