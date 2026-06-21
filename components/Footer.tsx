@@ -78,6 +78,7 @@ export function Footer(): React.ReactElement {
               <h3 className="font-bold text-[var(--text-primary)] mb-1">Company</h3>
               <div className="grid gap-1.5">
                 <Link href="/about"          className="text-[var(--text-secondary)] hover:text-[var(--accent-action)] transition-colors">About</Link>
+                <Link href="/blog"           className="text-[var(--text-secondary)] hover:text-[var(--accent-action)] transition-colors">Blog</Link>
                 <Link href="/team"           className="text-[var(--text-secondary)] hover:text-[var(--accent-action)] transition-colors">Team</Link>
                 <Link href="/contact"        className="text-[var(--text-secondary)] hover:text-[var(--accent-action)] transition-colors">Contact</Link>
                 <Link href="/privacy-policy" className="text-[var(--text-secondary)] hover:text-[var(--accent-action)] transition-colors">Privacy Policy</Link>

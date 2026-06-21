@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { GLOBAL_TOOLS, PK_TOOLS } from '@/lib/tools-registry';
+import { blogPosts } from '@/lib/blog-posts';
 
 export const metadata: Metadata = {
   title: 'HTML Sitemap – All Tools & Pages | Tools2Do',
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
 const companyPages = [
   { href: '/', label: 'Home' },
   { href: '/pk', label: 'Pakistan Utilities' },
+  { href: '/blog', label: 'Tools2Do Blog' },
   { href: '/about', label: 'About' },
   { href: '/team', label: 'Team' },
   { href: '/contact', label: 'Contact' },
@@ -56,11 +58,13 @@ export default function HtmlSitemapPage(): React.ReactElement {
               Blog & News
             </h2>
             <ul className="mt-4 grid gap-2 text-sm">
-              <li>
-                <Link href="/blog/pta-tax-abolished-pakistan-smartphones-regulatory-duty-update" className="text-[var(--text-secondary)] hover:text-[var(--accent-action)] hover:underline">
-                  PTA Tax Abolished in Pakistan? Smartphone Regulatory Duty Update Explained
-                </Link>
-              </li>
+              {blogPosts.map((post) => (
+                <li key={post.slug}>
+                  <Link href={post.href} className="text-[var(--text-secondary)] hover:text-[var(--accent-action)] hover:underline">
+                    {post.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
 

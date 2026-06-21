@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { GLOBAL_TOOLS, PK_TOOLS } from '@/lib/tools-registry';
-
+import { blogPosts } from '@/lib/blog-posts';
 // Static build date used as a stable lastModified anchor.
 // Update this date when you make meaningful content changes to a page group.
 // Do NOT use `new Date()` here — that makes every page appear freshly changed on every build,
@@ -38,9 +38,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     })),
 
-    // Blog Posts
-    { url: 'https://tools2do.com/blog/pta-tax-abolished-pakistan-smartphones-regulatory-duty-update', lastModified: new Date(), changeFrequency: 'daily' as const, priority: 0.75 },
+    // Blog Hub
+    { url: 'https://tools2do.com/blog',       lastModified: SITE_LAST_MODIFIED,     changeFrequency: 'weekly', priority: 0.7 },
 
+    // Blog Posts
+    ...blogPosts.map(post => ({
+      url: `https://tools2do.com${post.href}`,
+      lastModified: post.updatedAt ? new Date(post.updatedAt) : new Date(post.publishedAt),
+      changeFrequency: 'weekly' as const,
+      priority: 0.75,
+    })),
     // Programmatic SEO Pages
     { url: 'https://tools2do.com/tools/image-compressor/compress-image-to-100kb', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
     { url: 'https://tools2do.com/tools/image-compressor/compress-image-to-200kb', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },

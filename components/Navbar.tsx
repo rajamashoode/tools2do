@@ -10,6 +10,7 @@ import { siteConfig } from '@/lib/site-config';
 const navLinks = [
   { href: '/',                      label: 'Developer Tools'    },
   { href: '/pk',                    label: 'Pakistan Utilities' },
+  { href: '/blog',                  label: 'Blog'               },
   { href: '/tools/json-formatter',  label: 'JSON Formatter'     },
   { href: '/pk/check-lesco-bill',   label: 'LESCO Bill'         },
 ];

@@ -1,4 +1,5 @@
 import { TOOLS_REGISTRY } from '@/lib/tools-registry';
+import { blogPosts } from '@/lib/blog-posts';
 
 // P3-J fix: Use stable per-item dates instead of new Date() at build time.
 // Previously, every item had the build timestamp as pubDate — this gave RSS readers
@@ -32,6 +33,15 @@ export async function GET(): Promise<Response> {
       <pubDate>${TOOL_DATES[tool.id] ?? TOOLS_LAST_MODIFIED}</pubDate>
     </item>`).join('');
 
+  const blogItems = blogPosts.map(post => `
+    <item>
+      <title><![CDATA[${post.title}]]></title>
+      <link>${base}${post.href}</link>
+      <guid isPermaLink="true">${base}${post.href}</guid>
+      <description><![CDATA[${post.excerpt}]]></description>
+      <pubDate>${new Date(post.publishedAt).toUTCString()}</pubDate>
+    </item>`).join('');
+
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -41,6 +51,7 @@ export async function GET(): Promise<Response> {
     <language>en-us</language>
     <lastBuildDate>${feedLastBuild}</lastBuildDate>
     <atom:link href="${base}/feed.xml" rel="self" type="application/rss+xml"/>
+    ${blogItems}
     ${items}
   </channel>
 </rss>`;
