@@ -51,6 +51,19 @@ export default function HtmlSitemapPage(): React.ReactElement {
             </ul>
           </nav>
 
+          <nav aria-labelledby="blog-news-heading" className="rounded-2xl border border-[var(--border-default)] bg-[var(--bg-canvas)] p-5">
+            <h2 id="blog-news-heading" className="text-xl font-bold text-[var(--text-primary)]">
+              Blog & News
+            </h2>
+            <ul className="mt-4 grid gap-2 text-sm">
+              <li>
+                <Link href="/blog/pta-tax-abolished-pakistan-smartphones-regulatory-duty-update" className="text-[var(--text-secondary)] hover:text-[var(--accent-action)] hover:underline">
+                  PTA Tax Abolished in Pakistan? Smartphone Regulatory Duty Update Explained
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
           <nav aria-labelledby="global-tools-heading" className="rounded-2xl border border-[var(--border-default)] bg-[var(--bg-canvas)] p-5">
             <h2 id="global-tools-heading" className="text-xl font-bold text-[var(--text-primary)]">
               Online Tools

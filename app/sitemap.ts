@@ -38,6 +38,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     })),
 
+    // Blog Posts
+    { url: 'https://tools2do.com/blog/pta-tax-abolished-pakistan-smartphones-regulatory-duty-update', lastModified: new Date(), changeFrequency: 'daily' as const, priority: 0.75 },
+
     // Programmatic SEO Pages
     { url: 'https://tools2do.com/tools/image-compressor/compress-image-to-100kb', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
     { url: 'https://tools2do.com/tools/image-compressor/compress-image-to-200kb', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
