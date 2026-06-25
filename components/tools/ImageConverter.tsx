@@ -25,10 +25,14 @@ function formatBytes(b: number): string {
 function extOf(fmt: OutputFormat): string {
   return fmt === 'image/png' ? 'png' : fmt === 'image/webp' ? 'webp' : 'jpg';
 }
+type ImageConverterProps = {
+  initialFormat?: OutputFormat;
+  targetFormat?: OutputFormat;
+};
 
-export function ImageConverter(): React.ReactElement {
+export function ImageConverter({ initialFormat = 'image/webp', targetFormat }: ImageConverterProps = {}): React.ReactElement {
   const [files, setFiles]     = useState<File[]>([]);
-  const [format, setFormat]   = useState<OutputFormat>('image/webp');
+  const [format, setFormat]   = useState<OutputFormat>(targetFormat || initialFormat);
   const [quality, setQuality] = useState(82);
   const [targetW, setTargetW] = useState('');
   const [targetH, setTargetH] = useState('');
@@ -141,7 +145,7 @@ export function ImageConverter(): React.ReactElement {
             {/* Format */}
             <div>
               <label className="block text-sm font-semibold mb-1 text-[var(--text-primary)]">Output format</label>
-              <select value={format} onChange={e => setFormat(e.target.value as OutputFormat)} className="w-full rounded-xl border border-[var(--border-default)] bg-[var(--bg-canvas)] px-3 py-2.5 text-sm outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-indigo)]">
+              <select disabled={!!targetFormat} value={format} onChange={e => setFormat(e.target.value as OutputFormat)} className="w-full rounded-xl border border-[var(--border-default)] bg-[var(--bg-canvas)] px-3 py-2.5 text-sm outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-indigo)] disabled:opacity-50">
                 <option value="image/webp">WebP (best web)</option>
                 <option value="image/jpeg">JPG</option>
                 <option value="image/png">PNG (lossless)</option>

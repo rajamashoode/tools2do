@@ -1,57 +1,159 @@
-import type { MetadataRoute } from 'next';
-import { GLOBAL_TOOLS, PK_TOOLS } from '@/lib/tools-registry';
-import { blogPosts } from '@/lib/blog-posts';
-// Static build date used as a stable lastModified anchor.
-// Update this date when you make meaningful content changes to a page group.
-// Do NOT use `new Date()` here — that makes every page appear freshly changed on every build,
-// which sends inaccurate freshness signals to Googlebot.
-const TOOLS_LAST_MODIFIED   = new Date('2026-06-20');
-const PK_TOOLS_LAST_MODIFIED = new Date('2026-06-20');
-const SITE_LAST_MODIFIED    = new Date('2026-06-20');
+import { MetadataRoute } from 'next';
+
+// --------------------------------------------------------------------------------
+// IMPORTANT: IF YOU ADD NEW ROUTES, MAKE SURE TO ADD THEM HERE!
+// --------------------------------------------------------------------------------
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    // Core pages
-    { url: 'https://tools2do.com',            lastModified: SITE_LAST_MODIFIED,     changeFrequency: 'weekly',  priority: 1.0 },
-    { url: 'https://tools2do.com/pk',         lastModified: PK_TOOLS_LAST_MODIFIED, changeFrequency: 'weekly',  priority: 0.9 },
-    { url: 'https://tools2do.com/about',      lastModified: SITE_LAST_MODIFIED,     changeFrequency: 'monthly', priority: 0.6 },
-    { url: 'https://tools2do.com/contact',    lastModified: SITE_LAST_MODIFIED,     changeFrequency: 'monthly', priority: 0.5 },
-    { url: 'https://tools2do.com/team',       lastModified: SITE_LAST_MODIFIED,     changeFrequency: 'monthly', priority: 0.5 },
-    { url: 'https://tools2do.com/privacy-policy', lastModified: SITE_LAST_MODIFIED, changeFrequency: 'yearly',  priority: 0.4 },
-    { url: 'https://tools2do.com/terms',      lastModified: SITE_LAST_MODIFIED,     changeFrequency: 'yearly',  priority: 0.4 },
-    { url: 'https://tools2do.com/html-sitemap', lastModified: SITE_LAST_MODIFIED,   changeFrequency: 'monthly', priority: 0.3 },
+  const CORE_LAST_MODIFIED = new Date().toISOString();
+  const TOOLS_LAST_MODIFIED = new Date().toISOString();
+  const BLOG_LAST_MODIFIED = new Date('2024-03-20').toISOString();
 
-    // Global tools
-    ...GLOBAL_TOOLS.map(tool => ({
-      url: `https://tools2do.com${tool.slug}`,
-      lastModified: TOOLS_LAST_MODIFIED,
-      changeFrequency: 'monthly' as const,
-      priority: tool.isFeatured ? 0.9 : 0.8,
-    })),
+  const coreRoutes = [
+    { url: 'https://tools2do.com', lastModified: CORE_LAST_MODIFIED, changeFrequency: 'daily' as const, priority: 1.0 },
+    { url: 'https://tools2do.com/tools', lastModified: CORE_LAST_MODIFIED, changeFrequency: 'daily' as const, priority: 0.9 },
+    { url: 'https://tools2do.com/blog', lastModified: BLOG_LAST_MODIFIED, changeFrequency: 'weekly' as const, priority: 0.8 },
+    { url: 'https://tools2do.com/about', lastModified: CORE_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.5 },
+    { url: 'https://tools2do.com/contact', lastModified: CORE_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.5 },
+    { url: 'https://tools2do.com/privacy-policy', lastModified: CORE_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.3 },
+    { url: 'https://tools2do.com/terms-of-service', lastModified: CORE_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.3 },
+    { url: 'https://tools2do.com/blog/pta-tax-abolished-pakistan-smartphones-regulatory-duty-update', lastModified: BLOG_LAST_MODIFIED, changeFrequency: 'yearly' as const, priority: 0.6 }
+  ];
 
-    // Pakistan utility pages — 'weekly' because guides may be updated with new portal links
-    // and price/program changes. Not 'daily' since these are static content pages.
-    ...PK_TOOLS.map(tool => ({
-      url: `https://tools2do.com${tool.slug}`,
-      lastModified: PK_TOOLS_LAST_MODIFIED,
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-    })),
-
-    // Blog Hub
-    { url: 'https://tools2do.com/blog',       lastModified: SITE_LAST_MODIFIED,     changeFrequency: 'weekly', priority: 0.7 },
-
-    // Blog Posts
-    ...blogPosts.map(post => ({
-      url: `https://tools2do.com${post.href}`,
-      lastModified: post.updatedAt ? new Date(post.updatedAt) : new Date(post.publishedAt),
-      changeFrequency: 'weekly' as const,
-      priority: 0.75,
-    })),
-    // Programmatic SEO Pages
+  const dynamicRoutes = [
+    { url: 'https://tools2do.com/pakistan-tools/electricity-subsidy-calculator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/pakistan-tools/fesco-bill-checker', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/pakistan-tools/gepco-bill-checker', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/pakistan-tools/hesco-bill-checker', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/pakistan-tools/iesco-bill-checker', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/pakistan-tools/lesco-bill-checker', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/pakistan-tools/mepco-bill-checker', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/pakistan-tools/pesco-bill-checker', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/pakistan-tools/pta-tax-calculator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/pakistan-tools/qesco-bill-checker', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/pakistan-tools/sepco-bill-checker', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/pakistan-tools/tesco-bill-checker', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/[slug]', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/age-calculator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/age-calculator/baby-age-calculator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/age-calculator/birthday-calculator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/age-calculator/chronological-age-calculator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/base64', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/base64-encoder/base64-decode-string', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/base64-encoder/base64-encode-string', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/case-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/case-converter/camel-case-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/case-converter/kebab-case-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/case-converter/lowercase-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/case-converter/pascal-case-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/case-converter/sentence-case-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/case-converter/snake-case-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/case-converter/title-case-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/case-converter/uppercase-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/character-counter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/color-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/color-converter/hex-to-rgb', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/color-converter/rgb-to-hex', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/color-palette', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/color-palette-generator/random-color-generator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/css-formatter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/css-formatter/css-beautifier', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/css-formatter/css-minifier', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/csv-to-json', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/csv-to-json/csv-to-json-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/find-and-replace', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/find-and-replace/text-replacer', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/html-formatter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/html-formatter/html-beautifier', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/html-formatter/html-minifier', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/image-compressor', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
     { url: 'https://tools2do.com/tools/image-compressor/compress-image-to-100kb', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
     { url: 'https://tools2do.com/tools/image-compressor/compress-image-to-200kb', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
     { url: 'https://tools2do.com/tools/image-compressor/compress-image-to-500kb', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/image-compressor/compress-image-to-50kb', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/image-compressor/compress-jpeg-online', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/image-compressor/compress-jpeg-to-100kb', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/image-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/image-converter/jpg-to-png-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/image-converter/png-to-jpg-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/image-converter/png-to-webp-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/image-converter/webp-to-jpg-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/image-converter/webp-to-png-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/image-resizer', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
     { url: 'https://tools2do.com/tools/image-resizer/passport-size-photo-resizer', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/image-resizer/resize-image-for-facebook', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/image-resizer/resize-image-for-instagram', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/image-resizer/resize-image-for-youtube-thumbnail', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/image-resizer/resize-image-to-1080p', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/image-to-pdf', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/image-to-pdf/jpeg-to-pdf-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/image-to-pdf/jpg-to-pdf-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/image-to-pdf/png-to-pdf-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/javascript-formatter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/javascript-formatter/javascript-beautifier', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/javascript-formatter/js-minifier', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/json-formatter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/json-formatter/json-beautifier', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/json-formatter/json-minifier', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/json-formatter/json-validator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/json-formatter/json-viewer', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/lorem-ipsum-generator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/lorem-ipsum-generator/dummy-text-generator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/lorem-ipsum-generator/random-text-generator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/markdown-previewer', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/markdown-previewer/markdown-editor', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/markdown-previewer/markdown-to-html', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/password-generator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/password-generator/random-pin-generator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/password-generator/random-string-generator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/password-generator/secure-password-maker', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/password-generator/strong-password-generator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/password-generator/wifi-password-generator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/pdf-merge-split', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/pdf-merge-split/combine-pdf', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/pdf-merge-split/merge-pdf', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/pdf-merge-split/split-pdf', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/percentage-calculator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/percentage-calculator/discount-calculator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/percentage-calculator/margin-calculator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/percentage-calculator/percentage-increase-calculator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/percentage-calculator/tax-calculator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/qr-code-generator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/qr-code-generator/email-qr-code-generator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/qr-code-generator/url-qr-code-generator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/qr-code-generator/vcard-qr-code-generator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/qr-code-generator/wifi-qr-code-generator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/regex-tester', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/regex-tester/online-regex-tester', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/remove-extra-spaces', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/remove-extra-spaces/space-remover', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/remove-extra-spaces/trim-whitespace', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/slug-generator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/slug-generator/url-slug-generator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/text-repeater', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/text-repeater/string-repeater', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/text-repeater/word-repeater', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/timestamp-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/timestamp-converter/epoch-to-date', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/timestamp-converter/unix-epoch-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/unit-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/unit-converter/length-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/unit-converter/temperature-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/unit-converter/weight-converter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/url-encoder', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/url-encoder/url-decode-online', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/url-encoder/url-decoder', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/url-encoder/url-encode-online', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/uuid-generator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/uuid-generator/guid-generator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/uuid-generator/random-uuid-generator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/uuid-generator/uuid-v4-generator', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/word-counter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/word-counter/character-counter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/word-counter/essay-word-counter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/word-counter/sentence-counter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: 'https://tools2do.com/tools/word-counter/tweet-character-counter', lastModified: TOOLS_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.7 },
   ];
+
+  return [...coreRoutes, ...dynamicRoutes];
 }

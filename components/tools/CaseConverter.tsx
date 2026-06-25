@@ -11,6 +11,9 @@ export function CaseConverter(): React.ReactElement {
     { label: 'Sentence case', fn: (s:string) => s.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, c => c.toUpperCase()) },
     { label: 'slug-format', fn: (s:string) => s.toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'') },
     { label: 'camelCase', fn: (s:string) => s.toLowerCase().replace(/[^a-z0-9]+(.)/g,(_,c)=>c.toUpperCase()) },
+    { label: 'snake_case', fn: (s:string) => s.trim().toLowerCase().replace(/[^a-z0-9]+/g, '_') },
+    { label: 'kebab-case', fn: (s:string) => s.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-') },
+    { label: 'PascalCase', fn: (s:string) => s.toLowerCase().replace(/(?:^|[^a-z0-9]+)(.)/g,(_,c)=>c.toUpperCase()) },
   ];
   return (
     <div className="mx-auto max-w-4xl px-4 py-10 md:px-6 space-y-4">
