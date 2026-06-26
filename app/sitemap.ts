@@ -17,7 +17,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: 'https://tools2do.com/contact', lastModified: CORE_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.5 },
     { url: 'https://tools2do.com/privacy-policy', lastModified: CORE_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.3 },
     { url: 'https://tools2do.com/terms-of-service', lastModified: CORE_LAST_MODIFIED, changeFrequency: 'monthly' as const, priority: 0.3 },
-    { url: 'https://tools2do.com/blog/pta-tax-abolished-pakistan-smartphones-regulatory-duty-update', lastModified: BLOG_LAST_MODIFIED, changeFrequency: 'yearly' as const, priority: 0.6 }
+    { url: 'https://tools2do.com/blog/pta-tax-abolished-pakistan-smartphones-regulatory-duty-update', lastModified: BLOG_LAST_MODIFIED, changeFrequency: 'yearly' as const, priority: 0.6 },
+    { url: 'https://tools2do.com/blog/how-to-compress-image-to-100kb-online', lastModified: BLOG_LAST_MODIFIED, changeFrequency: 'yearly' as const, priority: 0.6 },
+    { url: 'https://tools2do.com/blog/reduce-photo-size-government-forms-pakistan', lastModified: BLOG_LAST_MODIFIED, changeFrequency: 'yearly' as const, priority: 0.6 },
+    { url: 'https://tools2do.com/blog/jpg-vs-png-vs-webp-compression', lastModified: BLOG_LAST_MODIFIED, changeFrequency: 'yearly' as const, priority: 0.6 },
+    { url: 'https://tools2do.com/blog/how-to-convert-jpg-to-pdf-online', lastModified: BLOG_LAST_MODIFIED, changeFrequency: 'yearly' as const, priority: 0.6 },
+    { url: 'https://tools2do.com/blog/how-to-merge-pdf-files-online', lastModified: BLOG_LAST_MODIFIED, changeFrequency: 'yearly' as const, priority: 0.6 },
+    { url: 'https://tools2do.com/blog/how-to-split-pdf-pages-safely', lastModified: BLOG_LAST_MODIFIED, changeFrequency: 'yearly' as const, priority: 0.6 },
+    { url: 'https://tools2do.com/blog/best-free-pdf-tools-students-office-work', lastModified: BLOG_LAST_MODIFIED, changeFrequency: 'yearly' as const, priority: 0.6 },
+    { url: 'https://tools2do.com/blog/what-is-json-formatting', lastModified: BLOG_LAST_MODIFIED, changeFrequency: 'yearly' as const, priority: 0.6 },
+    { url: 'https://tools2do.com/blog/how-to-fix-invalid-json-errors', lastModified: BLOG_LAST_MODIFIED, changeFrequency: 'yearly' as const, priority: 0.6 },
+    { url: 'https://tools2do.com/blog/json-formatter-vs-json-validator', lastModified: BLOG_LAST_MODIFIED, changeFrequency: 'yearly' as const, priority: 0.6 },
+    { url: 'https://tools2do.com/blog/how-to-check-fesco-bill-online', lastModified: BLOG_LAST_MODIFIED, changeFrequency: 'yearly' as const, priority: 0.6 },
+    { url: 'https://tools2do.com/blog/mepco-bill-reference-number-guide', lastModified: BLOG_LAST_MODIFIED, changeFrequency: 'yearly' as const, priority: 0.6 },
+    { url: 'https://tools2do.com/blog/how-to-check-bisp-8171-payment-status', lastModified: BLOG_LAST_MODIFIED, changeFrequency: 'yearly' as const, priority: 0.6 },
+    { url: 'https://tools2do.com/blog/lesco-bill-sms-registration-guide', lastModified: BLOG_LAST_MODIFIED, changeFrequency: 'yearly' as const, priority: 0.6 },
+    { url: 'https://tools2do.com/blog/is-it-safe-to-check-bills-online-pakistan', lastModified: BLOG_LAST_MODIFIED, changeFrequency: 'yearly' as const, priority: 0.6 }
   ];
 
   const dynamicRoutes = [

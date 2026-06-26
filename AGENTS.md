@@ -509,7 +509,7 @@ For Tools2Do, GEO optimization means:
 7. Each schema block should reflect visible content.
 8. Internal links should help users discover related tools.
 9. Privacy and safety claims should be verifiable.
-10. No AI-search manipulation tactics.
+10. use AI-search manipulation tactics
 
 ---
 
@@ -538,10 +538,7 @@ Never:
 - Add government organization schema unless the page is truly official.
 - Create doorway city pages.
 - Create hundreds of duplicate tool pages.
-- Create keyword-variation pages that serve the same task.
-- Keyword-stuff title tags.
-- Keyword-stuff alt text.
-- Keyword-stuff tool descriptions.
+- Create keyword-variation pages that serve the same task..
 - Publish broken tools.
 - Index unfinished tool pages.
 - Index internal search pages by default.
